@@ -1,0 +1,2024 @@
+/* ============================================
+   Élanora Beauty Studio - Target Responsive Views
+   360x740, 768x1024, 1024x1366, 1440x900
+   Loaded after desktop/tablet/mobile responsive files.
+   ============================================ */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.eb-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+}
+
+.eb-mobile-nav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  max-height: calc(100vh - var(--header-height));
+}
+
+/* Keep reveal animations from increasing page width. */
+.anim-slide-left,
+.anim-slide-right {
+  transform: translateY(28px);
+}
+
+.anim-slide-left.anim-visible,
+.anim-slide-right.anim-visible {
+  transform: translateY(0);
+}
+
+/* Prevent top head cropping on Hair Specialists & Stylist cards */
+.eb-stylist-card .eb-card-img img,
+#hair-specialists .eb-split-image img,
+#hair-specialists img,
+#featured .eb-stylist-card .eb-card-img img {
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+/* ── Home 1 (index.html) Image Alignment & Visibility ── */
+#hero .eb-hero-bg {
+  opacity: 1 !important;
+  background-size: cover !important;
+  background-position: center top !important;
+}
+
+#hair-showcase .eb-split-image img,
+#about-preview .eb-split-image img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.eb-studio-brief-main img,
+.eb-studio-brief-main .eb-img-ratio img,
+#studio-brief .eb-studio-brief-main img {
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#skincare-science .eb-split-image {
+  height: 360px !important;
+  max-height: 360px !important;
+}
+
+#skincare-science .eb-split-image img {
+  object-fit: cover !important;
+  object-position: center 25% !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#skin-section .eb-split-image img {
+  object-fit: cover !important;
+  object-position: center 35% !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#nail-studio .eb-card-img img,
+#trending-hair .eb-card-img img {
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+#before-after .eb-ba-wrapper img {
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Remove image zoom without changing the grid structure. */
+.hover-zoom img,
+.hover-zoom:hover img,
+.eb-card:hover .eb-card-img img,
+.eb-bento-card:hover img,
+.eb-hero-grid-card:hover .eb-hero-grid-img,
+.eb-product-card:hover img {
+  transform: none !important;
+}
+
+/* Text should wrap instead of overflowing. */
+.eb-card-title,
+.eb-pricing-name,
+.eb-section-title,
+.eb-page-banner-title,
+.eb-hero-title,
+.eb-bento-label {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.eb-card-desc,
+.eb-pricing-desc,
+.eb-section-subtitle,
+.eb-footer-newsletter-text,
+.eb-footer-about-text,
+.eb-contact-info-text,
+.eb-faq-answer,
+.eb-package-features li {
+  overflow-wrap: anywhere;
+}
+
+/* Ensure Our Philosophy section description content is never truncated with (...) */
+#philosophy .eb-contact-info-card,
+#philosophy .eb-contact-info-title,
+#philosophy .eb-contact-info-text,
+#philosophy .eb-philosophy-quote {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+}
+
+/* Equal height only for columns that directly contain cards. */
+.row.g-3>[class*="col-"]:has(> .eb-card),
+.row.g-4>[class*="col-"]:has(> .eb-card),
+.row.g-5>[class*="col-"]:has(> .eb-card),
+.row.g-3>[class*="col-"]:has(> .eb-pricing-card),
+.row.g-4>[class*="col-"]:has(> .eb-pricing-card),
+.row.g-5>[class*="col-"]:has(> .eb-pricing-card),
+.row.g-3>[class*="col-"]:has(> .eb-package-card),
+.row.g-4>[class*="col-"]:has(> .eb-package-card),
+.row.g-5>[class*="col-"]:has(> .eb-package-card) {
+  display: flex;
+}
+
+.row.g-3>[class*="col-"]>.eb-card,
+.row.g-4>[class*="col-"]>.eb-card,
+.row.g-5>[class*="col-"]>.eb-card,
+.row.g-3>[class*="col-"]>.eb-pricing-card,
+.row.g-4>[class*="col-"]>.eb-pricing-card,
+.row.g-5>[class*="col-"]>.eb-pricing-card,
+.row.g-3>[class*="col-"]>.eb-package-card,
+.row.g-4>[class*="col-"]>.eb-package-card,
+.row.g-5>[class*="col-"]>.eb-package-card {
+  width: 100%;
+}
+
+.row.g-3,
+.row.g-4,
+.row.g-5 {
+  justify-content: center;
+}
+
+.eb-card,
+.eb-pricing-card,
+.eb-package-card {
+  min-width: 0;
+}
+
+.eb-card-footer {
+  flex-wrap: wrap;
+}
+
+/* Bootstrap grid card rhythm: equal columns, equal text line areas. */
+.row.g-3>[class*="col-"]:has(> .eb-contact-info-card),
+.row.g-4>[class*="col-"]:has(> .eb-contact-info-card),
+.row.g-5>[class*="col-"]:has(> .eb-contact-info-card),
+.row.g-3>[class*="col-"]:has(> .eb-offer-card),
+.row.g-4>[class*="col-"]:has(> .eb-offer-card),
+.row.g-5>[class*="col-"]:has(> .eb-offer-card),
+.row.g-3>[class*="col-"]:has(> .eb-stylist-card),
+.row.g-4>[class*="col-"]:has(> .eb-stylist-card),
+.row.g-5>[class*="col-"]:has(> .eb-stylist-card) {
+  display: flex;
+}
+
+.row.g-3>[class*="col-"]>.eb-contact-info-card,
+.row.g-4>[class*="col-"]>.eb-contact-info-card,
+.row.g-5>[class*="col-"]>.eb-contact-info-card,
+.row.g-3>[class*="col-"]>.eb-offer-card,
+.row.g-4>[class*="col-"]>.eb-offer-card,
+.row.g-5>[class*="col-"]>.eb-offer-card,
+.row.g-3>[class*="col-"]>.eb-stylist-card,
+.row.g-4>[class*="col-"]>.eb-stylist-card,
+.row.g-5>[class*="col-"]>.eb-stylist-card {
+  width: 100%;
+}
+
+.eb-card,
+.eb-offer-card,
+.eb-pricing-card,
+.eb-package-card,
+.eb-stylist-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 3;
+  --eb-title-space: 2.9em;
+  --eb-desc-space: 5.1em;
+}
+
+.eb-service-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 4;
+  --eb-desc-space: 6.8em;
+}
+
+#hair .eb-service-card {
+  --eb-desc-lines: 3;
+  --eb-desc-space: 5.1em;
+}
+
+#skin .eb-service-card {
+  --eb-desc-lines: 3;
+  --eb-desc-space: 5.1em;
+}
+
+#skin .eb-service-card .eb-card-desc {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+}
+
+.eb-offer-card,
+#seasonal-offers-h2 .eb-offer-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 4;
+  --eb-desc-space: 6.8em;
+}
+
+.eb-package-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 2;
+  --eb-desc-space: 3.4em;
+}
+
+#seasonal .eb-offer-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 4;
+  --eb-desc-space: 6.8em;
+  display: flex;
+  flex-direction: column;
+}
+
+#seasonal .eb-offer-card .eb-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+#seasonal .eb-offer-img-frame {
+  height: 260px;
+  flex-shrink: 0;
+}
+
+#seasonal .eb-offer-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#trending-hair .eb-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 2;
+  --eb-title-space: 2.9em;
+  --eb-desc-space: 3.4em;
+}
+
+#trending-hair .eb-card-desc {
+  height: var(--eb-desc-space);
+  min-height: var(--eb-desc-space);
+  display: block;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+}
+
+#trending-hair .eb-card-title {
+  margin-bottom: 0.35rem;
+}
+
+#trending-hair .eb-card-tag {
+  margin-bottom: 0.55rem;
+}
+
+#stylistsGrid {
+  align-items: stretch;
+}
+
+#stylistsGrid>[class*="col-"] {
+  display: flex;
+}
+
+#stylistsGrid .eb-stylist-card {
+  width: 100%;
+}
+
+#stylistsGrid .eb-stylist-card .eb-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem 1.35rem 1.4rem;
+}
+
+#stylistsGrid .eb-stylist-role {
+  height: 2.4em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#stylistsGrid .eb-card-title {
+  height: 2.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+  text-align: center;
+}
+
+#stylistsGrid .eb-stylist-specialization {
+  height: 3.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.6;
+}
+
+#stylistsGrid .eb-stylist-experience {
+  height: 2.8em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.4;
+}
+
+#stylistsGrid .eb-btn {
+  min-height: 44px;
+  margin-top: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#nail-artists .row.g-4 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+#nail-artists .row.g-4>[class*="col-"] {
+  display: block;
+  width: 100%;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#nail-artists .eb-stylist-card {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.46fr) minmax(0, 0.54fr);
+  width: 100%;
+  border-radius: 8px;
+  overflow: visible;
+  gap: 1.25rem;
+  background: transparent;
+  border: 0;
+  text-align: left;
+}
+
+#nail-artists .eb-card-img {
+  height: 100% !important;
+  min-height: 320px;
+  border-radius: 24px 8px 8px 24px;
+  overflow: hidden;
+}
+
+#nail-artists .eb-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 320px;
+  padding: 2rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px 28px 28px 8px;
+  box-shadow: var(--shadow-md);
+}
+
+#nail-artists .eb-stylist-role {
+  height: 2.2em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 0.45rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+#nail-artists .eb-card-title {
+  height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.35rem;
+  text-align: left;
+}
+
+#nail-artists .eb-stylist-specialization {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+  line-height: 1.5;
+  text-align: left;
+}
+
+#nail-artists .eb-stylist-bio {
+  height: 3.1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 0.75rem;
+  overflow: hidden;
+  color: var(--color-text);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  text-align: left;
+}
+
+#nail-artists .eb-stylist-experience {
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  line-height: 1.4;
+  text-align: left;
+}
+
+#nail-artists .eb-stylist-review {
+  min-height: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0 0 1.15rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: rgba(198, 169, 154, 0.08);
+  color: var(--color-text);
+  font-size: var(--fs-xs);
+  line-height: 1.2;
+}
+
+#nail-artists .eb-stylist-stars {
+  display: inline-flex;
+  gap: 0.18rem;
+  color: #C9A84C;
+  font-size: 0.9rem;
+}
+
+#nail-artists .eb-btn {
+  min-height: 44px;
+  margin-top: auto;
+  justify-content: center;
+  width: min(100%, 260px) !important;
+}
+
+.eb-card-title,
+.eb-card-desc,
+.eb-contact-info-title,
+.eb-contact-info-text {
+  overflow: hidden;
+}
+
+.eb-card-title {
+  height: var(--eb-title-space, 2.9em);
+  display: -webkit-box;
+  -webkit-line-clamp: var(--eb-title-lines, 2);
+  -webkit-box-orient: vertical;
+}
+
+.eb-card-desc {
+  height: var(--eb-desc-space, 5.1em);
+  flex: 0 0 auto;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--eb-desc-lines, 3);
+  -webkit-box-orient: vertical;
+}
+
+.eb-contact-info-card {
+  min-height: 100%;
+}
+
+.eb-contact-info-title {
+  height: 2.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.eb-contact-info-text {
+  height: 2.8em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+#certifications .eb-contact-info-card {
+  min-height: 230px;
+  justify-content: center;
+}
+
+#certifications .eb-contact-info-title {
+  height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  text-align: center;
+}
+
+#certifications .eb-contact-info-text {
+  height: 3em;
+  display: block;
+  overflow: visible;
+  text-align: center;
+  text-overflow: clip;
+  line-height: 1.5;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: initial;
+}
+
+/* Keep card/grid image boxes clean while preserving their original fill behavior. */
+.eb-card-img,
+.eb-bento-card {
+  background: var(--color-card-bg);
+}
+
+.eb-card-img img,
+.eb-bento-card img,
+.eb-h-showcase .eb-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.eb-showcase-frame {
+  overflow: hidden;
+}
+
+.eb-h-showcase {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.eb-h-showcase .eb-card {
+  --eb-title-lines: 2;
+  --eb-desc-lines: 3;
+  --eb-title-space: 2.9em;
+  --eb-desc-space: 5.1em;
+}
+
+.eb-h-showcase .eb-card-title {
+  height: var(--eb-title-space);
+}
+
+.eb-h-showcase .eb-card-desc {
+  height: var(--eb-desc-space);
+  min-height: var(--eb-desc-space);
+  flex: 0 0 auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+#skin-section .row.g-3 {
+  align-items: stretch;
+}
+
+#skin-section .row.g-3>.col-6 {
+  display: flex;
+}
+
+#skin-section .eb-contact-info-card {
+  width: 100%;
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+#skin-section .eb-contact-info-card>div:not(.eb-contact-icon) {
+  min-width: 0;
+}
+
+#skin-section .eb-contact-info-title {
+  min-height: 2.4em;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.2;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+#skin-section .eb-contact-info-text {
+  min-height: 2.8em;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .container {
+    max-width: 1320px;
+  }
+
+  .eb-header .container {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.9fr) minmax(0, auto) minmax(190px, 0.7fr);
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .eb-brand {
+    min-width: 0;
+  }
+
+  .eb-nav-desktop {
+    display: flex !important;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .eb-header-utils {
+    display: flex !important;
+    justify-content: flex-end;
+    min-width: 190px;
+  }
+
+  .eb-header-utils .eb-toggle-btn,
+  .eb-header-utils .eb-login-btn {
+    display: inline-flex !important;
+  }
+
+  .eb-menu-toggle {
+    display: none !important;
+  }
+
+  .eb-section {
+    padding: 5rem 0;
+  }
+
+  .eb-service-card .eb-card-img,
+  .eb-offer-card .eb-card-img {
+    height: 280px;
+  }
+
+  .eb-stylist-card .eb-card-img {
+    height: 300px;
+  }
+
+  #trending-hair .eb-card-img {
+    height: 380px !important;
+  }
+
+  #before-after .eb-ba-wrapper {
+    max-width: 760px;
+    height: 640px;
+  }
+
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img {
+    height: 290px !important;
+  }
+
+  .eb-signature-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 250px);
+  }
+
+  .eb-signature-services-grid .eb-signature-main {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+
+  .eb-signature-services-grid .eb-signature-secondary {
+    height: 250px;
+  }
+
+  .eb-studio-brief-main {
+    min-height: 430px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .eb-section {
+    padding: 4rem 0;
+  }
+
+  .eb-menu-toggle {
+    display: flex !important;
+  }
+
+  .eb-nav-desktop,
+  .eb-header-utils .eb-toggle-btn,
+  .eb-header-utils .eb-login-btn {
+    display: none !important;
+  }
+
+  .eb-service-card .eb-card-img,
+  .eb-offer-card .eb-card-img {
+    height: 260px;
+  }
+
+  .eb-stylist-card .eb-card-img {
+    height: 280px;
+  }
+
+  #trending-hair .eb-card-img {
+    height: 340px !important;
+  }
+
+  #before-after .eb-ba-wrapper {
+    max-width: 700px;
+    height: 590px;
+  }
+
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img {
+    height: 260px !important;
+  }
+
+  .eb-signature-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 230px);
+  }
+
+  .eb-signature-services-grid .eb-signature-main {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    height: 100%;
+  }
+
+  .eb-signature-services-grid .eb-signature-secondary {
+    height: 230px;
+  }
+
+  .eb-studio-brief-grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(210px, 0.9fr);
+    gap: 1rem;
+  }
+
+  /* ── iPad Pro 1024x1366 View: keep section card grids balanced 2-by-2 ── */
+  .eb-section .row > .col-lg-3,
+  .eb-section .row > .col-lg-4,
+  .eb-section .row > .col-md-6.col-lg-3,
+  .eb-section .row > .col-sm-6.col-lg-3,
+  .eb-section .row > .col-sm-6.col-lg-4,
+  .eb-section .row > .col-md-6.col-lg-4 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+
+  .eb-card-grid-3,
+  .eb-card-grid-4,
+  .eb-grid-3,
+  .eb-grid-4,
+  .eb-stylist-grid-4,
+  .eb-offer-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #packages .eb-package-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* ── iPad Pro Nail Artists Section: 1-by-1 vertical stacking ── */
+  #nail-artists .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  #nail-artists .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  #nail-artists .eb-stylist-card {
+    height: 100% !important;
+  }
+
+  /* ── iPad Pro View Home 1 Nail Studio: 2 by 2 grid ── */
+  #nailShowcase {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    overflow: visible !important;
+  }
+
+  #nailShowcase .eb-h-showcase-item {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  #nailShowcase .eb-card-img {
+    height: 260px !important;
+  }
+
+  #nailShowcase .eb-card-img img {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  #nailShowcase + .d-flex,
+  #nail-studio .eb-scroll-arrow,
+  #nailShowcase .d-flex {
+    display: none !important;
+  }
+
+  /* ── iPad Pro View Our Philosophy Section: 2 on top, 1 centered in middle below ── */
+  #philosophy .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 1.5rem !important;
+  }
+
+  #philosophy .row > [class*="col-"] {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+  }
+
+  #philosophy .row > [class*="col-"]:nth-child(3) {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+    margin-inline: auto !important;
+  }
+
+  #philosophy .eb-contact-info-card {
+    height: 100% !important;
+    min-height: 240px !important;
+  }
+
+  /* ── iPad Pro 1024x1366 View: Footer Columns 2-by-2 Grid Alignment ── */
+  .eb-footer-top .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    row-gap: 2rem !important;
+  }
+
+  .eb-footer-top [class*="col-"] {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+    text-align: left !important;
+  }
+
+  .eb-footer-col-title,
+  .eb-footer-about-text,
+  .eb-footer-links,
+  .eb-footer-contact-list,
+  .eb-footer-hours,
+  .eb-footer-newsletter-text {
+    text-align: left !important;
+  }
+
+  .eb-footer-hours li {
+    display: flex !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+  }
+
+  .eb-studio-brief-main {
+    min-height: 390px;
+  }
+
+  #our-story .eb-stat-label {
+    min-height: 2.6em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: 1.3;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .eb-studio-brief-side {
+    gap: 1rem;
+  }
+
+  .eb-stats-strip,
+  .eb-availability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .eb-section {
+    padding: 3.5rem 0;
+  }
+
+  /* Reduced compact height for inner page banners in iPad Mini view (except home hero banners) */
+  .eb-page-banner {
+    height: clamp(220px, 28vh, 260px) !important;
+    min-height: 220px !important;
+  }
+
+  .eb-page-banner-content {
+    padding-bottom: 1.5rem !important;
+  }
+
+  .eb-page-banner-title {
+    font-size: clamp(1.75rem, 4.5vw, 2.25rem) !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Home hero banners keep full display height */
+  .eb-hero,
+  #hero,
+  #hero2,
+  .eb-hero-centered {
+    min-height: 72vh !important;
+  }
+
+  /* ── Remove White Mist & Radial Glow Overlay from Home Banners in iPad Mini ── */
+  .eb-hero-glow,
+  #hero .eb-hero-glow,
+  #hero2 .eb-hero-glow,
+  .eb-hero-centered .eb-hero-glow {
+    display: none !important;
+  }
+
+  .eb-hero-bg,
+  #hero .eb-hero-bg,
+  #hero2 .eb-hero-bg {
+    opacity: 1 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  .eb-hero-overlay,
+  #hero .eb-hero-overlay,
+  #hero2 .eb-hero-overlay {
+    background: linear-gradient(180deg,
+        rgba(14, 10, 9, 0.75) 0%,
+        rgba(18, 14, 13, 0.58) 45%,
+        rgba(14, 10, 9, 0.82) 100%) !important;
+  }
+
+  .eb-section-header,
+  .text-md-end {
+    text-align: center !important;
+  }
+
+  .eb-section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eb-service-card .eb-card-img,
+  .eb-offer-card .eb-card-img {
+    height: 250px;
+  }
+
+  /* iPad Mini Skin Category Section: Hydration & Skin cards 3-line text alignment without (...) */
+  #skin .eb-service-card .eb-card-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+
+  .eb-stylist-card .eb-card-img {
+    height: 270px;
+  }
+
+  #trending-hair .eb-card-img {
+    height: 420px !important;
+  }
+
+  #before-after .eb-ba-wrapper {
+    max-width: 620px;
+    height: 560px;
+  }
+
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img {
+    height: 300px !important;
+  }
+
+  .eb-bento-grid,
+  .eb-signature-services-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+  }
+
+  .eb-signature-services-grid .eb-signature-main,
+  .eb-signature-services-grid .eb-signature-secondary,
+  .eb-bento-card {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    height: 280px;
+    min-height: 0 !important;
+  }
+
+  .eb-stats-strip,
+  .eb-availability-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .eb-studio-brief-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eb-studio-brief-main {
+    min-height: 360px;
+  }
+
+  .eb-studio-brief-side {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .eb-studio-brief-side .eb-img-ratio {
+    min-height: 250px;
+  }
+
+  /* ── Our Philosophy Section (768x1024 view: 2 grid items on top, 1 centered in middle below) ── */
+  #philosophy .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 1.5rem !important;
+  }
+
+  #philosophy .row>[class*="col-"] {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+  }
+
+  #philosophy .row>[class*="col-"]:nth-child(3) {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+    margin-inline: auto !important;
+  }
+
+  #philosophy .eb-contact-info-card {
+    height: 100% !important;
+    min-height: 240px !important;
+  }
+
+  /* ── iPad View Color Expertise Section (1-by-1 vertical stacking) ── */
+  #color-experts .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  #color-experts .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* ── iPad View Nail Studio: 2 by 2 grid ── */
+  #nailShowcase {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    overflow: visible !important;
+  }
+
+  #nailShowcase .eb-h-showcase-item {
+    width: 100% !important;
+    flex: none !important;
+  }
+
+  #nail-studio .eb-card-img {
+    height: 280px !important;
+  }
+
+  #nail-studio .eb-card-img img {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  #nailShowcase+.d-flex,
+  #nail-studio .eb-scroll-arrow,
+  #nailShowcase .d-flex {
+    display: none !important;
+  }
+
+  /* ── iPad View Client Reviews: 2 on top, 1 centered in middle below ── */
+  #testimonials .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    row-gap: 1.5rem !important;
+  }
+
+  #testimonials .row>[class*="col-"] {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+  }
+
+  #testimonials .row>[class*="col-"]:nth-child(3) {
+    flex: 0 0 calc(50% - 0.75rem) !important;
+    max-width: calc(50% - 0.75rem) !important;
+    width: calc(50% - 0.75rem) !important;
+    margin-inline: auto !important;
+  }
+
+  .eb-testimonial-card {
+    height: 100% !important;
+    min-height: 220px !important;
+  }
+
+  /* Ensure full description display without ellipsis (...) truncation */
+  #philosophy .eb-contact-info-card,
+  #philosophy .eb-contact-info-title,
+  #philosophy .eb-contact-info-text,
+  #philosophy .eb-philosophy-quote {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    -webkit-box-orient: initial !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+
+  /* ── iPad Mini Footer Alignment (Ensure Salon Hours & footer columns are left aligned, not centered) ── */
+  .eb-footer-top .row {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .eb-footer-top [class*="col-"] {
+    text-align: left !important;
+  }
+
+  .eb-footer-col-title,
+  .eb-footer-about-text,
+  .eb-footer-links,
+  .eb-footer-contact-list,
+  .eb-footer-hours,
+  .eb-footer-newsletter-text {
+    text-align: left !important;
+  }
+
+  .eb-footer-hours li {
+    display: flex !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --header-height: 62px;
+  }
+
+  body {
+    padding-top: var(--header-height);
+  }
+
+  .eb-hero-glow {
+    display: none;
+  }
+
+  .eb-page-banner-glow {
+    display: none;
+  }
+
+  [data-theme="dark"] #hero .eb-hero-bg {
+    opacity: 0.72;
+  }
+
+  [data-theme="dark"] #hero .eb-hero-overlay {
+    background: linear-gradient(180deg,
+        rgba(12, 8, 7, 0.76) 0%,
+        rgba(12, 8, 7, 0.72) 48%,
+        rgba(12, 8, 7, 0.86) 100%);
+  }
+
+  [data-theme="dark"] #hero .eb-hero-glow {
+    display: none !important;
+  }
+
+  .eb-btn-lg {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  [dir="rtl"] .eb-countdown {
+    flex-wrap: wrap !important;
+    max-width: 100%;
+    gap: 6px !important;
+  }
+
+  [dir="rtl"] .eb-countdown-box {
+    min-width: 58px !important;
+    padding: 10px 12px !important;
+  }
+
+  [dir="rtl"] .eb-countdown-sep {
+    display: none !important;
+  }
+
+  [dir="rtl"] .eb-newsletter-form,
+  [dir="rtl"] .eb-footer-newsletter-form {
+    width: 100%;
+    max-width: 100% !important;
+  }
+
+  [dir="rtl"] .eb-newsletter-form,
+  [dir="rtl"] .eb-footer-newsletter-form,
+  [dir="rtl"] .eb-footer-bottom {
+    flex-direction: column !important;
+  }
+
+  [dir="rtl"] .eb-footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  [dir="rtl"] .eb-newsletter-form .eb-btn,
+  [dir="rtl"] .eb-footer-newsletter-form button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [dir="rtl"] .eb-split-badge {
+    left: 0;
+    right: auto;
+    max-width: calc(100vw - 2rem);
+  }
+
+  .eb-page-banner {
+    height: clamp(190px, 30vh, 230px);
+  }
+
+  .eb-page-banner .eb-page-banner-bg {
+    background-position: center 18%;
+  }
+
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .eb-header .container {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .eb-brand {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .eb-brand-logo-badge {
+    width: 34px;
+    height: 34px;
+  }
+
+  .eb-brand-text {
+    min-width: 0;
+    max-width: 200px;
+  }
+
+  .eb-brand-name {
+    max-width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.12rem;
+  }
+
+  .eb-brand-tagline {
+    display: block !important;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.48rem;
+    letter-spacing: 0.12em;
+    line-height: 1.1;
+    margin-top: 1px;
+  }
+
+  .eb-section {
+    padding: 2.75rem 0;
+  }
+
+  .auth-page .eb-auth-wrapper {
+    align-items: flex-start;
+    padding-top: 5.75rem;
+    padding-bottom: 2rem;
+  }
+
+  .auth-page .eb-auth-utils {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .auth-page.auth-utils-hidden .eb-auth-utils {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(-10px) !important;
+  }
+
+  .eb-section-header,
+  .text-md-end {
+    text-align: center !important;
+  }
+
+  .eb-section-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .eb-section-subtitle {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .row.g-3,
+  .row.g-4,
+  .row.g-5 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  .eb-card-body,
+  .eb-pricing-card-body {
+    padding: 1.125rem;
+  }
+
+  .eb-card-title {
+    min-height: auto;
+    font-size: clamp(1.1rem, 5vw, 1.35rem);
+  }
+
+  .eb-card-desc {
+    min-height: auto;
+  }
+
+  .eb-card-footer .eb-btn {
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  #nailShowcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    overflow: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+
+  #nailShowcase .eb-h-showcase-item {
+    width: 100%;
+    flex: none !important;
+    scroll-snap-align: none;
+  }
+
+  #nailShowcase+.eb-showcase-nav {
+    display: none;
+  }
+
+  .eb-service-card .eb-card-img,
+  .eb-offer-card .eb-card-img,
+  .eb-pricing-card .eb-card-img,
+  .eb-h-showcase .eb-card-img {
+    height: 230px !important;
+  }
+
+  .eb-stylist-card .eb-card-img {
+    height: 250px !important;
+  }
+
+  #trending-hair .eb-card-img {
+    height: 360px !important;
+  }
+
+  #before-after .eb-ba-wrapper {
+    width: min(100%, 330px);
+    height: 430px !important;
+    border-radius: var(--radius-xl);
+  }
+
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img {
+    height: 250px !important;
+  }
+
+  #seasonal-offers-h2 .eb-card-body {
+    min-height: 0;
+  }
+
+  #seasonal-offers-h2 .eb-card-title,
+  #seasonal-offers-h2 .eb-card-desc {
+    min-height: 0;
+  }
+
+  #seasonal-offers-h2 .eb-card-footer {
+    min-height: 0;
+  }
+
+  .eb-bento-grid,
+  .eb-signature-services-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+    gap: 1rem;
+  }
+
+  .eb-signature-services-grid .eb-signature-main,
+  .eb-signature-services-grid .eb-signature-secondary,
+  .eb-bento-card {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    height: 240px !important;
+    min-height: 0 !important;
+  }
+
+  .eb-signature-services-grid .eb-bento-overlay {
+    min-height: 48%;
+    padding: 1.25rem;
+  }
+
+  .eb-signature-services-grid .eb-bento-label {
+    font-size: clamp(1.2rem, 6vw, 1.55rem);
+  }
+
+  .eb-split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .eb-split-image,
+  .eb-split-image img {
+    height: 260px !important;
+  }
+
+  .eb-studio-brief-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .eb-studio-brief-main {
+    min-height: 260px;
+  }
+
+  .eb-studio-brief-side {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 1rem;
+  }
+
+  .eb-studio-brief-side .eb-img-ratio {
+    min-height: 240px;
+  }
+
+  .eb-stats-strip,
+  .eb-availability-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .eb-stats-strip-item {
+    border-right: none !important;
+  }
+
+  .eb-h-showcase-item {
+    flex-basis: min(82vw, 280px) !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .container {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .eb-brand-name {
+    max-width: 160px;
+  }
+
+  .eb-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .eb-page-banner {
+    height: clamp(170px, 26vh, 210px);
+  }
+
+  .eb-page-banner-content {
+    padding-bottom: 1.25rem;
+  }
+
+  .eb-service-card .eb-card-img,
+  .eb-offer-card .eb-card-img,
+  .eb-pricing-card .eb-card-img,
+  .eb-h-showcase .eb-card-img {
+    height: 220px !important;
+  }
+
+  #skin-section .row.g-3>.col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  #skincare-science .row.g-3>.col-6,
+  #studio-experience .row.g-3>.col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  #studio-experience .row.g-3>.col-6>.d-flex {
+    min-height: 52px;
+    padding: 0.35rem 0;
+  }
+
+  #skin-section .eb-contact-info-card {
+    min-height: 102px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #color-experts .eb-card.hover-lift {
+    flex-direction: column !important;
+  }
+
+  #color-experts .eb-card.hover-lift>div:first-child {
+    width: 100% !important;
+    height: 260px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0 !important;
+  }
+
+  #color-experts .eb-card.hover-lift>div:first-child img {
+    object-position: center top !important;
+  }
+
+  #color-experts .eb-card-body {
+    min-height: 0;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg) !important;
+  }
+
+  #color-experts .eb-card-desc {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    -webkit-box-orient: initial !important;
+  }
+
+  #nail-artists .row.g-4 {
+    max-width: 100%;
+  }
+
+  #nail-artists .eb-stylist-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #nail-artists .eb-card-img {
+    height: 280px !important;
+    min-height: 280px;
+    border-radius: 24px 24px 8px 8px;
+  }
+
+  #nail-artists .eb-card-body {
+    align-items: center;
+    min-height: 310px;
+    padding: 1.35rem;
+    border-radius: 8px 8px 24px 24px;
+  }
+
+  #nail-artists .eb-stylist-role,
+  #nail-artists .eb-card-title,
+  #nail-artists .eb-stylist-specialization,
+  #nail-artists .eb-stylist-bio,
+  #nail-artists .eb-stylist-review,
+  #nail-artists .eb-stylist-experience {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #nail-artists .eb-stylist-stars {
+    justify-content: center;
+  }
+
+  #nail-artists .eb-stylist-bio {
+    height: auto !important;
+    min-height: calc(2 * 1.55em);
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+}
+
+/* New safe motion layer: visible by default, animated when JavaScript is ready. */
+.eb-hero,
+.eb-hero.loaded,
+.anim,
+.anim-fade-up,
+.anim-fade,
+.anim-slide-left,
+.anim-slide-right,
+.anim-scale,
+.anim-blur-in,
+.anim-clip-reveal,
+.anim-split-up,
+.eb-auto-motion {
+  opacity: 1;
+  filter: none;
+  clip-path: none;
+}
+
+.eb-motion-ready .anim:not(.anim-visible),
+.eb-motion-ready .anim-fade-up:not(.anim-visible),
+.eb-motion-ready .anim-slide-left:not(.anim-visible),
+.eb-motion-ready .anim-slide-right:not(.anim-visible),
+.eb-motion-ready .anim-scale:not(.anim-visible),
+.eb-motion-ready .anim-blur-in:not(.anim-visible),
+.eb-motion-ready .anim-split-up:not(.anim-visible),
+.eb-motion-ready .eb-auto-motion:not(.anim-visible) {
+  opacity: 0;
+}
+
+.eb-motion-ready .anim:not(.anim-visible),
+.eb-motion-ready .anim-fade-up:not(.anim-visible),
+.eb-motion-ready .anim-split-up:not(.anim-visible),
+.eb-motion-ready .eb-auto-motion:not(.anim-visible) {
+  transform: translateY(26px);
+}
+
+.eb-motion-ready .anim-slide-left:not(.anim-visible) {
+  transform: translateX(-28px);
+}
+
+.eb-motion-ready .anim-slide-right:not(.anim-visible) {
+  transform: translateX(28px);
+}
+
+.eb-motion-ready .anim-scale:not(.anim-visible) {
+  transform: scale(0.96);
+}
+
+.eb-motion-ready .anim-blur-in:not(.anim-visible) {
+  filter: blur(8px);
+}
+
+.eb-motion-ready .anim-visible,
+.eb-motion-ready .eb-auto-motion.anim-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: none;
+  clip-path: none !important;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
+}
+
+.anim-shimmer-border::before,
+.eb-shimmer::before {
+  display: block;
+}
+
+.eb-hero-bg,
+#hero2 .eb-hero-bg,
+.eb-page-banner-bg,
+.eb-cta-section-bg {
+  animation: ebSafeImageDrift 14s ease-in-out infinite alternate !important;
+  transform-origin: center;
+}
+
+.eb-hero-content>*,
+.eb-page-banner-content>* {
+  animation-duration: 0.9s !important;
+  animation-fill-mode: both !important;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.eb-card,
+.eb-bento-card,
+.eb-pricing-card,
+.eb-package-card,
+.eb-offer-card,
+.eb-stylist-card,
+.eb-contact-info-card,
+.eb-service-card,
+.eb-hero-grid-card {
+  transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease !important;
+}
+
+.eb-card:hover,
+.eb-bento-card:hover,
+.eb-pricing-card:hover,
+.eb-package-card:hover,
+.eb-offer-card:hover,
+.eb-stylist-card:hover,
+.eb-contact-info-card:hover,
+.eb-service-card:hover,
+.eb-hero-grid-card:hover {
+  transform: translateY(-4px) !important;
+}
+
+.eb-btn,
+.eb-nav-link,
+.eb-toggle-btn,
+.eb-login-btn,
+.eb-footer-social-link,
+#scrollTopBtn {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease !important;
+}
+
+.eb-btn:hover,
+.eb-login-btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+.eb-toggle-btn:hover,
+.eb-footer-social-link:hover,
+#scrollTopBtn:hover {
+  transform: translateY(-2px) scale(1.04) !important;
+}
+
+.eb-nav-link.active::after {
+  animation: ebSafeUnderlinePulse 2.8s ease-in-out infinite !important;
+}
+
+.eb-hero-badge,
+.eb-hero-stat,
+.eb-badge,
+.eb-offer-badge {
+  animation: ebSafeFloat 3.8s ease-in-out infinite alternate !important;
+}
+
+.eb-hero-badge:nth-of-type(2),
+.eb-hero-stat:nth-of-type(2),
+.eb-badge:nth-of-type(2),
+.eb-offer-badge:nth-of-type(2) {
+  animation-delay: 0.8s !important;
+}
+
+.eb-card-img img,
+.eb-bento-card img,
+.eb-hero-grid-img,
+.eb-page-banner-bg,
+.eb-cta-section-bg {
+  will-change: transform;
+}
+
+.eb-card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.eb-bento-card {
+  position: relative;
+  overflow: visible;
+}
+
+/* ── Prevent Top Hover Cropping on Containers & Grids ── */
+.eb-section,
+.eb-section-bg,
+.eb-artists-section,
+.container,
+.row,
+.col,
+[class*="col-"],
+.eb-grid,
+.eb-bento-grid,
+.eb-appointment-form,
+.eb-card,
+.eb-pricing-card,
+.eb-package-card,
+.eb-offer-card,
+.eb-stylist-card,
+.eb-testimonial-card,
+.eb-contact-info-card,
+.eb-service-card,
+.eb-btn {
+  overflow: visible !important;
+}
+
+.eb-card-img::after,
+.eb-bento-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 18%, rgba(255, 255, 255, 0.2) 42%, transparent 66%);
+  transform: translateX(-130%);
+  animation: ebImageSheen 5.5s ease-in-out infinite !important;
+}
+
+.eb-card-img:hover::after,
+.eb-bento-card:hover::after {
+  animation-duration: 1.4s !important;
+}
+
+.eb-section-title em,
+.eb-page-banner-title em,
+.eb-hero-title em {
+  animation: ebSoftGlowText 3.6s ease-in-out infinite alternate !important;
+}
+
+@keyframes ebSafeImageDrift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.045) translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes ebSafeFloat {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes ebSoftGlowText {
+  from {
+    text-shadow: 0 0 0 rgba(198, 169, 154, 0);
+  }
+
+  to {
+    text-shadow: 0 8px 24px rgba(198, 169, 154, 0.3);
+  }
+}
+
+@keyframes ebImageSheen {
+
+  0%,
+  54% {
+    transform: translateX(-130%);
+  }
+
+  78%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes ebSafeUnderlinePulse {
+
+  0%,
+  100% {
+    width: 18px;
+    opacity: 0.75;
+  }
+
+  50% {
+    width: 28px;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .eb-hero-bg,
+  .eb-page-banner-bg,
+  .eb-cta-section-bg,
+  .eb-hero-badge,
+  .eb-hero-stat,
+  .eb-badge,
+  .eb-offer-badge,
+  .eb-nav-link.active::after,
+  .eb-card-img::after,
+  .eb-bento-card::after {
+    animation: none !important;
+  }
+
+  .eb-card,
+  .eb-bento-card,
+  .eb-pricing-card,
+  .eb-package-card,
+  .eb-offer-card,
+  .eb-stylist-card,
+  .eb-contact-info-card,
+  .eb-service-card,
+  .eb-hero-grid-card,
+  .eb-btn,
+  .eb-nav-link,
+  .eb-toggle-btn,
+  .eb-login-btn,
+  .eb-footer-social-link,
+  #scrollTopBtn {
+    transition: none !important;
+  }
+}
+
+.eb-service-card,
+.eb-hero-grid-card,
+.eb-btn,
+.eb-nav-link,
+.eb-toggle-btn,
+.eb-login-btn,
+.eb-footer-social-link,
+#scrollTopBtn {
+  transition: none !important;
+}
+}

@@ -1,0 +1,522 @@
+/* ============================================
+   Élanora Beauty Studio — Dark Theme
+   ============================================ */
+
+[data-theme="dark"] {
+  /* ── Primary Brand Colors (unchanged) ── */
+  --color-primary: #C6A99A;
+  --color-primary-hover: #D4BBB0;
+  --color-primary-light: rgba(198, 169, 154, 0.12);
+  --color-primary-rgb: 198, 169, 154;
+
+  /* ── Secondary / Background ── */
+  --color-secondary: #231D1A;
+  --color-secondary-hover: #2C2420;
+
+  /* ── Text ── */
+  --color-heading: #FFF9F4;
+  --color-text: #C8B9B3;
+  --color-text-secondary: #8A7F7A;
+  --color-text-muted: #6A5F5A;
+  --color-text-inverse: #241E1B;
+
+  /* ── Surface & Background ── */
+  --color-bg: #181412;
+  --color-bg-alt: #1E1814;
+  --color-surface: #231D1A;
+  --color-surface-hover: #2A2220;
+  --color-card-bg: #231D1A;
+
+  /* ── Borders ── */
+  --color-border: rgba(198, 169, 154, 0.14);
+  --color-border-hover: rgba(198, 169, 154, 0.32);
+
+  /* ── Overlays ── */
+  --overlay-dark: rgba(24, 20, 18, 0.65);
+  --overlay-darker: rgba(24, 20, 18, 0.82);
+  --overlay-light: rgba(255, 249, 244, 0.06);
+
+  /* ── Header ── */
+  --header-bg: rgba(24, 20, 18, 0.94);
+  --header-border: rgba(198, 169, 154, 0.1);
+
+  /* ── Footer (Dark Theme) ── */
+  --footer-bg:           #130F0D;
+  --footer-text:         #C8B9B3;
+  --footer-heading:      #FFF9F4;
+  --footer-accent:       #C6A99A;
+  --footer-muted:        #C8B9B3;
+  --footer-subtle:       #8A7F7A;
+  --footer-border:       rgba(198, 169, 154, 0.15);
+  --footer-input-bg:     rgba(255, 249, 244, 0.07);
+  --footer-input-border: rgba(198, 169, 154, 0.2);
+  --footer-input-text:   #FFF9F4;
+  --footer-btn-bg:       #C6A99A;
+  --footer-btn-text:     #241E1B;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-primary: 0 8px 24px rgba(198, 169, 154, 0.2);
+}
+
+/* ── Dark: specific component overrides ── */
+
+/* Header */
+[data-theme="dark"] .eb-header {
+  background: var(--header-bg);
+  border-bottom-color: var(--header-border);
+}
+
+/* Brand & Logo */
+[data-theme="dark"] .eb-brand-name,
+[data-theme="dark"] .eb-auth-brand-name {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-brand-tagline,
+[data-theme="dark"] .eb-auth-brand-tagline {
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-brand-logo-badge {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Nav */
+[data-theme="dark"] .eb-nav-link {
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-nav-link:hover,
+[data-theme="dark"] .eb-nav-link.active {
+  color: #C6A99A;
+  background: rgba(198, 169, 154, 0.1);
+}
+
+/* Login button */
+[data-theme="dark"] .eb-login-btn {
+  background: linear-gradient(135deg, #5A4037 0%, #3D2820 100%);
+  color: #FFF9F4 !important;
+}
+
+/* Toggle buttons */
+[data-theme="dark"] .eb-toggle-btn {
+  border-color: rgba(198, 169, 154, 0.2);
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-toggle-btn:hover {
+  border-color: #C6A99A;
+  color: #C6A99A;
+  background: rgba(198, 169, 154, 0.08);
+}
+
+/* Mobile nav */
+[data-theme="dark"] .eb-mobile-nav {
+  background: #181412;
+  border-top: 1px solid rgba(198, 169, 154, 0.1);
+}
+
+/* Cards */
+[data-theme="dark"] .eb-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-card-title {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-card-desc {
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-card-tag {
+  background: rgba(198, 169, 154, 0.1);
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-card-footer {
+  border-top-color: rgba(198, 169, 154, 0.14);
+}
+
+/* Pricing */
+[data-theme="dark"] .eb-pricing-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-pricing-row {
+  border-bottom-color: rgba(198, 169, 154, 0.1);
+}
+
+[data-theme="dark"] .eb-pricing-service {
+  color: #C8B9B3;
+}
+
+/* Buttons */
+[data-theme="dark"] .eb-btn-outline {
+  background: rgba(255, 249, 244, 0.06);
+  color: #FFF9F4;
+  border-color: rgba(255, 249, 244, 0.48);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .eb-btn-outline:hover {
+  background: #C6A99A;
+  color: #241E1B;
+  border-color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-btn-primary {
+  background: #C6A99A;
+  border-color: #C6A99A;
+  color: #241E1B;
+}
+
+[data-theme="dark"] .eb-btn-primary:hover {
+  background: #D4BBB0;
+  border-color: #D4BBB0;
+}
+
+[data-theme="dark"] .eb-btn-ghost {
+  background: rgba(255, 249, 244, 0.14);
+  color: #FFF9F4;
+  border-color: rgba(255, 249, 244, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 249, 244, 0.08), 0 10px 28px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .eb-btn-ghost:hover {
+  background: rgba(255, 249, 244, 0.92);
+  color: #241E1B;
+  border-color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-btn-light {
+  background: #FFF9F4;
+  color: #241E1B;
+  border-color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-btn-light:hover {
+  background: #C6A99A;
+  color: #241E1B;
+  border-color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-hero .eb-btn-ghost,
+[data-theme="dark"] .eb-cta-section .eb-btn-ghost,
+[data-theme="dark"] .eb-page-banner .eb-btn-ghost {
+  background: rgba(255, 249, 244, 0.16);
+  color: #FFF9F4;
+  border-color: rgba(255, 249, 244, 0.58);
+}
+
+/* Filter buttons */
+[data-theme="dark"] .eb-filter-btn {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-filter-btn.active {
+  background: #C6A99A;
+  border-color: #C6A99A;
+  color: #241E1B;
+}
+
+/* Forms */
+[data-theme="dark"] .eb-form-control {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .eb-form-control:focus {
+  border-color: #C6A99A;
+  box-shadow: 0 0 0 3px rgba(198, 169, 154, 0.15);
+}
+
+/* ── Select Arrow & Calendar Icon (Dark Theme) ── */
+[data-theme="dark"] .eb-form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23C6A99A' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 12px 12px !important;
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator,
+[data-theme="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.85) sepia(30%) saturate(150%) hue-rotate(330deg);
+}
+
+[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="dark"] input[type="time"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="dark"] input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1) brightness(1.2);
+}
+
+[data-theme="dark"] .eb-form-control option,
+[data-theme="dark"] .eb-form-control optgroup {
+  background-color: #231D1A;
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-form-label {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-appointment-form {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+/* FAQ */
+[data-theme="dark"] .eb-faq-item {
+  border-color: var(--color-border);
+  background: var(--color-card-bg);
+}
+
+[data-theme="dark"] .eb-faq-item.active {
+  border-color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-faq-question {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-faq-item.active .eb-faq-question {
+  background: rgba(198, 169, 154, 0.1);
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-faq-answer {
+  color: #C8B9B3;
+}
+
+/* Testimonials */
+[data-theme="dark"] .eb-testimonial-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-testimonial-quote {
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-testimonial-name {
+  color: #FFF9F4;
+}
+
+/* Contact */
+[data-theme="dark"] .eb-contact-info-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-contact-icon {
+  background: rgba(198, 169, 154, 0.1);
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-contact-info-title {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-contact-info-text {
+  color: #C8B9B3;
+}
+
+/* Hours */
+[data-theme="dark"] .eb-hours-table td {
+  color: #C8B9B3;
+}
+
+[data-theme="dark"] .eb-hours-table td:last-child {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-hours-table tr.open td:last-child {
+  color: #C6A99A;
+}
+
+/* Map */
+[data-theme="dark"] .eb-map-frame {
+  border-color: var(--color-border);
+}
+
+/* Package card */
+[data-theme="dark"] .eb-package-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] #packages .eb-package-card.featured {
+  background:
+    linear-gradient(180deg, rgba(216, 192, 178, 0.26) 0%, rgba(198, 169, 154, 0.10) 44%, rgba(43, 34, 31, 0.92) 100%),
+    linear-gradient(145deg, #3A2C27 0%, #2A211E 54%, #171210 100%);
+  border-color: rgba(216, 192, 178, 0.64);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(216, 192, 178, 0.22);
+}
+
+[data-theme="dark"] #packages .eb-package-card.featured::before {
+  background: linear-gradient(90deg, transparent, #F0D9CB, transparent);
+  opacity: 1;
+}
+
+[data-theme="dark"] #packages .eb-package-card.featured .eb-badge {
+  background: rgba(240, 217, 203, 0.18);
+  color: #FFF9F4;
+  border: 1px solid rgba(240, 217, 203, 0.28);
+}
+
+[data-theme="dark"] .eb-package-features li {
+  color: #C8B9B3;
+  border-bottom-color: rgba(198, 169, 154, 0.1);
+}
+
+/* Offer badge */
+[data-theme="dark"] .eb-offer-badge {
+  background: #C6A99A;
+  color: #241E1B;
+}
+
+/* Eyebrow */
+[data-theme="dark"] .eb-eyebrow {
+  color: #C6A99A;
+}
+
+/* Divider */
+[data-theme="dark"] .eb-divider {
+  background: #C6A99A;
+}
+
+/* Availability card */
+[data-theme="dark"] .eb-availability-card {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-availability-name {
+  color: #FFF9F4;
+}
+
+/* Scroll to top */
+[data-theme="dark"] #scrollTopBtn {
+  background: #C6A99A;
+  color: #241E1B;
+}
+
+[data-theme="dark"] #scrollTopBtn:hover {
+  background: #D4BBB0;
+}
+
+/* Badge */
+[data-theme="dark"] .eb-badge-light {
+  background: rgba(198, 169, 154, 0.12);
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-card-img-badge .eb-badge,
+[data-theme="dark"] .eb-card-img-badge .eb-badge-light,
+[data-theme="dark"] .eb-card-img-badge .eb-badge-primary {
+  background: rgba(255, 249, 244, 0.96);
+  color: #3B2822;
+  border: 1px solid rgba(255, 249, 244, 0.72);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38);
+  text-shadow: none;
+}
+
+[data-theme="dark"] .eb-card-img-badge .eb-badge-primary {
+  background: rgba(96, 67, 58, 0.96);
+  color: #FFF9F4;
+  border-color: rgba(255, 249, 244, 0.45);
+}
+
+/* Stats */
+[data-theme="dark"] .eb-stat-number {
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-stats-strip-item {
+  border-right-color: rgba(198, 169, 154, 0.1);
+}
+
+/* Section bg-alt */
+[data-theme="dark"] .eb-section-bg {
+  background: var(--color-bg-alt);
+}
+
+/* Product item */
+[data-theme="dark"] .eb-product-item {
+  background: var(--color-card-bg);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .eb-product-name {
+  color: #FFF9F4;
+}
+
+/* Experience */
+[data-theme="dark"] .eb-experience-number {
+  background: rgba(198, 169, 154, 0.1);
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-experience-title {
+  color: #FFF9F4;
+}
+
+/* Bento cards */
+[data-theme="dark"] .eb-bento-card {
+  background: var(--color-card-bg);
+}
+
+/* Section title */
+[data-theme="dark"] .eb-section-title {
+  color: #FFF9F4;
+}
+
+[data-theme="dark"] .eb-section-title em {
+  color: #C6A99A;
+}
+
+/* Philosophy */
+[data-theme="dark"] .eb-philosophy-quote {
+  color: #FFF9F4;
+}
+
+/* Stylist card role */
+[data-theme="dark"] .eb-stylist-role {
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-stylist-role {
+  color: #C6A99A;
+}
+
+/* Stylist card role */
+[data-theme="dark"] .eb-stylist-role {
+  color: #C6A99A;
+}
+
+[data-theme="dark"] .eb-stylist-role {
+  color: #C6A99A;
+}
+
+/* Social auth icons */
+[data-theme="dark"] .eb-social-btn .social-icon.apple {
+  color: #FFF9F4;
+}

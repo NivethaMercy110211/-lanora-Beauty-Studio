@@ -1,0 +1,240 @@
+/* ============================================
+   Élanora Beauty Studio — Forms
+   ============================================ */
+
+/* ── Form Group ── */
+.eb-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.eb-form-label {
+  display: block;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.eb-form-label .required {
+  color: var(--color-primary);
+  margin-left: 3px;
+}
+
+/* ── Input / Select / Textarea ── */
+.eb-form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.eb-form-control::placeholder {
+  color: var(--color-text-muted);
+}
+
+.eb-form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(90, 64, 55, 0.1);
+  background-color: var(--color-surface);
+}
+
+.eb-form-control:invalid:not(:placeholder-shown) {
+  border-color: #C06060;
+}
+
+.eb-form-control.is-invalid {
+  border-color: #C06060;
+}
+
+.eb-form-control.is-valid {
+  border-color: #7A9A6A;
+}
+
+/* ── Select Arrow ── */
+.eb-form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%235A4037' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat !important;
+  background-position: right 14px center !important;
+  background-size: 12px 12px !important;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* ── Date / Time Pickers ── */
+input[type="date"].eb-form-control,
+input[type="time"].eb-form-control,
+input[type="datetime-local"].eb-form-control {
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* ── Textarea ── */
+.eb-form-control.textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* ── Input Group (with icon) ── */
+.eb-input-group {
+  position: relative;
+}
+
+.eb-input-group .eb-form-control {
+  padding-left: 44px;
+}
+
+.eb-input-group-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+/* ── Form Row (2-col) ── */
+.eb-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ── Feedback Message ── */
+.eb-form-feedback {
+  font-size: var(--fs-xs);
+  margin-top: 5px;
+  display: none;
+}
+
+.is-invalid+.eb-form-feedback,
+.eb-form-control.is-invalid~.eb-form-feedback {
+  display: block;
+  color: #C06060;
+}
+
+/* ── Form Success Message ── */
+.eb-form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  border: 1px solid var(--color-border);
+}
+
+.eb-form-success i {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.eb-form-success h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.eb-form-success p {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+}
+
+.eb-form-success.show {
+  display: block;
+}
+
+/* ── Newsletter Form ── */
+.eb-newsletter-form {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+}
+
+.eb-newsletter-form .eb-form-control {
+  flex: 1;
+  border-radius: var(--radius-pill);
+  padding: 11px 20px;
+}
+
+.eb-newsletter-form .eb-btn {
+  flex-shrink: 0;
+}
+
+/* ── Appointment Form Wrapper ── */
+.eb-appointment-form {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.eb-appointment-form-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.eb-appointment-form-subtitle {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+/* ── Checkbox / Radio ── */
+.eb-form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.eb-form-check input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.eb-form-check-label {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  line-height: var(--lh-normal);
+}
+
+.eb-form-check-label a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

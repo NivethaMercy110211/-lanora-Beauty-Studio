@@ -1,0 +1,415 @@
+/* ============================================
+   Élanora Beauty Studio — Animations & FX
+   ============================================ */
+
+/* ── Scroll Reveal (base) ── */
+.js-anim-ready .anim {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.anim.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stagger delays ── */
+.anim-d1 { transition-delay: 0.06s; }
+.anim-d2 { transition-delay: 0.14s; }
+.anim-d3 { transition-delay: 0.22s; }
+.anim-d4 { transition-delay: 0.30s; }
+.anim-d5 { transition-delay: 0.38s; }
+.anim-d6 { transition-delay: 0.46s; }
+
+/* ── Fade Up (default) ── */
+.js-anim-ready .anim-fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.anim-fade-up.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fade In ── */
+.js-anim-ready .anim-fade {
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.anim-fade.anim-visible {
+  opacity: 1;
+}
+
+/* ── Slide Left ── */
+.js-anim-ready .anim-slide-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.anim-slide-left.anim-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Slide Right ── */
+.js-anim-ready .anim-slide-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.anim-slide-right.anim-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Scale In ── */
+.js-anim-ready .anim-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.anim-scale.anim-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── NEW: Soft Focus / Blur In Reveal ── */
+.js-anim-ready .anim-blur-in {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(20px);
+  transition: filter 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.85s ease, transform 0.85s ease;
+  will-change: filter, opacity, transform;
+}
+
+.anim-blur-in.anim-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* ── NEW: Clip-Path Curtain Reveal ── */
+.js-anim-ready .anim-clip-reveal {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: clip-path;
+}
+
+.anim-clip-reveal.anim-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ── NEW: Split Up Text Entrance ── */
+.js-anim-ready .anim-split-up {
+  opacity: 0;
+  transform: translateY(32px) rotate(0.8deg);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-split-up.anim-visible {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ── High-End Banner Content Entrance Animations ──
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Automatic Keyframe Entrance for Hero & Page Banner Content */
+.eb-hero-content > *,
+.eb-page-banner-content > * {
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.eb-hero-eyebrow,
+.eb-breadcrumb {
+  animation-name: ebBannerEyebrowIn;
+}
+
+.eb-hero-title,
+.eb-page-banner-title {
+  animation-name: ebBannerTitleIn;
+  animation-delay: 0.15s;
+}
+
+.eb-hero-subtitle {
+  animation-name: ebBannerSubIn;
+  animation-delay: 0.3s;
+}
+
+.eb-hero-actions {
+  animation-name: ebBannerActionsIn;
+  animation-delay: 0.45s;
+}
+
+@keyframes ebBannerEyebrowIn {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes ebBannerTitleIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(36px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ebBannerSubIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ebBannerActionsIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Subtle Hero & Banner Background Slow Pan Motion */
+.eb-page-banner-bg {
+  animation: ebBannerBgZoom 25s ease-in-out infinite alternate;
+}
+
+@keyframes ebBannerBgZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+/* ── NEW: Continuous Floating Loop ── */
+.anim-float {
+  animation: continuousFloat 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes continuousFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* ── NEW: Glowing Pulse Aura ── */
+.anim-glow-pulse {
+  animation: animGlowPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes animGlowPulse {
+  0% { box-shadow: 0 0 0 0 rgba(198, 169, 154, 0.3); }
+  100% { box-shadow: 0 0 24px 6px rgba(198, 169, 154, 0.55); }
+}
+
+/* ── NEW: Sweeping Shimmer Border ── */
+.anim-shimmer-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.anim-shimmer-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.8s ease;
+}
+
+.anim-shimmer-border:hover::before {
+  left: 150%;
+}
+
+/* ── Hero entrance ── */
+.eb-hero {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.eb-hero.loaded {
+  opacity: 1;
+}
+
+/* ── Hover: Card Lift ── */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── NEW: 3D Depth Card Tilt Hover ── */
+.hover-tilt-3d {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.hover-tilt-3d:hover {
+  transform: translateY(-6px) rotateX(3deg) rotateY(-2deg);
+  box-shadow: 0 25px 45px rgba(24, 20, 18, 0.18);
+}
+
+/* ── Hover: Image Zoom ── */
+.hover-zoom {
+  overflow: hidden;
+}
+
+.hover-zoom img {
+  transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.08);
+}
+
+/* ── Shimmer loading ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.eb-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg-alt) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Pulse ring (for CTA/booking) ── */
+@keyframes pulseRing {
+  0%   { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(198, 169, 154, 0.6); }
+  70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(198, 169, 154, 0); }
+  100% { transform: scale(0.96); box-shadow: 0 0 0 0 rgba(198, 169, 154, 0); }
+}
+
+.eb-btn-pulse {
+  animation: pulseRing 2.4s ease-in-out infinite;
+}
+
+/* ── Underline hover ── */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C6A99A, #E6C8B8);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Counter animation ── */
+.eb-stat-number.animated {
+  animation: counterFlash 0.3s ease;
+}
+
+@keyframes counterFlash {
+  from { opacity: 0.6; transform: scale(1.05); }
+  to   { opacity: 1;   transform: scale(1); }
+}
+
+/* ── Image Lightbox ── */
+.eb-image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 20, 18, 0.94);
+  z-index: var(--z-modal);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.eb-image-lightbox.show {
+  display: flex;
+}
+
+.eb-image-lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  border-radius: var(--radius-lg);
+  object-fit: contain;
+  box-shadow: var(--shadow-xl);
+}
+
+.eb-image-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background: rgba(255, 249, 244, 0.12);
+  border: 1px solid rgba(255, 249, 244, 0.25);
+  color: #FFF9F4;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.eb-image-lightbox-close:hover {
+  background: rgba(255, 249, 244, 0.25);
+}

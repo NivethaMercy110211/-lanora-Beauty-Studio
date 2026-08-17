@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking — Élanora Beauty Studio</title>
+  <meta name="description"
+    content="Contact Élanora Beauty Studio to book your appointment. Visit us at 42, Velachery Main Rd, Chennai. Call +91 44 1234 5678 or book online.">
+  <link rel="icon" href="assets/images/common/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+  <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+  <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+  <link rel="stylesheet" href="assets/css/responsive/target-views.css">
+  <style>
+    #contact-info .eb-contact-map-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    #contact-info .eb-map-frame {
+      height: 340px;
+    }
+
+    #location-map .eb-contact-map-panel {
+      max-width: 980px;
+      margin-inline: auto;
+    }
+
+    #location-map .eb-map-frame {
+      height: 360px;
+    }
+
+    #contact-info .d-flex.flex-column.gap-3 {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #contact-info .eb-social-contact-text {
+      height: 3.1em;
+      display: block;
+      overflow: visible;
+      line-height: 1.55;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: initial;
+    }
+
+    #message-form .eb-appointment-form {
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 575.98px) {
+      #location-map .eb-map-frame {
+        height: 280px;
+      }
+
+      #contact-info .d-flex.flex-column.gap-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eb-header" id="header">
+    <div class="container">
+      <a href="index.html" class="eb-brand">
+        <div class="eb-brand-logo-badge"><img src="assets/images/common/logo.png" alt="Élanora Beauty Studio Logo">
+        </div>
+        <div class="eb-brand-text">
+          <span class="eb-brand-name">Élanora</span>
+          <span class="eb-brand-tagline">BEAUTY STUDIO</span>
+        </div>
+      </a>
+      <nav class="eb-nav eb-nav-desktop" id="mainNav">
+        <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+        <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+        <a href="stylists.html" class="eb-nav-link">Stylists</a><a href="pricing.html" class="eb-nav-link">Pricing</a>
+        <a href="offers.html" class="eb-nav-link">Offers</a><a href="contact.html"
+          class="eb-nav-link active">Contact</a>
+      </nav>
+      <div class="eb-header-utils">
+        <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+        <button class="eb-toggle-btn" data-action="toggle-dir"><span
+            class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+        <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+      </div>
+      <button class="eb-menu-toggle" id="menuToggle"
+        aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="eb-mobile-nav" id="mobileNav">
+    <nav class="eb-nav">
+      <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+      <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+      <a href="stylists.html" class="eb-nav-link">Stylists</a><a href="pricing.html" class="eb-nav-link">Pricing</a>
+      <a href="offers.html" class="eb-nav-link">Offers</a><a href="contact.html" class="eb-nav-link active">Contact</a>
+    </nav>
+    <div class="eb-mobile-nav-utils">
+      <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+      <button class="eb-toggle-btn" data-action="toggle-dir"><span
+          class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+      <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <section class="eb-page-banner">
+    <div class="eb-page-banner-bg" style="background-image:url('assets/images/hero/contact-hero.png');"></div>
+    <div class="eb-page-banner-glow"></div>
+    <div class="eb-page-banner-overlay"></div>
+    <div class="container">
+      <div class="eb-page-banner-content">
+        <div class="eb-breadcrumb anim-blur-in"><a href="index.html">Home</a><span
+            class="eb-breadcrumb-sep">›</span><span>Contact</span></div>
+        <h1 class="eb-page-banner-title anim-split-up">Get in <em>Touch with Us</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 1: CONTACT INFO + MAP ─── -->
+  <section class="eb-section" id="contact-info">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <!-- Info Column -->
+        <div class="col-lg-10 col-xl-9 anim anim-slide-left">
+          <span class="eb-eyebrow">Find Us</span>
+          <h2 class="eb-section-title">Visit <em>Élanora</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:2rem;">We'd love to welcome you
+            to our studio. Drop in for a consultation, or call ahead to schedule your visit.</p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="eb-contact-info-card">
+              <div class="eb-contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <div class="eb-contact-info-title">Studio Address</div>
+                <div class="eb-contact-info-text">42, Velachery Main Road, Velachery<br>Chennai — 600042, Tamil Nadu,
+                  India</div>
+              </div>
+            </div>
+            <div class="eb-contact-info-card">
+              <div class="eb-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <div class="eb-contact-info-title">Phone</div>
+                <div class="eb-contact-info-text">
+                  <a href="tel:+914412345678" style="color:var(--color-text);text-decoration:none;">+91 44 1234
+                    5678</a><br>
+                  <a href="tel:+919876543210" style="color:var(--color-text);text-decoration:none;">+91 98765 43210
+                    (WhatsApp)</a>
+                </div>
+              </div>
+            </div>
+            <div class="eb-contact-info-card">
+              <div class="eb-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <div class="eb-contact-info-title">Email</div>
+                <div class="eb-contact-info-text">
+                  <a href="mailto:hello@elanora.in"
+                    style="color:var(--color-text);text-decoration:none;">hello@elanora.in</a><br>
+                  <a href="mailto:appointments@elanora.in"
+                    style="color:var(--color-text);text-decoration:none;">appointments@elanora.in</a>
+                </div>
+              </div>
+            </div>
+            <div class="eb-contact-info-card">
+              <div class="eb-contact-icon"><i class="bi bi-instagram"></i></div>
+              <div>
+                <div class="eb-contact-info-title">Social Media</div>
+                <div class="eb-contact-info-text eb-social-contact-text">
+                  <a href="#" style="color:var(--color-primary);text-decoration:none;">@elanora.beauty</a> on
+                  Instagram<br>Facebook & Pinterest
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <h5 style="font-family:var(--font-heading);color:var(--color-heading);margin-bottom:1rem;">Studio Hours</h5>
+          <table class="eb-hours-table">
+            <tr class="open">
+              <td><strong>Monday – Friday</strong></td>
+              <td>9:00 AM – 8:00 PM</td>
+            </tr>
+            <tr class="open">
+              <td><strong>Saturday</strong></td>
+              <td>9:00 AM – 9:00 PM</td>
+            </tr>
+            <tr class="open">
+              <td><strong>Sunday</strong></td>
+              <td>10:00 AM – 6:00 PM</td>
+            </tr>
+            <tr>
+              <td><strong>Public Holidays</strong></td>
+              <td>10:00 AM – 5:00 PM</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: LOCATION MAP + VISIT ACTIONS ─── -->
+  <section class="eb-section eb-section-bg" id="location-map">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-10 col-xl-9 anim anim-slide-right">
+          <div class="eb-contact-map-panel">
+            <div class="eb-map-frame">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3!2d80.2!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzAwLjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Élanora Beauty Studio Location"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: APPOINTMENT BOOKING FORM ─── -->
+  <section class="eb-section eb-section-bg" id="appointment">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Book Online</span>
+        <h2 class="eb-section-title">Book Your <em>Appointment</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Fill in the form below and our team will confirm your
+          appointment within 30 minutes during working hours.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="eb-appointment-form anim">
+            <div class="eb-appointment-form-title">Appointment Request</div>
+            <div class="eb-appointment-form-subtitle">We'll confirm your slot within 30 minutes during salon hours.
+            </div>
+
+            <!-- Success message (hidden by default) -->
+            <div class="eb-form-success" id="appointmentSuccess">
+              <i class="bi bi-check-circle-fill"></i>
+              <h4>Appointment Requested!</h4>
+              <p>Thank you! We've received your appointment request and will confirm your slot within 30 minutes via
+                call or WhatsApp.</p>
+            </div>
+
+            <!-- Form fields -->
+            <div class="eb-form-fields">
+              <form id="appointmentForm" novalidate>
+                <div class="eb-form-row">
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptFirstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="apptFirstName" class="eb-form-control" placeholder="Priya" required>
+                  </div>
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptLastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="apptLastName" class="eb-form-control" placeholder="Sharma" required>
+                  </div>
+                </div>
+
+                <div class="eb-form-row">
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptEmail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="apptEmail" class="eb-form-control" placeholder="priya@email.com" required>
+                  </div>
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptPhone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="apptPhone" class="eb-form-control" placeholder="+91 98765 43210" required>
+                  </div>
+                </div>
+
+                <div class="eb-form-row">
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptService">Service Requested <span
+                        class="required">*</span></label>
+                    <select id="apptService" class="eb-form-control eb-form-select" required>
+                      <option value="" disabled selected>Select a service…</option>
+                      <optgroup label="Hair Services">
+                        <option>Haircut & Styling</option>
+                        <option>Hair Coloring</option>
+                        <option>Highlights / Balayage</option>
+                        <option>Keratin Treatment</option>
+                        <option>Hair Spa</option>
+                        <option>Other Hair Service</option>
+                      </optgroup>
+                      <optgroup label="Skin Treatments">
+                        <option>Luxury Facial</option>
+                        <option>Express Cleanup</option>
+                        <option>Brightening Treatment</option>
+                        <option>Hydration Treatment</option>
+                        <option>Skin Consultation</option>
+                      </optgroup>
+                      <optgroup label="Nail Studio">
+                        <option>Manicure</option>
+                        <option>Pedicure</option>
+                        <option>Gel Nails</option>
+                        <option>Nail Extensions</option>
+                        <option>Nail Art</option>
+                      </optgroup>
+                      <optgroup label="Packages">
+                        <option>Signature Package</option>
+                        <option>Bridal Package</option>
+                        <option>Custom / Not Sure</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptStylist">Preferred Stylist</label>
+                    <select id="apptStylist" class="eb-form-control eb-form-select">
+                      <option value="" selected>No preference</option>
+                      <option>Priya Sharma (Hair)</option>
+                      <option>Ananya Kapoor (Color)</option>
+                      <option>Meera Nair (Skin)</option>
+                      <option>Riya Patel (Nails)</option>
+                      <option>Rohan Mehta (Hair)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="eb-form-row">
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptDate">Preferred Date <span class="required">*</span></label>
+                    <input type="date" id="apptDate" class="eb-form-control" required>
+                  </div>
+                  <div class="eb-form-group">
+                    <label class="eb-form-label" for="apptTime">Preferred Time <span class="required">*</span></label>
+                    <select id="apptTime" class="eb-form-control eb-form-select" required>
+                      <option value="" disabled selected>Select a time slot…</option>
+                      <option>9:00 AM – 10:00 AM</option>
+                      <option>10:00 AM – 11:00 AM</option>
+                      <option>11:00 AM – 12:00 PM</option>
+                      <option>12:00 PM – 1:00 PM</option>
+                      <option>1:00 PM – 2:00 PM</option>
+                      <option>2:00 PM – 3:00 PM</option>
+                      <option>3:00 PM – 4:00 PM</option>
+                      <option>4:00 PM – 5:00 PM</option>
+                      <option>5:00 PM – 6:00 PM</option>
+                      <option>6:00 PM – 7:00 PM</option>
+                      <option>7:00 PM – 8:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="eb-form-group">
+                  <label class="eb-form-label" for="apptNotes">Special Requests / Notes</label>
+                  <textarea id="apptNotes" class="eb-form-control textarea"
+                    placeholder="Any special requests, skin concerns, or notes for your stylist…"></textarea>
+                </div>
+
+                <div class="eb-form-group">
+                  <label class="eb-form-check">
+                    <input type="checkbox" required>
+                    <span class="eb-form-check-label">I agree to the <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>. <span class="required">*</span></span>
+                  </label>
+                </div>
+
+                <button type="submit" class="eb-btn eb-btn-primary eb-btn-lg w-100">
+                  <i class="bi bi-calendar-check"></i> Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: MESSAGE FORM ─── -->
+  <section class="eb-section eb-section-bg" id="message-form">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Get in Touch</span>
+        <h2 class="eb-section-title">Send Us a <em>Message</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Have a question about our services, pricing, or
+          availability? Write to us and our team will respond within 24 hours.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-8 col-xl-7 anim anim-slide-right">
+          <div class="eb-appointment-form">
+            <div class="eb-appointment-form-title">Send a Message</div>
+            <div class="eb-appointment-form-subtitle">We'll get back to you within 24 hours.</div>
+
+            <div class="eb-form-success" id="inquirySuccess">
+              <i class="bi bi-check-circle-fill"></i>
+              <h4>Message Sent!</h4>
+              <p>Thank you for reaching out. We'll respond to your inquiry within 24 hours.</p>
+            </div>
+
+            <form id="inquiryForm" novalidate>
+              <div class="eb-form-fields">
+                <div class="eb-form-group">
+                  <label class="eb-form-label" for="inqName">Your Name <span class="required">*</span></label>
+                  <input type="text" id="inqName" class="eb-form-control" placeholder="Your full name" required>
+                </div>
+                <div class="eb-form-group">
+                  <label class="eb-form-label" for="inqEmail">Email Address <span class="required">*</span></label>
+                  <input type="email" id="inqEmail" class="eb-form-control" placeholder="your@email.com" required>
+                </div>
+                <div class="eb-form-group">
+                  <label class="eb-form-label" for="inqSubject">Subject <span class="required">*</span></label>
+                  <select id="inqSubject" class="eb-form-control eb-form-select" required>
+                    <option value="" disabled selected>Select a subject…</option>
+                    <option>General Inquiry</option>
+                    <option>Service Information</option>
+                    <option>Pricing Query</option>
+                    <option>Booking Assistance</option>
+                    <option>Feedback / Complaint</option>
+                    <option>Partnership / Collaboration</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="eb-form-group">
+                  <label class="eb-form-label" for="inqMessage">Message <span class="required">*</span></label>
+                  <textarea id="inqMessage" class="eb-form-control textarea" placeholder="Tell us how we can help you…"
+                    required></textarea>
+                </div>
+                <button type="submit" class="eb-btn eb-btn-primary eb-btn-lg w-100">
+                  <i class="bi bi-send"></i> Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: FAQ ─── -->
+  <section class="eb-section eb-section-bg" id="contact-faq">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="text-center mb-5 anim">
+            <span class="eb-eyebrow">Frequently Asked</span>
+            <h2 class="eb-section-title">Common <em>Questions</em></h2>
+            <div class="eb-divider eb-divider-center"></div>
+          </div>
+          <ul class="eb-faq-list">
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Do I need to book in advance? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">We recommend booking at least 24 hours in advance for hair services and 48
+                hours for skin treatments. For bridal packages and special occasions, we suggest booking 2–4 weeks ahead
+                to secure your preferred stylist and time slot.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">What is your cancellation policy? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">We request at least 4 hours notice for cancellations or rescheduling. No-shows
+                may be subject to a 50% cancellation fee for sessions over ₹2,000. We completely understand emergencies
+                — please just let us know.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Do you offer patch tests before chemical services? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Yes, we always recommend a patch test 24–48 hours before any color or chemical
+                treatment. Patch tests are offered free of charge at our studio or we can send you a home kit.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Is parking available at the studio? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Yes, we have dedicated parking spaces for up to 10 vehicles directly adjacent
+                to the studio. Additional street parking is available on Velachery Main Road, and the Velachery Metro
+                Station is a 5-minute walk.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Do you offer home service or bridal on-site services? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">We currently offer on-location bridal and event styling services for parties of
+                4 or more. Please contact us at least 2 weeks in advance to arrange on-location services within Chennai
+                city limits.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: BOOKING CTA ─── -->
+  <section class="eb-cta-section" id="cta-contact">
+    <div class="eb-cta-section-bg" style="background-image:url('assets/images/cta/contact-cta.jpg');"></div>
+    <div class="eb-cta-section-overlay"></div>
+    <div class="container">
+      <div class="eb-cta-section-content anim">
+        <span class="eb-cta-eyebrow">We're Ready for You</span>
+        <h2 class="eb-cta-title">Your <em>Beauty Journey</em> Starts Here</h2>
+        <p class="eb-cta-subtitle">Every great look starts with a conversation. Book your appointment today and let our
+          expert team take care of the rest.</p>
+        <div class="eb-cta-actions">
+          <a href="#appointment" class="eb-btn eb-btn-light eb-btn-lg"><i class="bi bi-calendar-check"></i> Book
+            Appointment</a>
+          <a href="tel:+914412345678" class="eb-btn eb-btn-ghost eb-btn-lg"><i class="bi bi-telephone"></i> Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eb-footer">
+    <div class="container">
+      <div class="eb-footer-top">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6"><a href="index.html" class="eb-footer-brand">
+              <div class="eb-footer-brand-badge"><img src="assets/images/common/logo.png"
+                  alt="Élanora Beauty Studio Logo"></div>
+              <div>
+                <span class="eb-footer-brand-name">Élanora</span>
+                <span class="eb-footer-brand-tagline">BEAUTY STUDIO</span>
+              </div>
+            </a>
+            <p class="eb-footer-about-text mt-3">Beauty, Refined. Confidence, Defined.<br>Luxury hair, skin, and nail
+              care in Chennai.</p>
+            <div class="eb-footer-social"><a href="#" class="eb-footer-social-link" aria-label="Instagram"><i
+                  class="bi bi-instagram"></i></a><a href="#" class="eb-footer-social-link" aria-label="Facebook"><i
+                  class="bi bi-facebook"></i></a><a href="#" class="eb-footer-social-link" aria-label="Pinterest"><i
+                  class="bi bi-pinterest"></i></a><a href="#" class="eb-footer-social-link" aria-label="YouTube"><i
+                  class="bi bi-youtube"></i></a></div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Services</h6>
+            <ul class="eb-footer-links">
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Styling</a></li>
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Color</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Facials</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Skin Care</a></li>
+              <li><a href="services.html#nails"><i class="bi bi-chevron-right"></i> Nail Studio</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Quick Links</h6>
+            <ul class="eb-footer-links">
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Studio</a></li>
+              <li><a href="stylists.html"><i class="bi bi-chevron-right"></i> Expert Stylists</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Service Pricing</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Special Offers</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+              <li><a href="contact.html#appointment"><i class="bi bi-chevron-right"></i> Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Contact</h6>
+            <ul class="eb-footer-contact-list">
+              <li><i class="bi bi-geo-alt"></i> 42, Velachery Main Rd, Chennai</li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+914412345678">+91 44 1234 5678</a></li>
+              <li><i class="bi bi-envelope"></i><a href="mailto:hello@elanora.in">hello@elanora.in</a></li>
+              <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/914412345678">WhatsApp Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="eb-footer-col-title">Hours</h6>
+            <ul class="eb-footer-hours">
+              <li><span>Mon–Fri</span><span>9AM–8PM</span></li>
+              <li><span>Sat</span><span>9AM–9PM</span></li>
+              <li><span>Sun</span><span>10AM–6PM</span></li>
+              <li><span>Holidays</span><span>11AM–5PM</span></li>
+              <li><span>Bridal</span><span>By Appointment</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="eb-footer-bottom"><span class="eb-footer-copyright">&copy; 2026 Élanora Beauty Studio.</span>
+        <div class="eb-footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script>
+    // Inquiry form handler
+    document.addEventListener('DOMContentLoaded', function () {
+      var inquiryForm = document.getElementById('inquiryForm');
+      if (!inquiryForm) return;
+      inquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var valid = true;
+        inquiryForm.querySelectorAll('[required]').forEach(function (field) {
+          if (!field.value.trim()) { field.classList.add('is-invalid'); valid = false; }
+          else { field.classList.remove('is-invalid'); }
+        });
+        if (valid) {
+          inquiryForm.querySelector('.eb-form-fields').style.display = 'none';
+          document.getElementById('inquirySuccess').classList.add('show');
+        }
+      });
+      inquiryForm.querySelectorAll('.eb-form-control').forEach(function (f) {
+        f.addEventListener('input', function () { this.classList.remove('is-invalid'); });
+      });
+
+      // Set min date for appointment
+      var dateField = document.getElementById('apptDate');
+      if (dateField) {
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateField.min = tomorrow.toISOString().split('T')[0];
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,443 @@
+/* ============================================
+   Élanora Beauty Studio — Mobile (up to 767px)
+   ============================================ */
+
+@media (max-width: 767.98px) {
+
+  /* ── Header ── */
+  .eb-brand-name {
+    font-size: 1.2rem;
+  }
+
+  .eb-brand-tagline {
+    display: none;
+  }
+
+  .eb-brand-logo-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  /* ── Hero ── */
+  .eb-hero {
+    min-height: 62vh;
+  }
+
+  .eb-hero-centered {
+    min-height: 62vh;
+  }
+
+  .eb-hero-content {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .eb-hero-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .eb-hero-subtitle {
+    font-size: var(--fs-body);
+    max-width: 100%;
+  }
+
+  .eb-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .eb-hero-actions .eb-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .eb-hero-centered .eb-hero-actions {
+    align-items: center;
+  }
+
+  .eb-scroll-hint {
+    display: none;
+  }
+
+  /* ── Page Banner ── */
+  .eb-page-banner {
+    height: clamp(220px, 40vw, 300px);
+  }
+
+  .eb-page-banner-title {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .eb-page-banner-content {
+    padding-bottom: 1.75rem;
+  }
+
+  /* ── Section ── */
+  .eb-section {
+    padding: 3rem 0;
+  }
+
+  .eb-section-sm {
+    padding: 2rem 0;
+  }
+
+  /* ── Section header ── */
+  .eb-section-header {
+    margin-bottom: 2rem;
+  }
+
+  .eb-section-subtitle {
+    font-size: var(--fs-body);
+  }
+
+  /* ── Split layout ── */
+  .eb-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    direction: ltr !important;
+  }
+
+  .eb-split-reverse {
+    direction: ltr;
+  }
+
+  .eb-split-image {
+    max-height: 280px;
+    border-radius: var(--radius-lg);
+  }
+
+  .eb-split-image img {
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .eb-split-image-accent {
+    width: 90px;
+    height: 90px;
+    bottom: -0.75rem;
+    left: -0.75rem;
+    border-width: 3px;
+  }
+
+  .eb-split-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .eb-split-badge-number {
+    font-size: 1.5rem;
+  }
+
+  /* ── Bento grid ── */
+  .eb-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .eb-bento-span-4,
+  .eb-bento-span-6,
+  .eb-bento-span-8,
+  .eb-bento-span-12 {
+    grid-column: span 1;
+  }
+
+  .eb-bento-row-2 {
+    grid-row: span 1;
+  }
+
+  .eb-bento-tall {
+    min-height: 220px;
+  }
+
+  .eb-bento-short {
+    min-height: 180px;
+  }
+
+  .eb-signature-services-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .eb-signature-services-grid .eb-signature-main,
+  .eb-signature-services-grid .eb-signature-secondary {
+    grid-column: 1;
+    grid-row: auto;
+    height: 220px;
+    min-height: 0;
+  }
+
+  /* ── Cards grid ── */
+  .eb-card-grid-3,
+  .eb-card-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .eb-card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Service card ── */
+  .eb-service-card .eb-card-img {
+    height: 200px;
+  }
+
+  .eb-stylist-card .eb-card-img {
+    height: 260px;
+  }
+
+  /* ── Stats strip ── */
+  .eb-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .eb-stats-strip-item {
+    padding: 1.75rem 1rem;
+    border-right: 1px solid var(--color-border) !important;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .eb-stats-strip-item:first-child,
+  .eb-stats-strip-item:nth-child(2) {
+    border-top: none;
+  }
+
+  .eb-stats-strip-item:nth-child(odd) {
+    border-right: 1px solid var(--color-border) !important;
+  }
+
+  .eb-stats-strip-item:nth-child(even) {
+    border-right: none !important;
+  }
+
+  /* ── Horizontal showcase ── */
+  .eb-h-showcase-item {
+    flex: 0 0 240px;
+  }
+
+  /* ── CTA Section ── */
+  .eb-cta-title {
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
+  }
+
+  .eb-cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .eb-cta-actions .eb-btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  /* ── Forms ── */
+  .eb-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .eb-appointment-form {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .eb-newsletter-form {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .eb-newsletter-form .eb-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── FAQ ── */
+  .eb-faq-question {
+    font-size: var(--fs-xs);
+    padding: 1rem 1.25rem;
+  }
+
+  .eb-faq-answer {
+    padding: 0 1.25rem;
+    font-size: var(--fs-xs);
+  }
+
+  .eb-faq-item.active .eb-faq-answer {
+    padding: 0 1.25rem 1rem;
+  }
+
+  /* ── Contact info card ── */
+  .eb-contact-info-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* ── Map ── */
+  .eb-map-frame {
+    height: 250px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── Before-after ── */
+  .eb-before-after {
+    height: 280px;
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── Footer ── */
+  .eb-footer-about-text {
+    max-width: 100%;
+  }
+
+  .eb-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .eb-footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .eb-footer-newsletter-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .eb-footer-newsletter-form button {
+    width: 100%;
+  }
+
+  /* ── Auth card ── */
+  .eb-auth-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-xl);
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+
+  .eb-auth-wrapper {
+    padding: 2rem 0;
+    align-items: flex-start;
+  }
+
+  /* ── Hours table ── */
+  .eb-hours-table td {
+    font-size: var(--fs-xs);
+    padding: 8px 0;
+  }
+
+  /* ── Availability grid ── */
+  .eb-availability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Membership card ── */
+  .eb-membership-card {
+    padding: 1.75rem;
+  }
+
+  /* ── Product item ── */
+  .eb-product-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* ── Package card ── */
+  .eb-package-card {
+    padding: 1.5rem;
+  }
+
+  .eb-package-price-main {
+    font-size: 2rem;
+  }
+
+  /* ── Scroll top ── */
+  #scrollTopBtn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* ── Philosophy quote ── */
+  .eb-philosophy-quote {
+    font-size: clamp(1.2rem, 4.5vw, 1.75rem);
+    padding: 1.5rem 0;
+  }
+
+  .eb-philosophy-quote::before,
+  .eb-philosophy-quote::after {
+    font-size: 4rem;
+  }
+
+  /* ── Testimonial card ── */
+  .eb-testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .eb-testimonial-quote-mark {
+    display: none;
+  }
+
+  /* ── Filter bar ── */
+  .eb-filter-bar {
+    gap: 8px;
+  }
+
+  .eb-filter-btn {
+    font-size: var(--fs-xs);
+    padding: 7px 16px;
+  }
+
+  /* ── Experience list ── */
+  .eb-experience-item {
+    gap: 1rem;
+  }
+
+  .eb-experience-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  /* ── Feature list ── */
+  .eb-feature-list li {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ── 360px small mobile ── */
+@media (max-width: 390px) {
+  body {
+    font-size: 0.9375rem;
+  }
+
+  .eb-brand-name {
+    font-size: 1.1rem;
+  }
+
+  .eb-hero-title {
+    font-size: clamp(1.75rem, 7.5vw, 2.25rem);
+  }
+
+  .eb-section {
+    padding: 2.5rem 0;
+  }
+
+  .eb-auth-card {
+    margin: 0 0.75rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .eb-filter-btn {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+}

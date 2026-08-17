@@ -1,0 +1,359 @@
+/* ============================================
+   Élanora Beauty Studio — Auth Pages
+   ============================================ */
+
+body.auth-page {
+  padding-top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-heading);
+}
+
+/* ── Auth utilities bar ── */
+.eb-auth-utils {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: var(--z-fixed);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.eb-auth-utils .eb-toggle-btn {
+  background: rgba(255, 249, 244, 0.12);
+  border-color: rgba(255, 249, 244, 0.25);
+  color: #FFF9F4;
+  backdrop-filter: blur(8px);
+}
+
+.eb-auth-utils .eb-toggle-btn:hover {
+  background: rgba(255, 249, 244, 0.22);
+  border-color: rgba(255, 249, 244, 0.4);
+  color: #FFF9F4;
+}
+
+/* ── Auth full-screen wrapper ── */
+.eb-auth-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+}
+
+.eb-auth-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.auth-page-login .eb-auth-bg {
+  background-image: url('../images/pages/inside-studio.jpg');
+}
+
+.auth-page-signup .eb-auth-bg {
+  background-image: url('../images/pages/signup-beauty-bg.jpg');
+}
+
+.auth-page-forgot .eb-auth-bg {
+  background-image: url('../images/pages/forgot-password-bg.jpg');
+}
+
+.eb-auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+      rgba(24, 20, 18, 0.78) 0%,
+      rgba(60, 40, 30, 0.68) 100%);
+}
+
+/* ── Auth Card ── */
+.eb-auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+  background: rgba(255, 249, 244, 0.97);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem;
+  box-shadow: 0 24px 64px rgba(24, 20, 18, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Auth Brand ── */
+.eb-auth-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.eb-auth-brand-badge {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: transform 0.35s ease;
+}
+
+.eb-auth-brand-badge img,
+.eb-auth-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.eb-auth-brand:hover .eb-auth-brand-badge {
+  transform: scale(1.06);
+}
+
+.eb-auth-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.1;
+}
+
+.eb-auth-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+  line-height: 1.05;
+}
+
+.eb-auth-brand-tagline {
+  font-size: 0.62rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* ── Auth Form Header ── */
+.eb-auth-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.eb-auth-subtitle {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+/* ── Auth Divider ── */
+.eb-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.eb-auth-divider::before,
+.eb-auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.eb-auth-divider span {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  font-weight: var(--fw-medium);
+}
+
+/* ── Social Auth Buttons ── */
+.eb-social-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eb-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 11px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  font-family: var(--font-body);
+  width: 100%;
+}
+
+.eb-social-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.eb-social-btn .social-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.eb-social-btn .social-svg-icon {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eb-social-btn .social-icon.apple {
+  color: #111111;
+}
+
+.eb-social-btn .social-icon.facebook {
+  color: #1877F2;
+}
+
+/* ── Auth footer links ── */
+.eb-auth-footer-text {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+.eb-auth-footer-text a {
+  color: var(--color-primary);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.eb-auth-footer-text a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Password Toggle ── */
+.eb-password-field {
+  position: relative;
+}
+
+.eb-password-field .eb-form-control {
+  padding-right: 44px;
+}
+
+.eb-password-toggle {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px;
+  transition: color var(--transition-fast);
+}
+
+.eb-password-toggle:hover {
+  color: var(--color-primary);
+}
+
+/* ── Auth Success ── */
+.eb-auth-success {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.eb-auth-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-circle);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin: 0 auto 1.25rem;
+}
+
+/* ── Forgot PW specifics ── */
+.eb-auth-instruction {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  text-align: center;
+  line-height: var(--lh-relaxed);
+  margin-bottom: 1.75rem;
+  background: var(--color-bg-alt);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.eb-auth-instruction i {
+  color: var(--color-primary);
+  margin-right: 6px;
+}
+
+/* Dark mode: auth card stays readable */
+[data-theme="dark"] .eb-auth-card {
+  background: rgba(35, 29, 26, 0.98);
+}
+
+@media (max-width: 767.98px) {
+  .eb-auth-utils {
+    top: 1rem;
+    right: 1rem;
+    padding-bottom: 0.85rem;
+  }
+
+  .eb-auth-wrapper {
+    align-items: flex-start;
+    padding-top: 5.75rem;
+  }
+
+  .auth-utils-hidden .eb-auth-utils {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+  }
+}

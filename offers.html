@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offers — Élanora Beauty Studio </title>
+  <meta name="description"
+    content="Discover Élanora's exclusive seasonal offers, limited-time discounts, festive packages, and bridal beauty deals on hair, skin, and nail services.">
+  <link rel="icon" href="assets/images/common/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+  <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+  <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+  <link rel="stylesheet" href="assets/css/responsive/target-views.css">
+  <style>
+    .eb-offer-card {
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+    }
+
+    .eb-offer-card .eb-card-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1.5rem;
+    }
+
+    .eb-offer-card .eb-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      min-height: 1.6rem;
+    }
+
+    .eb-offer-card .eb-card-desc {
+      font-size: var(--fs-small);
+      color: var(--color-text);
+      line-height: var(--lh-relaxed);
+      margin-bottom: 1rem;
+      min-height: 3.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .eb-offer-price-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 1.25rem;
+      min-height: 2.2rem;
+    }
+
+    .eb-offer-img-frame {
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .eb-offer-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .eb-offer-card:hover {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-5px);
+    }
+
+    .eb-offer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--color-primary);
+      color: #FFF9F4;
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 0.75rem;
+    }
+
+    .eb-offer-badge.badge-gold {
+      background: #B8860B;
+    }
+
+    .eb-offer-badge.badge-rose {
+      background: #A04060;
+    }
+
+    .eb-offer-badge.badge-teal {
+      background: #3D7A7A;
+    }
+
+    #seasonal .eb-offer-badge,
+    #seasonal .eb-offer-badge.badge-gold,
+    #seasonal .eb-offer-badge.badge-rose,
+    #seasonal .eb-offer-badge.badge-teal {
+      min-height: 32px;
+      min-width: 150px;
+      justify-content: center;
+      background: var(--color-primary);
+      color: #FFF9F4;
+      border: 1px solid rgba(255, 249, 244, 0.28);
+      box-shadow: 0 8px 20px rgba(24, 20, 18, 0.18);
+    }
+
+    #seasonal .eb-offer-discount {
+      background: var(--color-primary) !important;
+      color: #FFF9F4;
+      border: 1px solid rgba(255, 249, 244, 0.35);
+      box-shadow: 0 10px 24px rgba(24, 20, 18, 0.22);
+    }
+
+    #seasonal .eb-card-desc {
+      height: 4.95rem;
+      min-height: 4.95rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      display: block;
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: initial;
+    }
+
+    .eb-offer-validity {
+      font-size: var(--fs-xs);
+      color: var(--color-text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .eb-offer-discount {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--color-primary);
+      color: #FFF9F4;
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-circle);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-number);
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 1rem;
+      font-weight: var(--fw-bold);
+      line-height: 1.1;
+      box-shadow: var(--shadow-md);
+    }
+
+    .eb-offer-discount small {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .eb-countdown {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .eb-countdown-box {
+      background: var(--color-primary);
+      color: #FFF9F4;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      text-align: center;
+      min-width: 64px;
+    }
+
+    .eb-countdown-number {
+      font-family: var(--font-number);
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 2rem;
+      font-weight: var(--fw-bold);
+      line-height: 1;
+      display: block;
+    }
+
+    .eb-countdown-label {
+      font-size: 0.6rem;
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .eb-countdown-sep {
+      font-family: var(--font-number);
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 2rem;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    [data-theme="dark"] .eb-offer-card {
+      background: var(--color-card-bg);
+      border-color: var(--color-border);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eb-header" id="header">
+    <div class="container">
+      <a href="index.html" class="eb-brand">
+        <div class="eb-brand-logo-badge"><img src="assets/images/common/logo.png" alt="Élanora Beauty Studio Logo">
+        </div>
+        <div class="eb-brand-text">
+          <span class="eb-brand-name">Élanora</span>
+          <span class="eb-brand-tagline">BEAUTY STUDIO</span>
+        </div>
+      </a>
+      <nav class="eb-nav eb-nav-desktop" id="mainNav">
+        <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+        <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+        <a href="stylists.html" class="eb-nav-link">Stylists</a><a href="pricing.html" class="eb-nav-link">Pricing</a>
+        <a href="offers.html" class="eb-nav-link active">Offers</a><a href="contact.html"
+          class="eb-nav-link">Contact</a>
+      </nav>
+      <div class="eb-header-utils">
+        <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+        <button class="eb-toggle-btn" data-action="toggle-dir"><span
+            class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+        <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+      </div>
+      <button class="eb-menu-toggle" id="menuToggle"
+        aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="eb-mobile-nav" id="mobileNav">
+    <nav class="eb-nav">
+      <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+      <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+      <a href="stylists.html" class="eb-nav-link">Stylists</a><a href="pricing.html" class="eb-nav-link">Pricing</a>
+      <a href="offers.html" class="eb-nav-link active">Offers</a><a href="contact.html" class="eb-nav-link">Contact</a>
+    </nav>
+    <div class="eb-mobile-nav-utils">
+      <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+      <button class="eb-toggle-btn" data-action="toggle-dir"><span
+          class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+      <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <section class="eb-page-banner">
+    <div class="eb-page-banner-bg" style="background-image:url('assets/images/hero/offers-hero.png');"></div>
+    <div class="eb-page-banner-glow"></div>
+    <div class="eb-page-banner-overlay"></div>
+    <div class="container">
+      <div class="eb-page-banner-content">
+        <div class="eb-breadcrumb anim-blur-in"><a href="index.html">Home</a><span
+            class="eb-breadcrumb-sep">›</span><span>Offers</span></div>
+        <h1 class="eb-page-banner-title anim-split-up">Exclusive <em>Special Offers</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 1: FEATURED OFFER ─── -->
+  <section class="eb-section" id="featured-offer">
+    <div class="container">
+      <div
+        style="background:linear-gradient(135deg,var(--color-primary) 0%,#3D2820 100%);border-radius:var(--radius-2xl);overflow:hidden;position:relative;min-height:320px;display:flex;align-items:center;"
+        class="anim">
+        <div style="position:absolute;inset:0;overflow:hidden;border-radius:var(--radius-2xl);">
+          <img src="assets/images/cta/offer-bg.jpg" alt="Featured Offer" loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;opacity:0.25;">
+        </div>
+        <div class="container" style="position:relative;z-index:2;padding:3rem 1.5rem;">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span
+                style="display:inline-block;background:rgba(255,249,244,0.15);color:#FFF9F4;font-size:var(--fs-xs);font-weight:var(--fw-bold);letter-spacing:var(--ls-widest);text-transform:uppercase;padding:5px 14px;border-radius:var(--radius-pill);margin-bottom:1.25rem;">🌟
+                Limited Time Featured Offer</span>
+              <h2
+                style="font-family:var(--font-heading);font-size:clamp(1.75rem,4vw,2.75rem);color:#FFF9F4;line-height:var(--lh-tight);letter-spacing:var(--ls-tight);margin-bottom:0.75rem;">
+                Monsoon Beauty <em style="color:#C6A99A;">Rescue</em> Package</h2>
+              <p
+                style="color:rgba(255,249,244,0.78);line-height:var(--lh-relaxed);max-width:480px;margin-bottom:1.5rem;">
+                Fight the frizz and dullness of monsoon season. Hair spa + keratin + brightening facial combo at 25%
+                off. Valid through September 2026.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="contact.html#appointment" class="eb-btn eb-btn-light eb-btn-lg"><i
+                    class="bi bi-calendar-check"></i> Book Now</a>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span
+                    style="font-size:1.5rem;color:rgba(255,249,244,0.5);text-decoration:line-through;font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;">₹7,499</span>
+                  <span
+                    style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:2rem;color:#FFF9F4;font-weight:var(--fw-bold);">₹5,624</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 text-center mt-4 mt-lg-0">
+              <div
+                style="display:inline-flex;flex-direction:column;align-items:center;background:rgba(255,249,244,0.1);border-radius:var(--radius-xl);padding:1.5rem 2rem;border:1px solid rgba(255,249,244,0.2);">
+                <p
+                  style="color:rgba(255,249,244,0.7);font-size:var(--fs-xs);font-weight:var(--fw-semibold);letter-spacing:var(--ls-wider);text-transform:uppercase;margin-bottom:1rem;">
+                  Offer Ends In</p>
+                <div class="eb-countdown" id="featuredCountdown">
+                  <div class="eb-countdown-box"><span class="eb-countdown-number" id="cntDays">14</span><span
+                      class="eb-countdown-label">Days</span></div>
+                  <span class="eb-countdown-sep">:</span>
+                  <div class="eb-countdown-box"><span class="eb-countdown-number" id="cntHours">08</span><span
+                      class="eb-countdown-label">Hours</span></div>
+                  <span class="eb-countdown-sep">:</span>
+                  <div class="eb-countdown-box"><span class="eb-countdown-number" id="cntMins">34</span><span
+                      class="eb-countdown-label">Mins</span></div>
+                  <span class="eb-countdown-sep">:</span>
+                  <div class="eb-countdown-box"><span class="eb-countdown-number" id="cntSecs">00</span><span
+                      class="eb-countdown-label">Secs</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: SEASONAL OFFERS ─── -->
+  <section class="eb-section eb-section-bg" id="seasonal">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Seasonal Promotions</span>
+        <h2 class="eb-section-title">Seasonal <em>Offers</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Fresh deals every season — crafted to match your
+          beauty needs throughout the year.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="d-flex justify-content-center mb-5 anim">
+        <div class="eb-filter-bar">
+          <button class="eb-filter-btn active" data-filter="all">All Offers</button>
+          <button class="eb-filter-btn" data-filter="hair">Hair</button>
+          <button class="eb-filter-btn" data-filter="skin">Skin</button>
+          <button class="eb-filter-btn" data-filter="nails">Nails</button>
+          <button class="eb-filter-btn" data-filter="bridal">Bridal</button>
+        </div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Offer 1: Monsoon Hair -->
+        <div class="col-md-6 col-lg-4 anim anim-d1" data-category="hair">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/monsoon-hair.jpg" alt="Monsoon Hair Rescue" loading="lazy">
+              <div class="eb-offer-discount">25%<small>Off</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge">Monsoon Special</span>
+              <h4 class="eb-card-title">Monsoon Hair Rescue</h4>
+              <p class="eb-card-desc">Deep conditioning + Keratin care<br>protects hair through humid weather<br>with
+                soothing scalp support.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-size:1.1rem;color:var(--color-text-secondary);text-decoration:line-through;font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;">₹5,999</span>
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.4rem;color:var(--color-primary);font-weight:var(--fw-bold);">₹4,499</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> Valid through Sept 30, 2026</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 2: Summer Glow Facial -->
+        <div class="col-md-6 col-lg-4 anim anim-d2" data-category="skin">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/summer-glow.jpg" alt="Summer Glow Facial" loading="lazy">
+              <div class="eb-offer-discount" style="background:#B8860B;">20%<small>Off</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge badge-gold">Summer Special</span>
+              <h4 class="eb-card-title">Summer Glow Facial</h4>
+              <p class="eb-card-desc">Brightening facial + SPF care<br>keeps skin glowing and protected<br>through the
+                summer season.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-size:1.1rem;color:var(--color-text-secondary);text-decoration:line-through;font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;">₹2,499</span>
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.4rem;color:var(--color-primary);font-weight:var(--fw-bold);">₹1,999</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> Valid through Aug 31, 2026</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 3: Festive Nail Art -->
+        <div class="col-md-6 col-lg-4 anim anim-d3" data-category="nails">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/festive-nails.jpg" alt="Festive Nail Art" loading="lazy">
+              <div class="eb-offer-discount" style="background:#A04060;">15%<small>Off</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge badge-rose">Festival Edition</span>
+              <h4 class="eb-card-title">Festive Nail Collection</h4>
+              <p class="eb-card-desc">Intricate festive nail art with gold,<br>jewel tones, and floral details<br>plus
+                lasting gel manicure.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-size:1.1rem;color:var(--color-text-secondary);text-decoration:line-through;font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;">₹1,899</span>
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.4rem;color:var(--color-primary);font-weight:var(--fw-bold);">₹1,599</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> Oct 1 – Nov 30, 2026</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 4: Bridal Package -->
+        <div class="col-md-6 col-lg-4 anim anim-d1" data-category="bridal">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/bridal-package.jpg" alt="Bridal Beauty Package" loading="lazy">
+              <div class="eb-offer-discount">10%<small>Off</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge">Bridal Special</span>
+              <h4 class="eb-card-title">Bridal Beauty Package</h4>
+              <p class="eb-card-desc">Complete bridal transformation with<br>hair styling, facials, nail art,<br>and
+                polished skin prep.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-size:1.1rem;color:var(--color-text-secondary);text-decoration:line-through;font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;">₹10,999</span>
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.4rem;color:var(--color-primary);font-weight:var(--fw-bold);">₹9,899</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> Year-round availability</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 5: Birthday Glam -->
+        <div class="col-md-6 col-lg-4 anim anim-d2" data-category="hair,skin,nails">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/birthday-glam.jpg" alt="Birthday Glam Offer" loading="lazy">
+              <div class="eb-offer-discount" style="background:#3D7A7A;">Free<small>Add-on</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge badge-teal">Birthday Gift</span>
+              <h4 class="eb-card-title">Birthday Glam Offer</h4>
+              <p class="eb-card-desc">Get a free express cleanup with<br>any service booked during your<br>birthday
+                month celebration.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.25rem;color:var(--color-primary);font-weight:var(--fw-bold);">Free
+                  Cleanup Included</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> Valid in birthday month only</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offer 6: First-Time Client -->
+        <div class="col-md-6 col-lg-4 anim anim-d3" data-category="hair,skin,nails">
+          <div class="eb-offer-card">
+            <div class="eb-offer-img-frame">
+              <img src="assets/images/offers/new-client.jpg" alt="First Time Client Discount" loading="lazy">
+              <div class="eb-offer-discount">10%<small>Off</small></div>
+            </div>
+            <div class="eb-card-body">
+              <span class="eb-offer-badge">New Client</span>
+              <h4 class="eb-card-title">First-Time Client Discount</h4>
+              <p class="eb-card-desc">First visit at Élanora includes<br>10% off your first appointment<br>with no
+                minimum spend.</p>
+              <div class="eb-offer-price-row">
+                <span
+                  style="font-family:var(--font-number);font-variant-numeric:lining-nums proportional-nums;font-size:1.25rem;color:var(--color-primary);font-weight:var(--fw-bold);">10%
+                  Off Your First Visit</span>
+              </div>
+              <div class="eb-card-footer">
+                <span class="eb-offer-validity"><i class="bi bi-clock"></i> First visit only</span>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: REFER A FRIEND ─── -->
+  <section class="eb-section" id="referral">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6 anim anim-slide-left">
+          <span class="eb-eyebrow">Loyalty Rewards</span>
+          <h2 class="eb-section-title">Refer a Friend, <em>Earn Beauty</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:2rem;">Share the Élanora
+            experience and get rewarded. Refer a friend and both of you receive ₹500 credit toward your next service. No
+            limits — the more you share, the more you earn!</p>
+          <div class="eb-experience-list">
+            <div class="eb-experience-item">
+              <div class="eb-experience-number">01</div>
+              <div>
+                <div class="eb-experience-title">Share Your Code</div>
+                <div class="eb-experience-desc">Get your unique referral code at the front desk or via email.</div>
+              </div>
+            </div>
+            <div class="eb-experience-item">
+              <div class="eb-experience-number">02</div>
+              <div>
+                <div class="eb-experience-title">Friend Books a Service</div>
+                <div class="eb-experience-desc">Your friend uses your code during their first booking.</div>
+              </div>
+            </div>
+            <div class="eb-experience-item">
+              <div class="eb-experience-number">03</div>
+              <div>
+                <div class="eb-experience-title">Both Earn ₹500</div>
+                <div class="eb-experience-desc">Credit added to both accounts for use on any future service.</div>
+              </div>
+            </div>
+          </div>
+          <a href="contact.html" class="eb-btn eb-btn-primary mt-3">Get Your Code</a>
+        </div>
+        <div class="col-lg-6 anim anim-slide-right">
+          <div class="eb-membership-card">
+            <h4 class="eb-membership-title">Élanora Loyalty Program</h4>
+            <p class="eb-membership-desc">Join our exclusive loyalty program and unlock premium benefits with every
+              visit.</p>
+            <ul class="eb-membership-perks">
+              <li><i class="bi bi-check-circle-fill"></i> Earn 1 point per ₹100 spent</li>
+              <li><i class="bi bi-check-circle-fill"></i> Redeem points for free services</li>
+              <li><i class="bi bi-check-circle-fill"></i> Access to member-exclusive offers</li>
+              <li><i class="bi bi-check-circle-fill"></i> Early access to seasonal promotions</li>
+              <li><i class="bi bi-check-circle-fill"></i> Complimentary birthday service</li>
+            </ul>
+            <a href="login.html" class="eb-btn eb-btn-light w-100">Join Now — It's Free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: FAQ ─── -->
+  <section class="eb-section eb-section-bg" id="offers-faq">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="text-center mb-5 anim">
+            <span class="eb-eyebrow">FAQ</span>
+            <h2 class="eb-section-title">Offer <em>FAQs</em></h2>
+            <div class="eb-divider eb-divider-center"></div>
+          </div>
+          <ul class="eb-faq-list">
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Can I combine multiple offers? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Offers cannot be combined unless explicitly stated. However, our loyalty points
+                can always be redeemed on top of any promotional pricing.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">How do I redeem a seasonal offer? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Simply mention the offer name while booking — either online, by phone, or
+                in-person. Our team will verify eligibility and apply the discount automatically.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">Can offers be used on gift vouchers? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Seasonal discounts do not apply to gift voucher purchases. However, gift
+                voucher recipients can use any valid offer at the time of their booking.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">What is the birthday offer process? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Show a valid ID confirming your birth date at the time of service within your
+                birthday month. The complimentary cleanup will be added automatically with any service booked.</div>
+            </li>
+            <li class="eb-faq-item">
+              <button class="eb-faq-question">How do referral credits work? <i
+                  class="bi bi-plus eb-faq-icon"></i></button>
+              <div class="eb-faq-answer">Referral credits of ₹500 are added to both accounts after your referred friend
+                completes their first paid appointment. Credits are valid for 6 months from issue date.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: NEWSLETTER ─── -->
+  <section class="eb-section" id="newsletter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center anim">
+          <span class="eb-eyebrow">Never Miss a Deal</span>
+          <h2 class="eb-section-title">Subscribe for <em>Exclusive</em> Offers</h2>
+          <div class="eb-divider eb-divider-center"></div>
+          <p class="eb-section-subtitle eb-section-subtitle-center">Be the first to know about our seasonal promotions,
+            flash sales, and new service launches.</p>
+          <form class="eb-newsletter-form mx-auto mt-4" style="max-width:460px;" onsubmit="return false;"
+            id="offersNewsletter">
+            <input type="email" class="eb-form-control" placeholder="Enter your email address"
+              aria-label="Newsletter email" style="border-radius:var(--radius-pill);padding:14px 20px;">
+            <a href="#" class="eb-btn eb-btn-primary" style="padding:14px 24px;border-radius:var(--radius-pill);"
+              onclick="this.closest('form').dispatchEvent(new Event('submit'))">Subscribe</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 6: CTA ─── -->
+  <section class="eb-cta-section" id="cta-offers">
+    <div class="eb-cta-section-bg" style="background-image:url('assets/images/cta/offers-cta.jpg');"></div>
+    <div class="eb-cta-section-overlay"></div>
+    <div class="container">
+      <div class="eb-cta-section-content anim">
+        <span class="eb-cta-eyebrow">Claim Your Offer</span>
+        <h2 class="eb-cta-title">Book Before <em>Offers Expire</em></h2>
+        <p class="eb-cta-subtitle">All seasonal offers are available while slots last. Don't miss out on your favourite
+          beauty deals.</p>
+        <div class="eb-cta-actions">
+          <a href="contact.html#appointment" class="eb-btn eb-btn-light eb-btn-lg"><i class="bi bi-calendar-check"></i>
+            Book Appointment</a>
+          <a href="tel:+914412345678" class="eb-btn eb-btn-ghost eb-btn-lg"><i class="bi bi-telephone"></i> +91 44 1234
+            5678</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eb-footer">
+    <div class="container">
+      <div class="eb-footer-top">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6"><a href="index.html" class="eb-footer-brand">
+              <div class="eb-footer-brand-badge"><img src="assets/images/common/logo.png"
+                  alt="Élanora Beauty Studio Logo"></div>
+              <div>
+                <span class="eb-footer-brand-name">Élanora</span>
+                <span class="eb-footer-brand-tagline">BEAUTY STUDIO</span>
+              </div>
+            </a>
+            <p class="eb-footer-about-text mt-3">Beauty, Refined. Confidence, Defined.<br>Luxury hair, skin, and nail
+              care in Chennai.</p>
+            <div class="eb-footer-social"><a href="#" class="eb-footer-social-link" aria-label="Instagram"><i
+                  class="bi bi-instagram"></i></a><a href="#" class="eb-footer-social-link" aria-label="Facebook"><i
+                  class="bi bi-facebook"></i></a><a href="#" class="eb-footer-social-link" aria-label="Pinterest"><i
+                  class="bi bi-pinterest"></i></a><a href="#" class="eb-footer-social-link" aria-label="YouTube"><i
+                  class="bi bi-youtube"></i></a></div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Services</h6>
+            <ul class="eb-footer-links">
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Styling</a></li>
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Color</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Facials</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Skin Care</a></li>
+              <li><a href="services.html#nails"><i class="bi bi-chevron-right"></i> Nail Studio</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Quick Links</h6>
+            <ul class="eb-footer-links">
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Studio</a></li>
+              <li><a href="stylists.html"><i class="bi bi-chevron-right"></i> Expert Stylists</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Service Pricing</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Special Offers</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+              <li><a href="contact.html#appointment"><i class="bi bi-chevron-right"></i> Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Contact</h6>
+            <ul class="eb-footer-contact-list">
+              <li><i class="bi bi-geo-alt"></i> 42, Velachery Main Rd, Chennai</li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+914412345678">+91 44 1234 5678</a></li>
+              <li><i class="bi bi-envelope"></i><a href="mailto:hello@elanora.in">hello@elanora.in</a></li>
+              <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/914412345678">WhatsApp Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="eb-footer-col-title">Hours</h6>
+            <ul class="eb-footer-hours">
+              <li><span>Mon–Fri</span><span>9AM–8PM</span></li>
+              <li><span>Sat</span><span>9AM–9PM</span></li>
+              <li><span>Sun</span><span>10AM–6PM</span></li>
+              <li><span>Holidays</span><span>11AM–5PM</span></li>
+              <li><span>Bridal</span><span>By Appointment</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="eb-footer-bottom"><span class="eb-footer-copyright">&copy; 2026 Élanora Beauty Studio.</span>
+        <div class="eb-footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script>
+    // Countdown Timer
+    (function () {
+      var endDate = new Date();
+      endDate.setDate(endDate.getDate() + 14);
+      endDate.setHours(8, 34, 0, 0);
+
+      function updateCountdown() {
+        var now = new Date();
+        var diff = endDate - now;
+        if (diff <= 0) { diff = 0; }
+        var days = Math.floor(diff / 86400000);
+        var hours = Math.floor((diff % 86400000) / 3600000);
+        var mins = Math.floor((diff % 3600000) / 60000);
+        var secs = Math.floor((diff % 60000) / 1000);
+        var d = document.getElementById('cntDays');
+        var h = document.getElementById('cntHours');
+        var m = document.getElementById('cntMins');
+        var s = document.getElementById('cntSecs');
+        if (d) d.textContent = String(days).padStart(2, '0');
+        if (h) h.textContent = String(hours).padStart(2, '0');
+        if (m) m.textContent = String(mins).padStart(2, '0');
+        if (s) s.textContent = String(secs).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+
+</html>

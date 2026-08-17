@@ -1,0 +1,329 @@
+/* ============================================
+   Élanora Beauty Studio — Header Styles
+   ============================================ */
+
+/* ── Main Header ── */
+.eb-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: var(--header-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--header-border);
+  height: var(--header-height);
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+}
+
+.eb-header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.eb-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 12px;
+}
+
+/* ── Brand ── */
+.eb-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.eb-brand-logo-badge {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.eb-brand-logo-badge img,
+.eb-brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.eb-brand:hover .eb-brand-logo-badge {
+  transform: scale(1.08);
+}
+
+.eb-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.05;
+}
+
+.eb-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.eb-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.eb-brand:hover .eb-brand-name {
+  color: var(--color-primary-hover);
+}
+
+/* ── Desktop Navigation ── */
+.eb-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.eb-nav-link {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+}
+
+.eb-nav-link:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.eb-nav-link.active {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  font-weight: var(--fw-semibold);
+}
+
+.eb-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* ── Header Utilities ── */
+.eb-header-utils {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.eb-toggle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+}
+
+.eb-toggle-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.eb-rtl-label {
+  font-size: 0.68rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+}
+
+.eb-login-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  color: #FFF9F4 !important;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #5A4037 0%, #3D2820 100%);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 3px 12px rgba(90, 64, 55, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eb-login-btn:hover {
+  background: linear-gradient(135deg, #4A3229 0%, #2E1C13 100%);
+  color: #FFF9F4 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(90, 64, 55, 0.4);
+}
+
+/* ── Mobile Menu Toggle ── */
+.eb-menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-shrink: 0;
+  margin-left: auto;
+  box-shadow: var(--shadow-xs);
+  transition: all var(--transition-fast);
+}
+
+.eb-menu-toggle:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.eb-menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.eb-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.eb-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.eb-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ── Mobile Navigation ── */
+.eb-mobile-nav {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: calc(var(--z-fixed) - 1);
+  padding: var(--space-xl);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.eb-mobile-nav.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eb-mobile-nav .eb-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.eb-mobile-nav .eb-nav-link {
+  font-size: var(--fs-body);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+}
+
+.eb-mobile-nav-utils {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.eb-mobile-nav-utils .eb-login-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* ── Responsive Header ── */
+@media (max-width: 1199.98px) {
+  .eb-nav-desktop {
+    display: none !important;
+  }
+
+  .eb-menu-toggle {
+    display: flex !important;
+  }
+
+  .eb-header-utils .eb-toggle-btn,
+  .eb-header-utils .eb-login-btn {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .eb-mobile-nav {
+    display: none !important;
+  }
+}

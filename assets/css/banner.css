@@ -1,0 +1,568 @@
+/* ============================================
+   Élanora Beauty Studio — Hero / Banner Styles
+   ============================================ */
+
+/* ── Universal Hero ── */
+.eb-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-heading);
+}
+
+.eb-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #060404;
+  background-size: contain;
+  background-position: right 4% center;
+  background-repeat: no-repeat;
+  transform: none;
+  animation: none;
+  will-change: auto;
+}
+
+@media (max-width: 991px) {
+  .eb-hero-bg {
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+  }
+}
+
+/* ── Ambient Radial Glow Light ── */
+.eb-hero-glow {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(198, 169, 154, 0.25) 0%, rgba(90, 64, 55, 0.12) 45%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+  animation: ebGlowPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes ebGlowPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.9) translate(0, 0);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: scale(1.15) translate(20px, -20px);
+  }
+}
+
+.eb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 68% 45%, rgba(198, 169, 154, 0.18) 0%, transparent 65%),
+    linear-gradient(90deg, rgba(14, 10, 9, 0.92) 0%, rgba(18, 14, 13, 0.72) 42%, rgba(14, 10, 9, 0.3) 78%, rgba(10, 7, 6, 0.85) 100%);
+  z-index: 1;
+}
+
+/* Home 1: keep text readable, but remove the mist over the banner image. */
+#hero .eb-hero-glow {
+  display: none;
+}
+
+#hero .eb-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(14, 10, 9, 0.9) 0%,
+    rgba(18, 14, 13, 0.68) 38%,
+    rgba(14, 10, 9, 0.16) 62%,
+    rgba(10, 7, 6, 0.12) 100%
+  );
+}
+
+.eb-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 6.5rem 0 4.5rem;
+}
+
+.eb-hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  color: #D4B9A7;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+  padding: 6px 16px;
+  background: rgba(198, 169, 154, 0.12);
+  border: 1px solid rgba(198, 169, 154, 0.28);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.eb-hero-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D4B9A7;
+  box-shadow: 0 0 8px #D4B9A7;
+}
+
+.eb-hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-semibold);
+  color: #FFF9F4;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: 1.25rem;
+}
+
+/* Shimmer Golden / Rose-Gold Title Accent */
+.eb-hero-title em {
+  font-style: italic;
+  background: linear-gradient(120deg, #E6C8B8 0%, #FFF5ED 25%, #C6A99A 50%, #F5DFD0 75%, #C6A99A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ebTextShimmer 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes ebTextShimmer {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.eb-hero-subtitle {
+  font-size: var(--fs-body-lg);
+  color: rgba(255, 249, 244, 0.82);
+  max-width: 540px;
+  line-height: var(--lh-relaxed);
+  margin-bottom: 2.25rem;
+}
+
+.eb-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  padding: 8px 0;
+  overflow: visible !important;
+  clip-path: none !important;
+}
+
+/* ── Hero Glassmorphic Floating Badges ── */
+.eb-hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.eb-hero-badge {
+  position: absolute;
+  background: rgba(28, 22, 20, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 249, 244, 0.18);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.4rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 3;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.eb-hero-badge:hover {
+  transform: translateY(-4px);
+  border-color: rgba(198, 169, 154, 0.45);
+}
+
+.eb-hero-badge-rating {
+  bottom: 2rem;
+  left: -2rem;
+  animation: ebFloatSlow 5s ease-in-out infinite alternate;
+}
+
+.eb-hero-badge-experience {
+  top: 3rem;
+  right: -1.5rem;
+  animation: ebFloatSlow 6s ease-in-out 1s infinite alternate-reverse;
+}
+
+@keyframes ebFloatSlow {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+.eb-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  background: linear-gradient(135deg, rgba(198, 169, 154, 0.3), rgba(90, 64, 55, 0.4));
+  color: #F5DFD0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border: 1px solid rgba(255, 249, 244, 0.2);
+}
+
+.eb-badge-title {
+  font-family: var(--font-number);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-weight: var(--fw-bold);
+  font-size: 0.95rem;
+  color: #FFF9F4;
+  line-height: 1.2;
+}
+
+.eb-badge-subtitle {
+  font-size: var(--fs-xs);
+  color: rgba(255, 249, 244, 0.65);
+  margin-top: 2px;
+}
+
+/* ── Hero Creative Image Grid ── */
+.eb-hero-creative-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: 200px 200px;
+  gap: 16px;
+  max-width: 540px;
+  margin-left: auto;
+  padding: 0.5rem;
+}
+
+.eb-hero-grid-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 249, 244, 0.22);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.eb-hero-grid-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 45px rgba(198, 169, 154, 0.35);
+  border-color: rgba(198, 169, 154, 0.65);
+}
+
+.eb-hero-grid-main {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.eb-hero-grid-sub1 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.eb-hero-grid-sub2 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.eb-hero-grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.eb-hero-grid-card:hover .eb-hero-grid-img {
+  transform: scale(1.08);
+}
+
+.eb-hero-grid-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(24, 20, 18, 0.78);
+  backdrop-filter: blur(8px);
+  color: #FFF9F4;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  border: 1px solid rgba(198, 169, 154, 0.35);
+}
+
+/* ── Hero 2 — Centered Variant ── */
+#hero2 .eb-hero-bg {
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  transform: none !important;
+  animation: none !important;
+  opacity: 0.88;
+}
+
+.eb-hero-centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 92vh;
+}
+
+.eb-hero-centered .eb-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eb-hero-centered .eb-hero-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eb-hero-centered .eb-hero-actions {
+  justify-content: center;
+}
+
+/* Trust Pill Row for Centered Hero */
+.eb-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2.5rem;
+}
+
+.eb-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(255, 249, 244, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 249, 244, 0.15);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: rgba(255, 249, 244, 0.88);
+  transition: all var(--transition-fast);
+}
+
+.eb-hero-chip i {
+  color: #D4B9A7;
+  font-size: 0.9rem;
+}
+
+.eb-hero-chip:hover {
+  background: rgba(255, 249, 244, 0.16);
+  border-color: rgba(198, 169, 154, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ── Page Banner (Non-hero pages) ── */
+.eb-page-banner {
+  position: relative;
+  height: clamp(380px, 50vh, 560px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--color-heading);
+}
+
+.eb-page-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #3A2822 0%, #201714 50%, #150F0D 100%);
+  background-size: cover;
+  background-position: center 24%;
+  background-repeat: no-repeat;
+  animation: none;
+}
+
+@keyframes ebKenBurnsPage {
+  0% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1.09) translate(0, -1%);
+  }
+}
+
+.eb-page-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(18, 14, 13, 0.88) 0%,
+      rgba(24, 20, 18, 0.52) 60%,
+      rgba(24, 20, 18, 0.25) 100%);
+  z-index: 1;
+}
+
+.eb-page-banner-glow {
+  position: absolute;
+  bottom: -10%;
+  left: 20%;
+  width: 450px;
+  height: 250px;
+  background: radial-gradient(ellipse, rgba(198, 169, 154, 0.22) 0%, transparent 70%);
+  filter: blur(50px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.eb-page-banner-content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 3.25rem;
+}
+
+.eb-page-banner-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-semibold);
+  color: #FFF9F4;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+.eb-page-banner-title em {
+  font-style: italic;
+  background: linear-gradient(120deg, #E6C8B8 0%, #FFF5ED 25%, #C6A960 50%, #F5DFD0 75%, #C6A99A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ebTextShimmer 6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes ebTextShimmer {
+  to { background-position: 200% center; }
+}
+
+/* ── Breadcrumb ── */
+.eb-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: rgba(255, 249, 244, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 249, 244, 0.15);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: rgba(255, 249, 244, 0.72);
+  margin-bottom: 1rem;
+}
+
+.eb-breadcrumb a {
+  color: rgba(255, 249, 244, 0.75);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.eb-breadcrumb a:hover {
+  color: #FFF9F4;
+}
+
+.eb-breadcrumb-sep {
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+
+/* ── Hero scroll indicator ── */
+.eb-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 249, 244, 0.65);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  animation: scrollPulse 2.5s ease-in-out infinite;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.eb-scroll-hint:hover {
+  color: #FFF9F4;
+}
+
+.eb-scroll-hint::after {
+  content: '';
+  width: 2px;
+  height: 38px;
+  background: linear-gradient(to bottom, #C6A99A 0%, rgba(255, 249, 244, 0.1) 100%);
+  border-radius: 2px;
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+/* ── Banner & CTA Image Path Badge Overlay ── */
+.eb-banner-path-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.eb-banner-path-badge .eb-path-badge {
+  background: rgba(18, 14, 13, 0.85);
+  border: 1px solid rgba(198, 169, 154, 0.4);
+  color: #E6C8B8;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

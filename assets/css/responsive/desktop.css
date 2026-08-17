@@ -1,0 +1,41 @@
+/* ============================================
+   Élanora Beauty Studio — Desktop (1200px+)
+   ============================================ */
+
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+
+  .eb-hero { min-height: 94vh; }
+
+  .eb-split { gap: 6rem; }
+
+  .eb-bento-grid { gap: 1.75rem; }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .container { max-width: 1140px; }
+
+  .eb-hero { min-height: 92vh; }
+
+  .eb-brand-name { font-size: 1.4rem; }
+
+  .eb-split { gap: 4.5rem; }
+}
+
+@media (min-width: 1200px) {
+  /* Desktop-only bento grid presets */
+  .eb-bento-span-4  { grid-column: span 4; }
+  .eb-bento-span-6  { grid-column: span 6; }
+  .eb-bento-span-8  { grid-column: span 8; }
+  .eb-bento-span-12 { grid-column: span 12; }
+
+  .eb-bento-row-2 { grid-row: span 2; }
+  .eb-bento-tall  { min-height: 420px; }
+  .eb-bento-short { min-height: 240px; }
+
+  /* Stats strip 4-col */
+  .eb-stats-strip { grid-template-columns: repeat(4, 1fr); }
+
+  /* Showcase items on desktop */
+  .eb-h-showcase-item { flex: 0 0 300px; }
+}

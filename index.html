@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home- Élanora Beauty Studio.</title>
+  <meta name="description"
+    content="Élanora Beauty Studio — Premier salon offering professional hair, skin, and nail services. Book your appointment today and experience luxury beauty.">
+  <link rel="icon" href="assets/images/common/logo.png" type="image/png">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+  <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+  <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+  <link rel="stylesheet" href="assets/css/responsive/target-views.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eb-header" id="header">
+    <div class="container">
+      <a href="index.html" class="eb-brand">
+        <div class="eb-brand-logo-badge"><img src="assets/images/common/logo.png" alt="Élanora Beauty Studio Logo">
+        </div>
+        <div class="eb-brand-text">
+          <span class="eb-brand-name">Élanora</span>
+          <span class="eb-brand-tagline">BEAUTY STUDIO</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="eb-nav eb-nav-desktop" id="mainNav">
+        <a href="index.html" class="eb-nav-link active">Home 1</a>
+        <a href="home2.html" class="eb-nav-link">Home 2</a>
+        <a href="about.html" class="eb-nav-link">About</a>
+        <a href="services.html" class="eb-nav-link">Services</a>
+        <a href="stylists.html" class="eb-nav-link">Stylists</a>
+        <a href="pricing.html" class="eb-nav-link">Pricing</a>
+        <a href="offers.html" class="eb-nav-link">Offers</a>
+        <a href="contact.html" class="eb-nav-link">Contact</a>
+      </nav>
+
+      <!-- Utilities -->
+      <div class="eb-header-utils">
+        <button class="eb-toggle-btn" data-action="toggle-theme" title="Toggle Theme" id="themeToggleDesktop">
+          <i class="bi bi-moon theme-toggle-icon"></i>
+        </button>
+        <button class="eb-toggle-btn" data-action="toggle-dir" title="Toggle RTL/LTR" id="rtlToggleDesktop">
+          <span class="rtl-toggle-label eb-rtl-label">RTL</span>
+        </button>
+        <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="eb-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="eb-mobile-nav" id="mobileNav">
+    <nav class="eb-nav">
+      <a href="index.html" class="eb-nav-link active">Home 1</a>
+      <a href="home2.html" class="eb-nav-link">Home 2</a>
+      <a href="about.html" class="eb-nav-link">About</a>
+      <a href="services.html" class="eb-nav-link">Services</a>
+      <a href="stylists.html" class="eb-nav-link">Stylists</a>
+      <a href="pricing.html" class="eb-nav-link">Pricing</a>
+      <a href="offers.html" class="eb-nav-link">Offers</a>
+      <a href="contact.html" class="eb-nav-link">Contact</a>
+    </nav>
+    <div class="eb-mobile-nav-utils">
+      <button class="eb-toggle-btn" data-action="toggle-theme" title="Toggle Theme">
+        <i class="bi bi-moon theme-toggle-icon"></i>
+      </button>
+      <button class="eb-toggle-btn" data-action="toggle-dir" title="Toggle RTL/LTR">
+        <span class="rtl-toggle-label eb-rtl-label">RTL</span>
+      </button>
+      <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="eb-hero" id="hero">
+    <div class="eb-hero-bg" style="background-image:url('assets/images/hero/home1-salon-hero.png');"></div>
+    <div class="eb-hero-glow"></div>
+    <div class="eb-hero-overlay"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-xl-6">
+          <div class="eb-hero-content">
+            <span class="eb-hero-eyebrow anim-blur-in"><i class="bi bi-sparkles"></i> Welcome to Élanora Studio</span>
+            <h1 class="eb-hero-title anim-split-up">Where Beauty<br>Meets <em>Artistry & Glow</em></h1>
+            <p class="eb-hero-subtitle anim-fade-up anim-d2">Professional hair, skin, and nail services delivered by
+              certified experts. Experience luxury beauty in a serene, welcoming studio.</p>
+            <div class="eb-hero-actions anim-fade-up anim-d3">
+              <a href="contact.html#appointment"
+                class="eb-btn eb-btn-primary eb-btn-lg eb-btn-pulse anim-shimmer-border">
+                <i class="bi bi-calendar-check"></i> Book Appointment
+              </a>
+              <a href="services.html" class="eb-btn eb-btn-ghost eb-btn-lg">
+                Explore Services <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-6 d-none d-lg-block">
+          <div class="eb-hero-visual">
+            <!-- Floating Badges -->
+            <div class="eb-hero-badge eb-hero-badge-rating anim-blur-in anim-d3">
+              <div class="eb-badge-icon"><i class="bi bi-star-fill text-warning"></i></div>
+              <div>
+                <div class="eb-badge-title">★ 4.9 Rating</div>
+                <div class="eb-badge-subtitle">1,200+ Client Reviews</div>
+              </div>
+            </div>
+            <div class="eb-hero-badge eb-hero-badge-experience anim-blur-in anim-d4">
+              <div class="eb-badge-icon"><i class="bi bi-award-fill"></i></div>
+              <div>
+                <div class="eb-badge-title">10+ Years</div>
+                <div class="eb-badge-subtitle">Master Stylists & Artists</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#signature-services" class="eb-scroll-hint" aria-label="Scroll to content">Scroll</a>
+  </section>
+
+  <!-- SECTION 1: SIGNATURE SERVICES -->
+  <section class="eb-section eb-section-bg" id="signature-services">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col-md-7">
+          <div class="eb-section-header anim">
+            <span class="eb-eyebrow">What We Offer</span>
+            <h2 class="eb-section-title">Our <em>Signature</em> Services</h2>
+            <div class="eb-divider"></div>
+            <p class="eb-section-subtitle">From precision haircuts to luxury facials and artistic nail designs — every
+              service is crafted with care and expertise.</p>
+          </div>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <a href="services.html" class="eb-btn-link anim">View All Services <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Bento Grid layout -->
+      <div class="eb-bento-grid eb-signature-services-grid">
+        <div class="eb-bento-card eb-signature-main hover-zoom anim anim-d1">
+          <img src="assets/images/pages/hair-style.png" alt="Hair Services" class="eb-img-cover" loading="lazy">
+          <div class="eb-bento-overlay">
+            <div>
+              <div class="eb-bento-sublabel">Hair Services</div>
+              <div class="eb-bento-label">Cuts, Color<br>& Treatments</div>
+            </div>
+          </div>
+        </div>
+        <div class="eb-bento-card eb-signature-secondary hover-zoom anim anim-d2">
+          <img src="assets/images/pages/skin-care.jpg" alt="Skin Care" class="eb-img-cover" loading="lazy">
+          <div class="eb-bento-overlay">
+            <div>
+              <div class="eb-bento-sublabel">Skin Care</div>
+              <div class="eb-bento-label">Facials & Cleanup</div>
+            </div>
+          </div>
+        </div>
+        <div class="eb-bento-card eb-signature-secondary hover-zoom anim anim-d3">
+          <img src="assets/images/pages/nail-art.jpg" alt="Nail Studio" class="eb-img-cover" loading="lazy">
+          <div class="eb-bento-overlay">
+            <div>
+              <div class="eb-bento-sublabel">Nail Studio</div>
+              <div class="eb-bento-label">Manicure, Pedicure & Art</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: HAIR TRANSFORMATION SHOWCASE -->
+  <section class="eb-section" id="hair-showcase">
+    <div class="container">
+      <div class="eb-split">
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:480px;">
+            <img src="assets/images/pages/hair-transform.jpg" alt="Hair Transformation at Élanora" loading="lazy">
+          </div>
+          <div class="eb-split-badge">
+            <span class="eb-split-badge-number">500+</span>
+            <span class="eb-split-badge-label">Transformations</span>
+          </div>
+        </div>
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">Hair Transformation</span>
+          <h2 class="eb-section-title">Colour That <em>Tells Your Story</em></h2>
+          <div class="eb-divider"></div>
+          <p class="mb-4" style="color:var(--color-text);line-height:var(--lh-relaxed);">Our colour specialists use
+            premium, low-damage formulations to create bespoke looks — from sun-kissed balayage to bold vivid hues.
+            Every session begins with a detailed consultation.</p>
+          <ul class="eb-feature-list">
+            <li><i class="bi bi-check-circle-fill"></i> Balayage & Ombré Techniques</li>
+            <li><i class="bi bi-check-circle-fill"></i> Highlights & Lowlights</li>
+            <li><i class="bi bi-check-circle-fill"></i> Ammonia-Free Color Options</li>
+            <li><i class="bi bi-check-circle-fill"></i> Color Correction & Refresh</li>
+            <li><i class="bi bi-check-circle-fill"></i> Keratin & Bond-Repair Treatments</li>
+          </ul>
+          <div class="mt-4 d-flex flex-wrap gap-3">
+            <a href="services.html#hair" class="eb-btn eb-btn-primary">Explore Hair Services</a>
+            <a href="pricing.html" class="eb-btn eb-btn-outline">View Pricing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SKIN & FACIAL -->
+  <section class="eb-section eb-section-bg" id="skin-section">
+    <div class="container">
+      <div class="eb-split eb-split-reverse">
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">Skin & Facial Treatments</span>
+          <h2 class="eb-section-title">Radiant Skin, <em>Naturally</em></h2>
+          <div class="eb-divider"></div>
+          <p class="mb-4" style="color:var(--color-text);line-height:var(--lh-relaxed);">Our certified aestheticians
+            customize every facial to your unique skin type. From hydrating therapies to advanced brightening
+            treatments, we reveal your most luminous self.</p>
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="eb-contact-info-card">
+                <div class="eb-contact-icon"><i class="bi bi-droplet-fill"></i></div>
+                <div>
+                  <div class="eb-contact-info-title">Hydration<br>Facial</div>
+                  <div class="eb-contact-info-text">Deep moisture<br>replenishment</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="eb-contact-info-card">
+                <div class="eb-contact-icon"><i class="bi bi-sun"></i></div>
+                <div>
+                  <div class="eb-contact-info-title">Brightening<br>Treatment</div>
+                  <div class="eb-contact-info-text">Even tone,<br>lasting glow</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="eb-contact-info-card">
+                <div class="eb-contact-icon"><i class="bi bi-stars"></i></div>
+                <div>
+                  <div class="eb-contact-info-title">Luxury<br>Cleanup</div>
+                  <div class="eb-contact-info-text">Deep cleanse &<br>refresh</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="eb-contact-info-card">
+                <div class="eb-contact-icon"><i class="bi bi-clipboard-check"></i></div>
+                <div>
+                  <div class="eb-contact-info-title">Skin<br>Consultation</div>
+                  <div class="eb-contact-info-text">Personalized<br>skin analysis</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="services.html#skin" class="eb-btn eb-btn-primary">Explore Skin Treatments</a>
+        </div>
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:480px;">
+            <img src="assets/images/pages/skin-treat.jpg" alt="Luxury Facial Treatment" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: NAIL STUDIO -->
+  <section class="eb-section" id="nail-studio">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <div class="anim">
+            <span class="eb-eyebrow">Nail Studio</span>
+            <h2 class="eb-section-title">Artistry at Your <em>Fingertips</em></h2>
+            <div class="eb-divider eb-divider-center"></div>
+            <p class="eb-section-subtitle eb-section-subtitle-center">From classic manicures to intricate nail art —
+              every detail is crafted to perfection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="position-relative eb-showcase-frame">
+        <div class="eb-h-showcase" id="nailShowcase">
+          <div class="eb-h-showcase-item">
+            <div class="eb-card hover-lift anim anim-d1">
+              <div class="eb-card-img">
+                <img src="assets/images/pages/nail-studio-1.jpg" alt="Classic Manicure" loading="lazy">
+              </div>
+              <div class="eb-card-body">
+                <span class="eb-card-tag">Nails</span>
+                <h4 class="eb-card-title">Classic Manicure</h4>
+                <p class="eb-card-desc">Shape, buff, cuticle care, and polish application for elegant, timeless nails.</p>
+                <div class="eb-card-footer">
+                  <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹599</span></div>
+                  <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eb-h-showcase-item">
+            <div class="eb-card hover-lift anim anim-d2">
+              <div class="eb-card-img">
+                <img src="assets/images/pages/nail-3.jpg" alt="Gel Manicure" loading="lazy">
+              </div>
+              <div class="eb-card-body">
+                <span class="eb-card-tag">Nails</span>
+                <h4 class="eb-card-title">Gel Manicure</h4>
+                <p class="eb-card-desc">Long-lasting gel polish that stays chip-free for weeks. Strengthens natural nails.</p>
+                <div class="eb-card-footer">
+                  <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹899</span></div>
+                  <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eb-h-showcase-item">
+            <div class="eb-card hover-lift anim anim-d3">
+              <div class="eb-card-img">
+                <img src="assets/images/pages/nail-studio-3.jpg" alt="Nail Art Design" loading="lazy">
+              </div>
+              <div class="eb-card-body">
+                <span class="eb-card-tag">Nails</span>
+                <h4 class="eb-card-title">Nail Art Design</h4>
+                <p class="eb-card-desc">Custom nail art from minimalist patterns to geometric designs.</p>
+                <div class="eb-card-footer">
+                  <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,199</span></div>
+                  <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eb-h-showcase-item">
+            <div class="eb-card hover-lift anim anim-d4">
+              <div class="eb-card-img">
+                <img src="assets/images/pages/nail-studio-4.jpg" alt="Luxury Pedicure" loading="lazy">
+              </div>
+              <div class="eb-card-body">
+                <span class="eb-card-tag">Nails</span>
+                <h4 class="eb-card-title">Luxury Pedicure</h4>
+                <p class="eb-card-desc">Full foot treatment with soak, scrub, massage, and polish for pampered feet.</p>
+                <div class="eb-card-footer">
+                  <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹799</span></div>
+                  <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-2 justify-content-center mt-4">
+            <button class="eb-scroll-arrow" onclick="ebScrollShowcase(-1, 'nailShowcase')"><i
+                class="bi bi-arrow-left"></i></button>
+            <button class="eb-scroll-arrow" onclick="ebScrollShowcase(1, 'nailShowcase')"><i
+                class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- SECTION 5: WHY CHOOSE ÉLANORA -->
+  <section class="eb-section eb-why-section" id="why-elanora">
+    <div class="container">
+
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow"><i class="bi bi-patch-check-fill"></i> Why Élanora</span>
+        <h2 class="eb-section-title">What Makes Us <em>Truly Different</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Thousands of clients choose us — not just for results,
+          but for the entire experience.</p>
+      </div>
+
+      <div class="eb-why-grid">
+
+        <div class="eb-why-card anim anim-d1">
+          <div class="eb-why-card-accent" style="background:var(--color-primary);"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-chat-heart-fill" style="color:#C67070;"></i></div>
+          <h4 class="eb-why-card-title">Personalised Consultations</h4>
+          <p class="eb-why-card-desc">Every visit begins with a one-on-one consultation tailored to your hair, skin, and
+            lifestyle.</p>
+        </div>
+
+        <div class="eb-why-card anim anim-d2">
+          <div class="eb-why-card-accent" style="background:#C6A960;"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-gem" style="color:#C6A960;"></i></div>
+          <h4 class="eb-why-card-title">Premium-Only Products</h4>
+          <p class="eb-why-card-desc">L'Oréal Pro, Schwarzkopf & OPI — dermatologist-approved formulas, nothing less.
+          </p>
+        </div>
+
+        <div class="eb-why-card anim anim-d3">
+          <div class="eb-why-card-accent" style="background:#449898;"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-shield-check" style="color:#449898;"></i></div>
+          <h4 class="eb-why-card-title">Certified Hygiene Standards</h4>
+          <p class="eb-why-card-desc">Autoclave-sterilised tools, HEPA filtration, and Health Board-validated protocols.
+          </p>
+        </div>
+
+        <div class="eb-why-card anim anim-d4">
+          <div class="eb-why-card-accent" style="background:#8C64B4;"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-receipt-cutoff" style="color:#8C64B4;"></i></div>
+          <h4 class="eb-why-card-title">Transparent Pricing</h4>
+          <p class="eb-why-card-desc">Every service priced upfront — no hidden charges, no upselling pressure, ever.</p>
+        </div>
+
+        <div class="eb-why-card anim anim-d5">
+          <div class="eb-why-card-accent" style="background:#C67070;"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-calendar2-check" style="color:#C67070;"></i></div>
+          <h4 class="eb-why-card-title">Easy Online Booking</h4>
+          <p class="eb-why-card-desc">Book 24/7 — choose your stylist, service, and preferred time in seconds.</p>
+        </div>
+
+        <div class="eb-why-card anim anim-d6">
+          <div class="eb-why-card-accent" style="background:#C6A960;"></div>
+          <div class="eb-why-card-icon"><i class="bi bi-gift-fill" style="color:#C6A960;"></i></div>
+          <h4 class="eb-why-card-title">Loyalty Rewards Program</h4>
+          <p class="eb-why-card-desc">Earn points on every visit, redeem for free treatments and exclusive seasonal
+            deals.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- SECTION 6: CLIENT EXPERIENCES -->
+
+  <section class="eb-section" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Client Experiences</span>
+        <h2 class="eb-section-title">What Our Clients <em>Say</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Real stories from real clients who trust us with their
+          beauty journey.</p>
+      </div>
+
+      <div class="eb-stats-strip border rounded-4 mb-5 overflow-hidden anim">
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="5000">5000+</div>
+          <div class="eb-stat-label">Happy Clients</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="98">98%</div>
+          <div class="eb-stat-label">Satisfaction Rate</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="12">12+</div>
+          <div class="eb-stat-label">Years of Excellence</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="8">8+</div>
+          <div class="eb-stat-label">Expert Stylists</div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4 anim anim-d1">
+          <div class="eb-testimonial-card">
+            <div class="eb-testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="eb-testimonial-quote">"Priya did an absolutely stunning balayage on my hair. The colour is exactly
+              what I wanted — natural, warm, and beautiful."</p>
+            <div class="eb-testimonial-author">
+              <img src="assets/images/pages/priya.jpg" alt="Sneha R." class="eb-testimonial-avatar" loading="lazy">
+              <div>
+                <div class="eb-testimonial-name">Sneha Rajan</div>
+                <div class="eb-testimonial-info">Hair Balayage Client</div>
+              </div>
+            </div>
+            <div class="eb-testimonial-quote-mark">"</div>
+          </div>
+        </div>
+        <div class="col-md-4 anim anim-d2">
+          <div class="eb-testimonial-card">
+            <div class="eb-testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="eb-testimonial-quote">"Meera's facial treatment transformed my skin. My complexion is so much
+              brighter and more even. Truly luxurious."</p>
+            <div class="eb-testimonial-author">
+              <img src="assets/images/pages/ananya.jpg" alt="Divya M." class="eb-testimonial-avatar" loading="lazy">
+              <div>
+                <div class="eb-testimonial-name">Divya Menon</div>
+                <div class="eb-testimonial-info">Brightening Facial Client</div>
+              </div>
+            </div>
+            <div class="eb-testimonial-quote-mark">"</div>
+          </div>
+        </div>
+        <div class="col-md-4 anim anim-d3">
+          <div class="eb-testimonial-card">
+            <div class="eb-testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="eb-testimonial-quote">"Riya created the most beautiful custom nail art for my wedding. Everyone
+              kept asking where I got my nails done!"</p>
+            <div class="eb-testimonial-author">
+              <img src="assets/images/pages/testimon-03.jpg" alt="Kavya S." class="eb-testimonial-avatar"
+                loading="lazy">
+              <div>
+                <div class="eb-testimonial-name">Kavya Shetty</div>
+                <div class="eb-testimonial-info">Bridal Nail Art Client</div>
+              </div>
+            </div>
+            <div class="eb-testimonial-quote-mark">"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: APPOINTMENT CTA -->
+  <section class="eb-cta-section" id="cta-home">
+    <div class="eb-cta-section-bg" style="background-image:url('assets/images/cta/home1-cta.png');"></div>
+    <div class="eb-cta-section-overlay"></div>
+    <div class="container">
+      <div class="eb-cta-section-content anim">
+        <span class="eb-cta-eyebrow">Ready for Your Transformation?</span>
+        <h2 class="eb-cta-title">Book Your <em>Next Look</em> Today</h2>
+        <p class="eb-cta-subtitle">Our expert stylists are ready to craft a look uniquely tailored to you. Walk in as
+          you are, walk out transformed.</p>
+        <div class="eb-cta-actions">
+          <a href="contact.html#appointment" class="eb-btn eb-btn-light eb-btn-lg">
+            <i class="bi bi-calendar-check"></i> Book Appointment
+          </a>
+          <a href="offers.html" class="eb-btn eb-btn-ghost eb-btn-lg">
+            View Current Offers <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eb-footer">
+    <div class="container">
+      <div class="eb-footer-top">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <a href="index.html" class="eb-footer-brand">
+              <div class="eb-footer-brand-badge"><img src="assets/images/common/logo.png"
+                  alt="Élanora Beauty Studio Logo"></div>
+              <div>
+                <span class="eb-footer-brand-name">Élanora</span>
+                <span class="eb-footer-brand-tagline">BEAUTY STUDIO</span>
+              </div>
+            </a>
+            <p class="eb-footer-about-text mt-3">Beauty, Refined. Confidence, Defined.<br>Luxury hair, skin, and nail
+              care in Chennai.</p>
+            <div class="eb-footer-social">
+              <a href="#" class="eb-footer-social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="eb-footer-social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="eb-footer-social-link" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+              <a href="#" class="eb-footer-social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Services</h6>
+            <ul class="eb-footer-links">
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Services</a></li>
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Coloring</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Skin Treatments</a></li>
+              <li><a href="services.html#nails"><i class="bi bi-chevron-right"></i> Nail Studio</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Service Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Quick Links</h6>
+            <ul class="eb-footer-links">
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+              <li><a href="stylists.html"><i class="bi bi-chevron-right"></i> Our Stylists</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Special Offers</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+              <li><a href="contact.html#appointment"><i class="bi bi-chevron-right"></i> Book Appointment</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Contact</h6>
+            <ul class="eb-footer-contact-list">
+              <li><i class="bi bi-geo-alt"></i> 42, Velachery Main Rd, Chennai — 600042</li>
+              <li><i class="bi bi-telephone"></i> <a href="tel:+914412345678">+91 44 1234 5678</a></li>
+              <li><i class="bi bi-envelope"></i> <a href="mailto:hello@elanora.in">hello@elanora.in</a></li>
+              <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/914412345678">WhatsApp Booking</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h6 class="eb-footer-col-title">Salon Hours</h6>
+            <ul class="eb-footer-hours">
+              <li><span>Mon – Fri</span><span>9:00 AM – 8:00 PM</span></li>
+              <li><span>Saturday</span><span>9:00 AM – 9:00 PM</span></li>
+              <li><span>Sunday</span><span>10:00 AM – 6:00 PM</span></li>
+              <li><span>Holidays</span><span>11:00 AM – 5:00 PM</span></li>
+              <li><span>Bridal</span><span>By Appointment</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="eb-footer-bottom">
+        <span class="eb-footer-copyright">&copy; 2026 Élanora Beauty Studio. All rights reserved.</span>
+        <div class="eb-footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/filters.js"></script>
+</body>
+
+</html>

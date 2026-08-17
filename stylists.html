@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylists — Élanora Beauty Studio </title>
+  <meta name="description"
+    content="Meet Élanora's certified stylists — hair specialists, color experts, skin aestheticians, and nail artists dedicated to your beauty journey.">
+  <link rel="icon" href="assets/images/common/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+  <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+  <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+  <link rel="stylesheet" href="assets/css/responsive/target-views.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eb-header" id="header">
+    <div class="container">
+      <a href="index.html" class="eb-brand">
+        <div class="eb-brand-logo-badge"><img src="assets/images/common/logo.png" alt="Élanora Beauty Studio Logo">
+        </div>
+        <div class="eb-brand-text">
+          <span class="eb-brand-name">Élanora</span>
+          <span class="eb-brand-tagline">BEAUTY STUDIO</span>
+        </div>
+      </a>
+      <nav class="eb-nav eb-nav-desktop" id="mainNav">
+        <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+        <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+        <a href="stylists.html" class="eb-nav-link active">Stylists</a><a href="pricing.html"
+          class="eb-nav-link">Pricing</a>
+        <a href="offers.html" class="eb-nav-link">Offers</a><a href="contact.html" class="eb-nav-link">Contact</a>
+      </nav>
+      <div class="eb-header-utils">
+        <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+        <button class="eb-toggle-btn" data-action="toggle-dir"><span
+            class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+        <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+      </div>
+      <button class="eb-menu-toggle" id="menuToggle"
+        aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="eb-mobile-nav" id="mobileNav">
+    <nav class="eb-nav">
+      <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+      <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link">Services</a>
+      <a href="stylists.html" class="eb-nav-link active">Stylists</a><a href="pricing.html"
+        class="eb-nav-link">Pricing</a>
+      <a href="offers.html" class="eb-nav-link">Offers</a><a href="contact.html" class="eb-nav-link">Contact</a>
+    </nav>
+    <div class="eb-mobile-nav-utils">
+      <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+      <button class="eb-toggle-btn" data-action="toggle-dir"><span
+          class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+      <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <section class="eb-page-banner">
+    <div class="eb-page-banner-bg" style="background-image:url('assets/images/hero/stylists-hero.png');"></div>
+    <div class="eb-page-banner-glow"></div>
+    <div class="eb-page-banner-overlay"></div>
+    <div class="container">
+      <div class="eb-page-banner-content">
+        <div class="eb-breadcrumb anim-blur-in"><a href="index.html">Home</a><span
+            class="eb-breadcrumb-sep">›</span><span>Stylists</span></div>
+        <h1 class="eb-page-banner-title anim-split-up">Our <em>Expert Stylists</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 1: FEATURED STYLISTS ─── -->
+  <section class="eb-section" id="featured">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Meet the Team</span>
+        <h2 class="eb-section-title">Featured <em>Stylists</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Internationally certified professionals who bring
+          global beauty trends and techniques directly to you.</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="d-flex justify-content-center mb-5 anim">
+        <div class="eb-filter-bar">
+          <button class="eb-filter-btn active" data-stylist-filter="all">All Stylists</button>
+          <button class="eb-filter-btn" data-stylist-filter="hair">Hair</button>
+          <button class="eb-filter-btn" data-stylist-filter="color">Color</button>
+          <button class="eb-filter-btn" data-stylist-filter="skin">Skin</button>
+          <button class="eb-filter-btn" data-stylist-filter="nails">Nails</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="stylistsGrid">
+
+        <!-- Priya Sharma -->
+        <div class="col-sm-6 col-lg-3 anim anim-d1" data-specialty="hair,color">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:300px;">
+              <img src="assets/images/pages/ourteam-1.jpg" alt="Priya Sharma" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Founder & Senior Stylist</div>
+              <h4 class="eb-card-title">Priya Sharma</h4>
+              <p class="eb-stylist-specialization">Precision Cuts, Balayage<br>& Bridal Styling</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 12 Years | <i class="bi bi-patch-check"></i>
+                L'Oréal Certified</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book with Priya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ananya Kapoor -->
+        <div class="col-sm-6 col-lg-3 anim anim-d2" data-specialty="color,hair">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:300px;">
+              <img src="assets/images/pages/ourteam-2.jpg" alt="Ananya Kapoor" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Color Expert</div>
+              <h4 class="eb-card-title">Ananya Kapoor</h4>
+              <p class="eb-stylist-specialization">Highlights, Ombré<br>& Color Correction</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 6 Years | <i class="bi bi-patch-check"></i>
+                Schwarzkopf Certified</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book with Ananya</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meera Nair -->
+        <div class="col-sm-6 col-lg-3 anim anim-d3" data-specialty="skin">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:300px;">
+              <img src="assets/images/pages/ourteam-3.jpg" alt="Meera Nair" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Senior Aesthetician</div>
+              <h4 class="eb-card-title">Meera Nair</h4>
+              <p class="eb-stylist-specialization">Facials, Cleanup<br>& Brightening Treatments</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 5 Years | <i class="bi bi-patch-check"></i>
+                CIDESCO Certified</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book with Meera</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Riya Patel -->
+        <div class="col-sm-6 col-lg-3 anim anim-d4" data-specialty="nails">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:300px;">
+              <img src="assets/images/pages/ourteam-4.jpg" alt="Riya Patel" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Nail Artist</div>
+              <h4 class="eb-card-title">Riya Patel</h4>
+              <p class="eb-stylist-specialization">Nail Art, Gel<br>& Extensions</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 4 Years | <i class="bi bi-patch-check"></i>
+                OPI Certified</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book with Riya</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: HAIR SPECIALISTS ─── -->
+  <section class="eb-section eb-section-bg" id="hair-specialists">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Hair Specialists</span>
+        <h2 class="eb-section-title">Hair <em>Experts</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+      </div>
+      <div class="eb-split">
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:420px;">
+            <img src="assets/images/pages/rohan.jpg" alt="Rohan Mehta" loading="lazy">
+          </div>
+        </div>
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">Hair Specialist</span>
+          <div class="eb-stylist-role" style="font-size:var(--fs-small);margin-bottom:0.5rem;">Hair Specialist & Stylist
+          </div>
+          <h2 class="eb-section-title" style="font-size:var(--fs-h3);">Rohan <em>Mehta</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:1.5rem;">With 7 years of
+            experience specializing in men's and women's haircuts, Rohan is known for his razor-precise technique and
+            ability to translate complex styles into wearable everyday looks.</p>
+          <div class="row g-3 mb-4">
+            <div class="col-6">
+              <div class="d-flex gap-2 align-items-center"><i class="bi bi-award"
+                  style="color:var(--color-primary);"></i><small
+                  style="color:var(--color-text);font-weight:var(--fw-medium);">7 Years Experience</small></div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex gap-2 align-items-center"><i class="bi bi-patch-check"
+                  style="color:var(--color-primary);"></i><small
+                  style="color:var(--color-text);font-weight:var(--fw-medium);">Wella Certified</small></div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex gap-2 align-items-center"><i class="bi bi-stars"
+                  style="color:var(--color-primary);"></i><small
+                  style="color:var(--color-text);font-weight:var(--fw-medium);">Specializes in: Precision Cuts, Texture
+                  Work, Men's Styling</small></div>
+            </div>
+          </div>
+          <a href="contact.html#appointment" class="eb-btn eb-btn-primary">Book with Rohan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: COLOR EXPERTS ─── -->
+  <section class="eb-section" id="color-experts">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Color Expertise</span>
+        <h2 class="eb-section-title">Color <em>Specialists</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Our color team stays ahead of trends with continuous
+          training in the latest techniques and formulations.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 anim anim-d1" data-specialty="color">
+          <div class="eb-card hover-lift" style="flex-direction:row;align-items:stretch;">
+            <div style="width:160px;flex-shrink:0;overflow:hidden;border-radius:var(--radius-lg) 0 0 var(--radius-lg);">
+              <img src="assets/images/pages/hair-1.jpg" alt="Ananya Kapoor" loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="eb-card-body" style="border-radius:0 var(--radius-lg) var(--radius-lg) 0;">
+              <div class="eb-stylist-role">Color Expert</div>
+              <h4 class="eb-card-title">Ananya Kapoor</h4>
+              <p class="eb-card-desc">6 years specializing in balayage, highlights, and vivid color. Schwarzkopf
+                Certified.</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 anim anim-d2" data-specialty="color">
+          <div class="eb-card hover-lift" style="flex-direction:row;align-items:stretch;">
+            <div style="width:160px;flex-shrink:0;overflow:hidden;border-radius:var(--radius-lg) 0 0 var(--radius-lg);">
+              <img src="assets/images/pages/after.jpg" alt="Kavitha Menon" loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="eb-card-body" style="border-radius:0 var(--radius-lg) var(--radius-lg) 0;">
+              <div class="eb-stylist-role">Color Specialist</div>
+              <h4 class="eb-card-title">Kavitha Menon</h4>
+              <p class="eb-card-desc">4 years specializing in color correction, fashion colors, and toning. L'Oréal
+                Certified.</p>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: SKIN EXPERTS ─── -->
+  <section class="eb-section eb-section-bg" id="skin-experts">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Skin Aesthetics</span>
+        <h2 class="eb-section-title">Skin <em>Experts</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+      </div>
+      <div class="eb-split eb-split-reverse">
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">Senior Aesthetician</span>
+          <div class="eb-stylist-role" style="font-size:var(--fs-small);margin-bottom:0.5rem;">Skin & Aesthetics Expert
+          </div>
+          <h2 class="eb-section-title" style="font-size:var(--fs-h3);">Meera <em>Nair</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:1.5rem;">A CIDESCO-certified
+            aesthetician with 5 years of experience in clinical and luxury skincare. Meera specializes in creating
+            customized skin protocols for every skin type and concern.</p>
+          <ul class="eb-feature-list">
+            <li><i class="bi bi-check-circle-fill"></i> CIDESCO International Certification</li>
+            <li><i class="bi bi-check-circle-fill"></i> Specializes in: Acne, Pigmentation & Anti-aging</li>
+            <li><i class="bi bi-check-circle-fill"></i> Trained at Dermalogica International School</li>
+            <li><i class="bi bi-check-circle-fill"></i> 500+ facial treatments performed</li>
+          </ul>
+          <a href="contact.html#appointment" class="eb-btn eb-btn-primary">Book with Meera</a>
+        </div>
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:420px;">
+            <img src="assets/images/pages/priya.jpg" alt="Meera Nair Skin Specialist" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: NAIL ARTISTS ─── -->
+  <section class="eb-section" id="nail-artists">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Nail Studio</span>
+        <h2 class="eb-section-title">Nail <em>Artists</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Creative nail professionals with an eye for detail and
+          a passion for artistic expression.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 anim anim-d1" data-specialty="nails">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:260px;">
+              <img src="assets/images/pages/nail-art-1.jpg" alt="Riya Patel" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Lead Nail Artist</div>
+              <h4 class="eb-card-title">Riya Patel</h4>
+              <p class="eb-stylist-specialization">Nail Art, Gel & Extensions</p>
+              <p class="eb-stylist-bio">Detailed gel finishes with refined nail art<br>for polished everyday style.</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 4 Years | OPI Certified</p>
+              <div class="eb-stylist-review">
+                <span class="eb-stylist-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span>
+                <span>4.8 Rating · 186 Reviews</span>
+              </div>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 anim anim-d2" data-specialty="nails">
+          <div class="eb-card eb-stylist-card hover-lift">
+            <div class="eb-card-img" style="height:260px;">
+              <img src="assets/images/pages/nail-art-2.jpg" alt="Shruti Bose" loading="lazy">
+            </div>
+            <div class="eb-card-body">
+              <div class="eb-stylist-role">Nail Technician</div>
+              <h4 class="eb-card-title">Shruti Bose</h4>
+              <p class="eb-stylist-specialization">Acrylic Extensions & Nail Sculpting</p>
+              <p class="eb-stylist-bio">Clean sculpted extensions with durable shape<br>and natural-looking balance.</p>
+              <p class="eb-stylist-experience"><i class="bi bi-award"></i> 3 Years | CND Certified</p>
+              <div class="eb-stylist-review">
+                <span class="eb-stylist-stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span>
+                <span>4.9 Rating · 142 Reviews</span>
+              </div>
+              <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm w-100">Book Appointment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 6: EXPERTISE & CERTIFICATIONS ─── -->
+  <section class="eb-section eb-section-bg" id="certifications">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Credentials</span>
+        <h2 class="eb-section-title">Expertise & <em>Certifications</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Our team holds certifications from the world's leading
+          beauty institutions.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 anim anim-d1">
+          <div class="eb-contact-info-card"
+            style="flex-direction:column;text-align:center;align-items:center;padding:2rem;">
+            <div class="eb-contact-icon" style="width:56px;height:56px;font-size:1.4rem;margin-bottom:1rem;"><i
+                class="bi bi-award"></i></div>
+            <div class="eb-contact-info-title" style="font-size:var(--fs-body);">L'Oréal Professionnel</div>
+            <div class="eb-contact-info-text">Advanced hair color<br>and treatment training</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 anim anim-d2">
+          <div class="eb-contact-info-card"
+            style="flex-direction:column;text-align:center;align-items:center;padding:2rem;">
+            <div class="eb-contact-icon" style="width:56px;height:56px;font-size:1.4rem;margin-bottom:1rem;"><i
+                class="bi bi-award"></i></div>
+            <div class="eb-contact-info-title" style="font-size:var(--fs-body);">CIDESCO International</div>
+            <div class="eb-contact-info-text">Skin care and beauty<br>therapy certification</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 anim anim-d3">
+          <div class="eb-contact-info-card"
+            style="flex-direction:column;text-align:center;align-items:center;padding:2rem;">
+            <div class="eb-contact-icon" style="width:56px;height:56px;font-size:1.4rem;margin-bottom:1rem;"><i
+                class="bi bi-award"></i></div>
+            <div class="eb-contact-info-title" style="font-size:var(--fs-body);">OPI Professional</div>
+            <div class="eb-contact-info-text">Gel, acrylic and nail art<br>technician training</div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 anim anim-d4">
+          <div class="eb-contact-info-card"
+            style="flex-direction:column;text-align:center;align-items:center;padding:2rem;">
+            <div class="eb-contact-icon" style="width:56px;height:56px;font-size:1.4rem;margin-bottom:1rem;"><i
+                class="bi bi-award"></i></div>
+            <div class="eb-contact-info-title" style="font-size:var(--fs-body);">Schwarzkopf Academy</div>
+            <div class="eb-contact-info-text">Color science and cutting<br>technique training</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 7: BOOK WITH STYLIST CTA ─── -->
+  <section class="eb-cta-section" id="cta-stylists">
+    <div class="eb-cta-section-bg" style="background-image:url('assets/images/cta/stylist-cta.jpg');"></div>
+    <div class="eb-cta-section-overlay"></div>
+    <div class="container">
+      <div class="eb-cta-section-content anim">
+        <span class="eb-cta-eyebrow">Your Expert Awaits</span>
+        <h2 class="eb-cta-title">Book with Your <em>Preferred Stylist</em></h2>
+        <p class="eb-cta-subtitle">Choose your specialist and schedule your session online. Our team is ready to create
+          your perfect look.</p>
+        <div class="eb-cta-actions">
+          <a href="contact.html#appointment" class="eb-btn eb-btn-light eb-btn-lg"><i class="bi bi-calendar-check"></i>
+            Book Appointment</a>
+          <a href="contact.html" class="eb-btn eb-btn-ghost eb-btn-lg"><i class="bi bi-telephone"></i> Call Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eb-footer">
+    <div class="container">
+      <div class="eb-footer-top">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6"><a href="index.html" class="eb-footer-brand">
+              <div class="eb-footer-brand-badge"><img src="assets/images/common/logo.png"
+                  alt="Élanora Beauty Studio Logo"></div>
+              <div>
+                <span class="eb-footer-brand-name">Élanora</span>
+                <span class="eb-footer-brand-tagline">BEAUTY STUDIO</span>
+              </div>
+            </a>
+            <p class="eb-footer-about-text mt-3">Beauty, Refined. Confidence, Defined.<br>Luxury hair, skin, and nail
+              care in Chennai.</p>
+            <div class="eb-footer-social"><a href="#" class="eb-footer-social-link" aria-label="Instagram"><i
+                  class="bi bi-instagram"></i></a><a href="#" class="eb-footer-social-link" aria-label="Facebook"><i
+                  class="bi bi-facebook"></i></a><a href="#" class="eb-footer-social-link" aria-label="Pinterest"><i
+                  class="bi bi-pinterest"></i></a><a href="#" class="eb-footer-social-link" aria-label="YouTube"><i
+                  class="bi bi-youtube"></i></a></div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Services</h6>
+            <ul class="eb-footer-links">
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Styling</a></li>
+              <li><a href="services.html#hair"><i class="bi bi-chevron-right"></i> Hair Color</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Facials</a></li>
+              <li><a href="services.html#skin"><i class="bi bi-chevron-right"></i> Skin Care</a></li>
+              <li><a href="services.html#nails"><i class="bi bi-chevron-right"></i> Nail Studio</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Quick Links</h6>
+            <ul class="eb-footer-links">
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Studio</a></li>
+              <li><a href="stylists.html"><i class="bi bi-chevron-right"></i> Expert Stylists</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Service Pricing</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Special Offers</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+              <li><a href="contact.html#appointment"><i class="bi bi-chevron-right"></i> Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Contact</h6>
+            <ul class="eb-footer-contact-list">
+              <li><i class="bi bi-geo-alt"></i> 42, Velachery Main Rd, Chennai</li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+914412345678">+91 44 1234 5678</a></li>
+              <li><i class="bi bi-envelope"></i><a href="mailto:hello@elanora.in">hello@elanora.in</a></li>
+              <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/914412345678">WhatsApp Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="eb-footer-col-title">Hours</h6>
+            <ul class="eb-footer-hours">
+              <li><span>Mon–Fri</span><span>9AM–8PM</span></li>
+              <li><span>Sat</span><span>9AM–9PM</span></li>
+              <li><span>Sun</span><span>10AM–6PM</span></li>
+              <li><span>Holidays</span><span>11AM–5PM</span></li>
+              <li><span>Bridal</span><span>By Appointment</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="eb-footer-bottom"><span class="eb-footer-copyright">&copy; 2026 Élanora Beauty Studio.</span>
+        <div class="eb-footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/filters.js"></script>
+</body>
+
+</html>

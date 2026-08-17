@@ -1,0 +1,218 @@
+/* ============================================
+   Élanora Beauty Studio — Buttons
+   ============================================ */
+
+/* ── Base Button ── */
+.eb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 30px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  position: relative;
+  overflow: visible !important;
+  clip-path: none !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+}
+
+.eb-btn i {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.eb-btn:hover i {
+  transform: translateX(3px);
+}
+
+/* ── Primary Button ── */
+.eb-btn-primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(90, 64, 55, 0.28);
+}
+
+.eb-btn-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(90, 64, 55, 0.38);
+}
+
+.eb-btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(90, 64, 55, 0.28);
+}
+
+/* ── Secondary / Outline Button ── */
+.eb-btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.eb-btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(90, 64, 55, 0.28);
+}
+
+/* ── Ghost / Inverse (for dark backgrounds) ── */
+.eb-btn-ghost {
+  background: rgba(255, 249, 244, 0.12);
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 249, 244, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.eb-btn-ghost:hover {
+  background: rgba(255, 249, 244, 0.22);
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 249, 244, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ── Light Button ── */
+.eb-btn-light {
+  background: var(--color-text-inverse);
+  color: var(--color-primary);
+  border-color: var(--color-text-inverse);
+}
+
+.eb-btn-light:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary-hover);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 249, 244, 0.28);
+}
+
+/* ── Sizes ── */
+.eb-btn-sm {
+  font-size: var(--fs-xs);
+  padding: 9px 20px;
+  letter-spacing: var(--ls-wider);
+}
+
+.eb-btn-lg {
+  font-size: var(--fs-body);
+  padding: 15px 40px;
+  letter-spacing: var(--ls-wide);
+}
+
+/* ── Icon-only button ── */
+.eb-btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1rem;
+}
+
+.eb-btn-icon:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.eb-btn-icon.primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-card);
+}
+
+.eb-btn-icon.primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: scale(1.08);
+}
+
+/* ── Text Link Button ── */
+.eb-btn-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-radius: 0;
+  position: relative;
+}
+
+.eb-btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.eb-btn-link:hover::after {
+  transform: scaleX(1);
+}
+
+.eb-btn-link:hover {
+  color: var(--color-primary-hover);
+  gap: 10px;
+}
+
+/* ── Hover scroll-nav arrows ── */
+.eb-scroll-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.eb-scroll-arrow:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+  transform: scale(1.06);
+}

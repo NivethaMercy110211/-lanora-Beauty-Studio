@@ -1,0 +1,858 @@
+/* ============================================
+   Élanora Beauty Studio — Cards
+   ============================================ */
+
+/* ── Universal Card Base ── */
+.eb-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: visible;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eb-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* ── Card Image & Image Path Placeholder ── */
+.eb-card-img {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.eb-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.eb-card:hover .eb-card-img img {
+  transform: scale(1.06);
+}
+
+/* ── Pure CSS Image Path Placeholder (No external images) ── */
+.eb-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  background: linear-gradient(135deg, rgba(90, 64, 55, 0.2) 0%, rgba(30, 24, 22, 0.5) 100%);
+  border: 1px dashed rgba(198, 169, 154, 0.35);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
+  gap: 8px;
+  transition: all var(--transition-base);
+}
+
+.eb-image-placeholder i {
+  font-size: 2.2rem;
+  color: #C6A99A;
+  transition: transform var(--transition-fast);
+}
+
+.eb-image-placeholder:hover i {
+  transform: scale(1.15);
+}
+
+.eb-path-badge {
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: #E6C8B8;
+  background: rgba(24, 20, 18, 0.75);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(198, 169, 154, 0.3);
+  word-break: break-all;
+}
+
+/* Fixed image heights by card type */
+.eb-service-card .eb-card-img  { height: 260px; }
+.eb-stylist-card .eb-card-img  { height: 280px; }
+.eb-offer-card .eb-card-img    { height: 200px; }
+.eb-pricing-card .eb-card-img  { height: 180px; }
+
+.eb-service-card {
+  border-radius: 8px;
+}
+
+.eb-service-card .eb-card-img {
+  background: #1E1714;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eb-service-card .eb-card-img img {
+  filter: none;
+  image-rendering: auto;
+  object-position: center center;
+}
+
+#trending-hair .eb-card {
+  border-radius: 8px;
+}
+
+#trending-hair .eb-card-img {
+  height: 360px !important;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(198, 169, 154, 0.22), transparent 36%),
+    linear-gradient(135deg, #F7F0EB 0%, #E9DDD6 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+#trending-hair .eb-card-img img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  filter: none;
+}
+
+/* ── Card Body ── */
+.eb-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ── Card Category Tag ── */
+.eb-card-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+/* ── Card Title ── */
+.eb-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: 0.625rem;
+}
+
+/* ── Card Description ── */
+.eb-card-desc {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  line-height: var(--lh-relaxed);
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Card Footer ── */
+.eb-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* ── Card Price ── */
+.eb-card-price {
+  font-family: var(--font-number);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}
+
+.eb-card-price-from {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ── Service Card Overlay Badge ── */
+.eb-card-img-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 4;
+  max-width: calc(100% - 24px);
+}
+
+.eb-card-img-badge .eb-badge {
+  min-height: 30px;
+  padding: 6px 13px;
+  border: 1px solid rgba(255, 249, 244, 0.45);
+  background: rgba(90, 64, 55, 0.92);
+  color: #FFF9F4;
+  box-shadow: 0 8px 22px rgba(24, 20, 18, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  line-height: 1.2;
+  text-shadow: none;
+}
+
+.eb-card-img-badge .eb-badge-light {
+  background: rgba(255, 249, 244, 0.94);
+  color: #4A3028;
+  border-color: rgba(90, 64, 55, 0.22);
+  box-shadow: 0 8px 22px rgba(24, 20, 18, 0.22);
+}
+
+.eb-card-img-badge .eb-badge-primary {
+  background: rgba(90, 64, 55, 0.94);
+  color: #FFF9F4;
+}
+
+/* ── Stylist Card ── */
+.eb-stylist-card {
+  text-align: center;
+}
+
+.eb-stylist-card .eb-card-img {
+  position: relative;
+}
+
+.eb-stylist-card .eb-card-img img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.eb-stylist-card .eb-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  align-items: center;
+}
+
+.eb-stylist-card .eb-card-title {
+  margin-bottom: 0.25rem;
+}
+
+.eb-stylist-role {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.eb-stylist-specialization {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.eb-stylist-experience {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+/* ── Offer Card ── */
+.eb-offer-card .eb-card-body {
+  position: relative;
+}
+
+.eb-offer-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  width: fit-content;
+  white-space: nowrap;
+  margin-bottom: 0.75rem;
+}
+
+.eb-offer-badge.badge-gold {
+  background: linear-gradient(135deg, #C9A84C, #A07828);
+  color: #FFF9F4;
+}
+
+.eb-offer-badge.badge-rose {
+  background: linear-gradient(135deg, #A07070, #7A4040);
+  color: #FFF9F4;
+}
+
+.eb-offer-validity {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#seasonal-offers-h2 .row.g-4 {
+  align-items: stretch;
+}
+
+#seasonal-offers-h2 .row.g-4 > [class*="col-"] {
+  display: flex;
+}
+
+#seasonal-offers-h2 .eb-offer-card {
+  width: 100%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#seasonal-offers-h2 .eb-offer-card .eb-card-img {
+  height: 270px !important;
+  background: #1E1714;
+}
+
+#seasonal-offers-h2 .eb-offer-card .eb-card-img img {
+  object-position: center center;
+}
+
+#seasonal-offers-h2 .eb-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+#seasonal-offers-h2 .eb-offer-badge,
+#seasonal-offers-h2 .eb-offer-badge.badge-gold,
+#seasonal-offers-h2 .eb-offer-badge.badge-rose {
+  min-height: 32px;
+  width: 152px;
+  max-width: 100%;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background: rgba(90, 64, 55, 0.94);
+  color: #FFF9F4;
+  border: 1px solid rgba(255, 249, 244, 0.32);
+  box-shadow: 0 8px 22px rgba(24, 20, 18, 0.18);
+}
+
+#seasonal-offers-h2 .eb-card-title {
+  min-height: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+#seasonal-offers-h2 .eb-card-desc {
+  min-height: 5rem;
+}
+
+#seasonal-offers-h2 .eb-card-footer {
+  margin-top: auto;
+  min-height: 48px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+#seasonal-offers-h2 .eb-card-footer .eb-offer-validity {
+  min-height: 0;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  white-space: nowrap;
+  font-size: 0.72rem;
+}
+
+#seasonal-offers-h2 .eb-card-footer .eb-btn {
+  justify-self: end;
+  align-self: center;
+}
+
+/* ── Testimonial Card ── */
+.eb-testimonial-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  position: relative;
+}
+
+.eb-testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: var(--lh-relaxed);
+  margin-bottom: 1.5rem;
+}
+
+.eb-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eb-testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.eb-testimonial-name {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  margin-bottom: 1px;
+}
+
+.eb-testimonial-info {
+  font-size: var(--fs-xs);
+  color: var(--color-text-secondary);
+}
+
+.eb-testimonial-stars {
+  color: #C9A84C;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.eb-testimonial-quote-mark {
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 0.5;
+  color: var(--color-primary-light);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-border);
+}
+
+/* ── Pricing Card ── */
+.eb-pricing-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  background: var(--color-card-bg);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.eb-pricing-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.eb-pricing-card.featured {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(90, 64, 55, 0.12), var(--shadow-card);
+}
+
+.eb-pricing-card-header {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.eb-pricing-card.featured .eb-pricing-card-header {
+  background: linear-gradient(135deg, var(--color-primary), #3D2820);
+}
+
+.eb-pricing-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  margin-bottom: 0.25rem;
+}
+
+.eb-pricing-desc {
+  font-size: var(--fs-xs);
+  opacity: 0.8;
+}
+
+.eb-pricing-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.eb-pricing-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+  gap: 1rem;
+}
+
+.eb-pricing-row:last-of-type {
+  border-bottom: none;
+}
+
+.eb-pricing-service {
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  font-weight: var(--fw-medium);
+  flex: 1;
+}
+
+.eb-pricing-price {
+  font-family: var(--font-number);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+/* ── Package Card ── */
+.eb-package-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.eb-package-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.eb-package-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 1rem 0;
+}
+
+.eb-package-price-main {
+  font-family: var(--font-number);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.eb-package-price-currency {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.eb-package-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+.eb-package-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: var(--fs-small);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eb-package-features li:last-child { border-bottom: none; }
+
+.eb-package-features li i {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Bento Grid Cards ── */
+.eb-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.eb-bento-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-card-bg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.eb-bento-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.eb-bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.eb-bento-card:hover img {
+  transform: scale(1.05);
+}
+
+.eb-bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 20, 18, 0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.eb-bento-label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: #FFF9F4;
+  line-height: var(--lh-snug);
+}
+
+.eb-bento-sublabel {
+  font-size: var(--fs-xs);
+  color: #C6A99A;
+  margin-top: 4px;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* ── Homepage signature services grid ── */
+.eb-signature-services-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 240px);
+  align-items: stretch;
+  gap: 1.75rem;
+}
+
+.eb-signature-services-grid .eb-bento-card {
+  height: 100%;
+  min-height: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(90, 64, 55, 0.12);
+  box-shadow: 0 18px 45px rgba(45, 34, 29, 0.12);
+  isolation: isolate;
+}
+
+.eb-signature-main {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.eb-signature-services-grid .eb-bento-card img {
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.eb-signature-services-grid .eb-bento-overlay {
+  inset: auto 0 0;
+  min-height: 42%;
+  align-items: flex-end;
+  padding: 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(24, 20, 18, 0.78) 0%,
+    rgba(24, 20, 18, 0.36) 52%,
+    transparent 100%
+  );
+}
+
+.eb-signature-services-grid .eb-bento-overlay > div {
+  max-width: min(100%, 380px);
+}
+
+.eb-signature-services-grid .eb-bento-sublabel {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 0 0.55rem;
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 249, 244, 0.18);
+  color: #F3D7C5;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.eb-signature-services-grid .eb-bento-label {
+  color: #FFF9F4;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.42);
+}
+
+.eb-signature-main img {
+  object-position: center center;
+}
+
+.eb-signature-secondary img {
+  object-position: center center;
+}
+
+/* ── Equal-height card rows ── */
+.eb-card-row {
+  display: grid;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.eb-card-row > .eb-card {
+  height: 100%;
+}
+
+/* ── Interactive Before & After Slider ── */
+.eb-ba-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 480px;
+  margin: 0 auto;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  border: 2px solid rgba(198, 169, 154, 0.35);
+  user-select: none;
+}
+
+.eb-ba-after-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.eb-ba-before-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 3px solid #C6A99A;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.eb-ba-before-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+#before-after .eb-ba-wrapper {
+  max-width: 760px;
+  height: 640px;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(198, 169, 154, 0.20), transparent 38%),
+    linear-gradient(135deg, #F7F0EB 0%, #E8DDD6 100%);
+}
+
+#before-after .eb-ba-after-img,
+#before-after .eb-ba-before-img {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.eb-ba-badge {
+  position: absolute;
+  top: 1.25rem;
+  padding: 0.4rem 1.1rem;
+  background: rgba(24, 20, 18, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFF9F4;
+  border: 1px solid rgba(198, 169, 154, 0.4);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.eb-ba-badge-before {
+  left: 1.25rem;
+}
+
+.eb-ba-badge-after {
+  right: 1.25rem;
+}
+
+.eb-ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #C6A99A;
+  color: #181412;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 20px rgba(198, 169, 154, 0.8);
+  z-index: 4;
+  pointer-events: none;
+  border: 2px solid #FFF;
+  transition: transform var(--transition-fast);
+}
+
+.eb-ba-wrapper:hover .eb-ba-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.eb-ba-slider-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 5;
+  cursor: ew-resize;
+  margin: 0;
+}

@@ -1,0 +1,304 @@
+/* ============================================
+   Élanora Beauty Studio — Footer
+   ============================================ */
+
+.eb-footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.eb-footer-top {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--footer-border);
+}
+
+.eb-footer-top .row {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+/* ── Footer Brand ── */
+.eb-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.eb-footer-brand-badge {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.eb-footer-brand-badge img,
+.eb-footer-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.eb-footer-brand:hover .eb-footer-brand-badge {
+  transform: scale(1.08);
+}
+
+.eb-footer-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+  color: var(--footer-heading);
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.eb-footer-brand-tagline {
+  font-size: 0.62rem;
+  font-weight: var(--fw-bold);
+  color: var(--footer-accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.eb-footer-about-text {
+  font-size: var(--fs-small);
+  color: var(--footer-muted);
+  line-height: var(--lh-relaxed);
+  margin-bottom: 1.75rem;
+  max-width: 310px;
+}
+
+/* ── Footer Social Icons ── */
+.eb-footer-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eb-footer-social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-circle);
+  border: 1px solid var(--footer-border);
+  background: transparent;
+  color: var(--footer-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.eb-footer-social-link:hover {
+  background: var(--footer-accent);
+  border-color: var(--footer-accent);
+  color: var(--footer-btn-text);
+  transform: translateY(-2px);
+}
+
+/* ── Footer Columns ── */
+.eb-footer-col-title {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--footer-accent);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Footer Links ── */
+.eb-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eb-footer-links li a {
+  font-size: var(--fs-small);
+  color: var(--footer-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eb-footer-links li a:hover {
+  color: var(--footer-heading);
+}
+
+.eb-footer-links li a i {
+  font-size: 0.7rem;
+  color: var(--footer-accent);
+}
+
+/* ── Footer Contact Items ── */
+.eb-footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eb-footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--fs-small);
+  color: var(--footer-muted);
+  line-height: var(--lh-normal);
+}
+
+.eb-footer-contact-list li i {
+  color: var(--footer-accent);
+  font-size: 0.95rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.eb-footer-contact-list li a {
+  color: var(--footer-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.eb-footer-contact-list li a:hover {
+  color: var(--footer-heading);
+}
+
+/* ── Footer Hours ── */
+.eb-footer-hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.eb-footer-hours li {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--footer-muted);
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--footer-border);
+}
+
+.eb-footer-hours li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.eb-footer-hours li span:last-child {
+  color: var(--footer-heading);
+  font-weight: var(--fw-medium);
+}
+
+/* ── Footer Newsletter ── */
+.eb-footer-newsletter-text {
+  font-size: var(--fs-xs);
+  color: var(--footer-subtle);
+  margin-bottom: 1rem;
+  line-height: var(--lh-normal);
+}
+
+.eb-footer-newsletter-form {
+  display: flex;
+  gap: 6px;
+}
+
+.eb-footer-newsletter-form input {
+  flex: 1;
+  background: var(--footer-input-bg);
+  border: 1px solid var(--footer-input-border);
+  border-radius: var(--radius-pill);
+  padding: 10px 16px;
+  color: var(--footer-input-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  transition: border-color var(--transition-fast);
+  min-width: 0;
+}
+
+.eb-footer-newsletter-form input::placeholder {
+  color: var(--footer-subtle);
+}
+
+.eb-footer-newsletter-form input:focus {
+  outline: none;
+  border-color: var(--footer-accent);
+}
+
+.eb-footer-newsletter-form button {
+  flex-shrink: 0;
+  background: var(--footer-btn-bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  color: var(--footer-btn-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.eb-footer-newsletter-form button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* ── Footer Bottom ── */
+.eb-footer-bottom {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.eb-footer-copyright {
+  font-size: var(--fs-xs);
+  color: var(--footer-subtle);
+}
+
+.eb-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.eb-footer-legal a {
+  font-size: var(--fs-xs);
+  color: var(--footer-subtle);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.eb-footer-legal a:hover {
+  color: var(--footer-heading);
+}

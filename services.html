@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Élanora Beauty Studio</title>
+  <meta name="description"
+    content="Explore Élanora's complete range of beauty services — haircuts, coloring, keratin, facials, cleanup, manicure, pedicure, gel nails, and more.">
+  <link rel="icon" href="assets/images/common/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/banner.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <link rel="stylesheet" href="assets/css/responsive/desktop.css">
+  <link rel="stylesheet" href="assets/css/responsive/tablet.css">
+  <link rel="stylesheet" href="assets/css/responsive/mobile.css">
+  <link rel="stylesheet" href="assets/css/responsive/target-views.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="eb-header" id="header">
+    <div class="container">
+      <a href="index.html" class="eb-brand">
+        <div class="eb-brand-logo-badge"><img src="assets/images/common/logo.png" alt="Élanora Beauty Studio Logo">
+        </div>
+        <div class="eb-brand-text">
+          <span class="eb-brand-name">Élanora</span>
+          <span class="eb-brand-tagline">BEAUTY STUDIO</span>
+        </div>
+      </a>
+      <nav class="eb-nav eb-nav-desktop" id="mainNav">
+        <a href="index.html" class="eb-nav-link">Home 1</a>
+        <a href="home2.html" class="eb-nav-link">Home 2</a>
+        <a href="about.html" class="eb-nav-link">About</a>
+        <a href="services.html" class="eb-nav-link active">Services</a>
+        <a href="stylists.html" class="eb-nav-link">Stylists</a>
+        <a href="pricing.html" class="eb-nav-link">Pricing</a>
+        <a href="offers.html" class="eb-nav-link">Offers</a>
+        <a href="contact.html" class="eb-nav-link">Contact</a>
+      </nav>
+      <div class="eb-header-utils">
+        <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+        <button class="eb-toggle-btn" data-action="toggle-dir"><span
+            class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+        <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+      </div>
+      <button class="eb-menu-toggle" id="menuToggle"
+        aria-label="Toggle Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="eb-mobile-nav" id="mobileNav">
+    <nav class="eb-nav">
+      <a href="index.html" class="eb-nav-link">Home 1</a><a href="home2.html" class="eb-nav-link">Home 2</a>
+      <a href="about.html" class="eb-nav-link">About</a><a href="services.html" class="eb-nav-link active">Services</a>
+      <a href="stylists.html" class="eb-nav-link">Stylists</a><a href="pricing.html" class="eb-nav-link">Pricing</a>
+      <a href="offers.html" class="eb-nav-link">Offers</a><a href="contact.html" class="eb-nav-link">Contact</a>
+    </nav>
+    <div class="eb-mobile-nav-utils">
+      <button class="eb-toggle-btn" data-action="toggle-theme"><i class="bi bi-moon theme-toggle-icon"></i></button>
+      <button class="eb-toggle-btn" data-action="toggle-dir"><span
+          class="rtl-toggle-label eb-rtl-label">RTL</span></button>
+      <a href="login.html" class="eb-login-btn"><i class="bi bi-person-circle"></i> Login</a>
+    </div>
+  </div>
+
+  <!-- PAGE BANNER -->
+  <section class="eb-page-banner">
+    <div class="eb-page-banner-bg" style="background-image:url('assets/images/hero/services-hero.png');"></div>
+    <div class="eb-page-banner-glow"></div>
+    <div class="eb-page-banner-overlay"></div>
+    <div class="container">
+      <div class="eb-page-banner-content">
+        <div class="eb-breadcrumb anim-blur-in"><a href="index.html">Home</a><span
+            class="eb-breadcrumb-sep">›</span><span>Services</span></div>
+        <h1 class="eb-page-banner-title anim-split-up">Our Luxury <em>Services</em></h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FILTER BAR ─── -->
+  <section class="eb-section-sm" style="border-bottom:1px solid var(--color-border);background:var(--color-bg);">
+    <div class="container">
+      <div class="d-flex align-items-center flex-wrap gap-3">
+        <span
+          style="font-size:var(--fs-small);font-weight:var(--fw-semibold);color:var(--color-text-secondary);white-space:nowrap;">Filter
+          by:</span>
+        <div class="eb-filter-bar">
+          <button class="eb-filter-btn active" data-filter="all"><i class="bi bi-grid-3x3-gap"></i> All
+            Services</button>
+          <button class="eb-filter-btn" data-filter="hair"><i class="bi bi-scissors"></i> Hair</button>
+          <button class="eb-filter-btn" data-filter="skin"><i class="bi bi-droplet"></i> Skin</button>
+          <button class="eb-filter-btn" data-filter="nails"><i class="bi bi-hand-index-thumb"></i> Nails</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 1: HAIR SERVICES ─── -->
+  <section class="eb-section" id="hair">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Hair Category</span>
+        <h2 class="eb-section-title">Hair <em>Services</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">From precision haircuts to transformative color —
+          crafted by certified hair professionals.</p>
+      </div>
+      <div class="row g-4" id="servicesGrid">
+
+        <!-- Haircut -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-1.jpg" alt="Precision Haircut" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Hair</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Precision Haircut</h4>
+              <p class="eb-card-desc">Expertly crafted cuts tailored to your face shape, texture, and lifestyle.
+                Includes wash, blow-dry, and styling finish.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹799</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hair Styling -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-2.jpg" alt="Hair Styling" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Hair</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Hair Styling & Blowout</h4>
+              <p class="eb-card-desc">Professional blowout, curling, straightening, and occasion updos. Perfect for
+                events, weddings, and every day.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹999</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hair Coloring -->
+        <div class="col-sm-6 col-lg-4 anim anim-d3" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-3.jpg" alt="Hair Coloring" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Best Seller</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Hair Coloring</h4>
+              <p class="eb-card-desc">Full color, balayage, ombré, highlights, lowlights, and color correction. Premium
+                ammonia-free options available.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹2,500</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highlights -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-4.jpg" alt="Highlights & Balayage" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Hair</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Highlights & Balayage</h4>
+              <p class="eb-card-desc">Handpainted or foil highlights that add dimension, depth, and a sun-kissed glow.
+                Natural grow-out guaranteed.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹3,500</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hair Spa -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-5.jpg" alt="Hair Spa Treatment" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Hair</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Hair Spa Treatment</h4>
+              <p class="eb-card-desc">Deep conditioning ritual with scalp massage, hot oil treatment, and nourishing
+                hair mask for silky, restored locks.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,499</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keratin -->
+        <div class="col-sm-6 col-lg-4 anim anim-d3" data-category="hair">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/hair-service-6.jpg" alt="Keratin Treatment" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Trending</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Keratin Treatment</h4>
+              <p class="eb-card-desc">Brazilian keratin smoothing that eliminates<br>frizz and adds shine while cutting
+                styling<br>time.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹4,999</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 2: EDITORIAL HAIR SPLIT ─── -->
+  <section class="eb-section eb-section-bg" id="hair-feature">
+    <div class="container">
+      <div class="eb-split">
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:440px;">
+            <img src="assets/images/pages/service-why.jpg" alt="Hair Services at Élanora" loading="lazy">
+          </div>
+          <div class="eb-split-badge">
+            <span class="eb-split-badge-number">6</span>
+            <span class="eb-split-badge-label">Hair Experts</span>
+          </div>
+        </div>
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">Why Choose Our Hair Services</span>
+          <h2 class="eb-section-title">Crafted with <em>Precision</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:2rem;">Every haircut at Élanora
+            begins with a 15-minute consultation. We analyze your hair type, face structure, lifestyle, and personal
+            style before a single snip is made.</p>
+          <ul class="eb-feature-list">
+            <li><i class="bi bi-check-circle-fill"></i> Free pre-service consultation on every visit</li>
+            <li><i class="bi bi-check-circle-fill"></i> L'Oréal, Schwarzkopf & Wella color systems</li>
+            <li><i class="bi bi-check-circle-fill"></i> Allergy patch test available on request</li>
+            <li><i class="bi bi-check-circle-fill"></i> Post-service care kit recommendations</li>
+            <li><i class="bi bi-check-circle-fill"></i> 3-day touch-up guarantee on all cuts</li>
+          </ul>
+          <a href="contact.html#appointment" class="eb-btn eb-btn-primary mt-3">Book Hair Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 3: SKIN SERVICES ─── -->
+  <section class="eb-section" id="skin">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Skin Category</span>
+        <h2 class="eb-section-title">Skin & Facial <em>Treatments</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Personalized skin treatments for every type and
+          concern — performed by certified aestheticians.</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Facial -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="skin">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/skin-1.jpg" alt="Luxury Facial" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Best Seller</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Luxury Facial</h4>
+              <p class="eb-card-desc">A comprehensive facial including double cleanse, exfoliation, steam, extraction,
+                mask, and moisturizer. 60-minute ritual.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,999</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cleanup -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="skin">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/skin-2.jpg" alt="Deep Cleanup" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Skin</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Deep Cleanup</h4>
+              <p class="eb-card-desc">Express 30-minute cleanup with cleansing, toning, blackhead removal, and hydrating
+                mask. Ideal for regular maintenance.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹899</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hydration -->
+        <div class="col-sm-6 col-lg-4 anim anim-d3" data-category="skin">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/skin-3.jpg" alt="Hydration Treatment" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Skin</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Hydration Treatment</h4>
+              <p class="eb-card-desc">Intense moisture replenishment using hyaluronic acid serums and peptide-rich masks for plump, dewy skin.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,499</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brightening -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="skin">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/skin-4.jpg" alt="Brightening Treatment" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Popular</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Brightening Treatment</h4>
+              <p class="eb-card-desc">Vitamin C and niacinamide-enriched treatment that visibly evens skin tone and
+                reduces pigmentation over time.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,799</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skin Consultation -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="skin">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/skin-5.jpg" alt="Skin Consultation" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Skin</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Skin Consultation</h4>
+              <p class="eb-card-desc">30-minute one-on-one skin analysis with a certified aesthetician to identify
+                concerns and design your personalized routine.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹499</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 4: NAIL SERVICES ─── -->
+  <section class="eb-section eb-section-bg" id="nails">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">Nail Category</span>
+        <h2 class="eb-section-title">Nail <em>Studio</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+        <p class="eb-section-subtitle eb-section-subtitle-center">Precision nail care and stunning nail art — from
+          classic elegance to bold expression.</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Manicure -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="nails">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/nail-1.jpg" alt="Classic Manicure" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Nails</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Classic Manicure</h4>
+              <p class="eb-card-desc">Shape, buff, cuticle care, hand massage, and polish application. Timeless nail
+                care for perfectly groomed hands.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹599</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pedicure -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="nails">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/nail-2.jpg" alt="Luxury Pedicure" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Best Seller</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Luxury Pedicure</h4>
+              <p class="eb-card-desc">Foot soak with salts, scrub, callus removal, nail shaping, massage, and polish.
+                The ultimate foot treatment.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹799</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gel Nails -->
+        <div class="col-sm-6 col-lg-4 anim anim-d3" data-category="nails">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/nail-3.jpg" alt="Gel Nails" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Popular</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Gel Manicure</h4>
+              <p class="eb-card-desc">Long-lasting gel polish with chip-free finish. Hardens under UV light for a
+                glossy, durable result that lasts 3+ weeks.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹899</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nail Extensions -->
+        <div class="col-sm-6 col-lg-4 anim anim-d1" data-category="nails">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/nail-4.jpg" alt="Nail Extensions" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-light">Nails</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Nail Extensions</h4>
+              <p class="eb-card-desc">Acrylic or gel extensions for added length and strength. Shaped to your preference
+                — almond, square, stiletto, or coffin.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,499</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nail Art -->
+        <div class="col-sm-6 col-lg-4 anim anim-d2" data-category="nails">
+          <div class="eb-card eb-service-card hover-lift">
+            <div class="eb-card-img">
+              <img src="assets/images/pages/nail-5.jpg" alt="Nail Art" loading="lazy">
+              <span class="eb-card-img-badge"><span class="eb-badge eb-badge-primary">Trending</span></span>
+            </div>
+            <div class="eb-card-body">
+              <h4 class="eb-card-title">Custom Nail Art</h4>
+              <p class="eb-card-desc">Bespoke hand-painted designs — from minimalist lines to intricate florals, jewel
+                effects, and 3D embellishments.</p>
+              <div class="eb-card-footer">
+                <div><span class="eb-card-price-from">From</span><span class="eb-card-price">₹1,199</span></div>
+                <a href="contact.html#appointment" class="eb-btn eb-btn-primary eb-btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 5: NAIL EDITORIAL SPLIT ─── -->
+  <section class="eb-section" id="nail-feature">
+    <div class="container">
+      <div class="eb-split eb-split-reverse">
+        <div class="anim anim-slide-right">
+          <span class="eb-eyebrow">The Nail Studio Difference</span>
+          <h2 class="eb-section-title">Nail Artistry <em>Elevated</em></h2>
+          <div class="eb-divider"></div>
+          <p style="color:var(--color-text);line-height:var(--lh-relaxed);margin-bottom:2rem;">Our nail studio uses OPI,
+            Gelish, and CND professional systems exclusively. Every tool is sterilized between clients, and we use only
+            non-toxic, cruelty-free formulations.</p>
+          <ul class="eb-feature-list">
+            <li><i class="bi bi-check-circle-fill"></i> OPI, Gelish & CND professional systems</li>
+            <li><i class="bi bi-check-circle-fill"></i> Autoclave-sterilized tools after every client</li>
+            <li><i class="bi bi-check-circle-fill"></i> Cruelty-free, non-toxic polish options</li>
+            <li><i class="bi bi-check-circle-fill"></i> 800+ nail art design reference library</li>
+            <li><i class="bi bi-check-circle-fill"></i> Complimentary hand massage with every manicure</li>
+          </ul>
+          <a href="contact.html#appointment" class="eb-btn eb-btn-primary mt-3">Book Nail Service</a>
+        </div>
+        <div class="eb-split-media anim anim-slide-left">
+          <div class="eb-split-image" style="height:420px;">
+            <img src="assets/images/pages/nail-artistry.jpg" alt="Nail Studio at Élanora" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 6: WHY CHOOSE US ─── -->
+  <section class="eb-section eb-section-bg" id="why-us">
+    <div class="container">
+      <div class="text-center mb-5 anim">
+        <span class="eb-eyebrow">The Élanora Promise</span>
+        <h2 class="eb-section-title">Why Clients <em>Choose Us</em></h2>
+        <div class="eb-divider eb-divider-center"></div>
+      </div>
+      <div class="eb-stats-strip border rounded-4 overflow-hidden anim">
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="5000">5000+</div>
+          <div class="eb-stat-label">Clients Served</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="30">30+</div>
+          <div class="eb-stat-label">Services Available</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="98">98%</div>
+          <div class="eb-stat-label">Client Satisfaction</div>
+        </div>
+        <div class="eb-stats-strip-item">
+          <div class="eb-stat-number" data-count="12">12+</div>
+          <div class="eb-stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 7: CTA ─── -->
+  <section class="eb-cta-section">
+    <div class="eb-cta-section-bg" style="background-image:url('assets/images/cta/services-cta.jpg');"></div>
+    <div class="eb-cta-section-overlay"></div>
+    <div class="container">
+      <div class="eb-cta-section-content anim">
+        <span class="eb-cta-eyebrow">Ready to Begin?</span>
+        <h2 class="eb-cta-title">Book Your <em>Service</em> Today</h2>
+        <p class="eb-cta-subtitle">From a quick cleanup to a complete transformation — our team is ready to bring your
+          beauty vision to life.</p>
+        <div class="eb-cta-actions">
+          <a href="contact.html#appointment" class="eb-btn eb-btn-light eb-btn-lg"><i class="bi bi-calendar-check"></i>
+            Book Appointment</a>
+          <a href="pricing.html" class="eb-btn eb-btn-ghost eb-btn-lg">View Pricing <i
+              class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="eb-footer">
+    <div class="container">
+      <div class="eb-footer-top">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6"><a href="index.html" class="eb-footer-brand">
+              <div class="eb-footer-brand-badge"><img src="assets/images/common/logo.png"
+                  alt="Élanora Beauty Studio Logo"></div>
+              <div>
+                <span class="eb-footer-brand-name">Élanora</span>
+                <span class="eb-footer-brand-tagline">BEAUTY STUDIO</span>
+              </div>
+            </a>
+            <p class="eb-footer-about-text mt-3">Beauty, Refined. Confidence, Defined.<br>Luxury hair, skin, and nail
+              care in Chennai.</p>
+            <div class="eb-footer-social"><a href="#" class="eb-footer-social-link" aria-label="Instagram"><i
+                  class="bi bi-instagram"></i></a><a href="#" class="eb-footer-social-link" aria-label="Facebook"><i
+                  class="bi bi-facebook"></i></a><a href="#" class="eb-footer-social-link" aria-label="Pinterest"><i
+                  class="bi bi-pinterest"></i></a><a href="#" class="eb-footer-social-link" aria-label="YouTube"><i
+                  class="bi bi-youtube"></i></a></div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Services</h6>
+            <ul class="eb-footer-links">
+              <li><a href="#hair"><i class="bi bi-chevron-right"></i> Hair Styling</a></li>
+              <li><a href="#hair"><i class="bi bi-chevron-right"></i> Hair Color</a></li>
+              <li><a href="#skin"><i class="bi bi-chevron-right"></i> Facials</a></li>
+              <li><a href="#skin"><i class="bi bi-chevron-right"></i> Skin Care</a></li>
+              <li><a href="#nails"><i class="bi bi-chevron-right"></i> Nail Studio</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Bridal Packages</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Quick Links</h6>
+            <ul class="eb-footer-links">
+              <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Studio</a></li>
+              <li><a href="stylists.html"><i class="bi bi-chevron-right"></i> Expert Stylists</a></li>
+              <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Service Pricing</a></li>
+              <li><a href="offers.html"><i class="bi bi-chevron-right"></i> Special Offers</a></li>
+              <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact Us</a></li>
+              <li><a href="contact.html#appointment"><i class="bi bi-chevron-right"></i> Book Appointment</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <h6 class="eb-footer-col-title">Contact</h6>
+            <ul class="eb-footer-contact-list">
+              <li><i class="bi bi-geo-alt"></i> 42, Velachery Main Rd, Chennai</li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+914412345678">+91 44 1234 5678</a></li>
+              <li><i class="bi bi-envelope"></i><a href="mailto:hello@elanora.in">hello@elanora.in</a></li>
+              <li><i class="bi bi-whatsapp"></i><a href="https://wa.me/914412345678">WhatsApp Booking</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h6 class="eb-footer-col-title">Hours</h6>
+            <ul class="eb-footer-hours">
+              <li><span>Mon–Fri</span><span>9AM–8PM</span></li>
+              <li><span>Sat</span><span>9AM–9PM</span></li>
+              <li><span>Sun</span><span>10AM–6PM</span></li>
+              <li><span>Holidays</span><span>11AM–5PM</span></li>
+              <li><span>Bridal</span><span>By Appointment</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="eb-footer-bottom"><span class="eb-footer-copyright">&copy; 2026 Élanora Beauty Studio. All rights
+          reserved.</span>
+        <div class="eb-footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/filters.js"></script>
+</body>
+
+</html>
