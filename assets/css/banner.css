@@ -16,12 +16,19 @@
   position: absolute;
   inset: 0;
   background-color: #060404;
-  background-size: contain;
-  background-position: right 4% center;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
   transform: none;
   animation: none;
   will-change: auto;
+}
+
+#hero .eb-hero-bg {
+  background-image: url('../images/hero/hero1-bg.png') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 991px) {
@@ -74,13 +81,11 @@
 }
 
 #hero .eb-hero-overlay {
-  background: linear-gradient(
-    90deg,
-    rgba(14, 10, 9, 0.9) 0%,
-    rgba(18, 14, 13, 0.68) 38%,
-    rgba(14, 10, 9, 0.16) 62%,
-    rgba(10, 7, 6, 0.12) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(14, 10, 9, 0.9) 0%,
+      rgba(18, 14, 13, 0.68) 38%,
+      rgba(14, 10, 9, 0.16) 62%,
+      rgba(10, 7, 6, 0.12) 100%);
 }
 
 .eb-hero-content {
@@ -462,7 +467,9 @@
 }
 
 @keyframes ebTextShimmer {
-  to { background-position: 200% center; }
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* ── Breadcrumb ── */
@@ -529,6 +536,12 @@
   height: 38px;
   background: linear-gradient(to bottom, #C6A99A 0%, rgba(255, 249, 244, 0.1) 100%);
   border-radius: 2px;
+}
+
+#hero .eb-scroll-hint {
+  bottom: 1.75rem;
+  animation: none;
+  transform: translateX(-50%);
 }
 
 @keyframes scrollPulse {

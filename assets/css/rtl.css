@@ -444,3 +444,30 @@
 [dir="rtl"] .eb-footer-copyright {
   text-align: right;
 }
+
+/* ── Home Hero Banners RTL Layout (Image STAYS on Right, Content STAYS on Left) ── */
+[dir="rtl"] #hero .eb-hero-split-row,
+[dir="rtl"] .eb-hero-split-row,
+[dir="rtl"] .eb-hero-row-fix {
+  flex-direction: row !important;
+}
+
+[dir="rtl"] #hero .eb-hero-text-col,
+[dir="rtl"] .eb-hero-text-col {
+  order: 1 !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] #hero .eb-hero-img-col,
+[dir="rtl"] .eb-hero-img-col {
+  order: 2 !important;
+}
+
+[dir="rtl"] .eb-hero-content {
+  text-align: right !important;
+}
+
+[dir="rtl"] .eb-hero-actions {
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+}
