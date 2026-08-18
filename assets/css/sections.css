@@ -18,6 +18,15 @@
   direction: ltr;
 }
 
+/* Top-align the Nail Studio feature so its portrait crop starts higher. */
+#nail-feature .eb-split {
+  align-items: start;
+}
+
+#nail-feature .eb-split-image img {
+  object-position: center center;
+}
+
 .eb-split-media {
   position: relative;
 }
@@ -136,6 +145,16 @@
 .eb-h-showcase-item {
   flex: 0 0 280px;
   scroll-snap-align: start;
+}
+
+/* Keep the Nail Studio cards aligned as a uniform visual grid. */
+#nailShowcase .eb-card-img {
+  height: 300px;
+}
+
+#nailShowcase .eb-card-img img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .eb-showcase-nav {

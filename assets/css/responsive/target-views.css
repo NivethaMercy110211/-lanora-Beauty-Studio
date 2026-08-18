@@ -569,26 +569,31 @@ body {
 }
 
 #certifications .eb-contact-info-card {
-  min-height: 230px;
+  min-height: 210px;
   justify-content: center;
+  padding: 1.5rem 1rem !important;
 }
 
 #certifications .eb-contact-info-title {
-  height: 2.8em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
+  height: auto;
+  min-height: 0;
+  margin-top: 0;
+  margin-bottom: 0.25rem !important;
+  display: block;
   text-align: center;
+  overflow: visible;
+  line-height: 1.25;
 }
 
 #certifications .eb-contact-info-text {
-  height: 3em;
+  height: auto;
+  min-height: 0;
+  margin-top: 0;
   display: block;
   overflow: visible;
   text-align: center;
   text-overflow: clip;
-  line-height: 1.5;
+  line-height: 1.4;
   -webkit-line-clamp: unset;
   -webkit-box-orient: initial;
 }
@@ -2021,4 +2026,550 @@ body {
 #scrollTopBtn {
   transition: none !important;
 }
+}
+
+/* ── Nail Studio Difference Laptop Grid Alignment ── */
+@media (min-width: 992px) {
+  #nail-feature .eb-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start !important;
+  }
+
+  #nail-feature .eb-split-media {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  #nail-feature .eb-split-image {
+    width: 100%;
+    height: 100% !important;
+    min-height: 420px;
+    max-height: 480px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  #nail-feature .eb-split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
+
+/* ── Certification Badge Image Styling ── */
+.eb-cert-img-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-primary-light, #c6a99a);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: var(--color-bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eb-cert-card:hover .eb-cert-img-wrap {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(198, 169, 154, 0.25);
+  border-color: var(--color-primary, #9e7a68);
+}
+
+.eb-cert-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+}
+
+/* ── Signature Services Header: centered tablet/mobile layout ── */
+@media (max-width: 991.98px) {
+  #signature-services > .container > .row:first-child {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #signature-services > .container > .row:first-child > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #signature-services .eb-section-header {
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+  }
+
+  #signature-services .eb-divider,
+  #signature-services .eb-section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #signature-services .text-md-end {
+    text-align: center !important;
+  }
+}
+
+/* ── Studio Experience amenities: centered responsive grid ── */
+@media (max-width: 1024px) {
+  #studio-experience .row.g-3 {
+    max-width: 620px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  #studio-experience .row.g-3 > .col-6 {
+    display: flex;
+    justify-content: center;
+  }
+
+  #studio-experience .row.g-3 > .col-6 > .d-flex {
+    width: 100%;
+    max-width: 270px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ── About Studio experience rows: consistent icon/text alignment ── */
+@media (max-width: 1024px) {
+  #salon-experience .eb-experience-list {
+    width: 100%;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #salon-experience .eb-experience-item {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  #salon-experience .eb-experience-item > :last-child,
+  #salon-experience .eb-experience-title,
+  #salon-experience .eb-experience-desc {
+    width: 100%;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #salon-experience .eb-experience-item {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* ── Hygiene checklist: centered as one aligned group ── */
+@media (max-width: 1024px) {
+  #hygiene .eb-feature-list {
+    width: fit-content !important;
+    max-width: 100%;
+    align-items: stretch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #hygiene .eb-feature-list li {
+    width: auto !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* ── Beauty Experts Header: centered tablet/mobile layout ── */
+@media (max-width: 991.98px) {
+  #experts > .container > .row:first-child {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #experts > .container > .row:first-child > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #experts > .container > .row:first-child > :first-child {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #experts .eb-divider,
+  #experts .eb-section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #experts .text-md-end {
+    margin-top: 1.5rem;
+    text-align: center !important;
+  }
+}
+
+/* ── Service feature checklists: centered aligned groups ── */
+@media (max-width: 1024px) {
+  #hair-feature .eb-feature-list,
+  #nail-feature .eb-feature-list {
+    width: fit-content !important;
+    max-width: 100%;
+    align-items: stretch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #hair-feature .eb-feature-list li,
+  #nail-feature .eb-feature-list li {
+    width: auto !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* ── Stylist profile details: stacked and centered ── */
+@media (max-width: 1024px) {
+  #hair-specialists .row.g-3 {
+    max-width: 560px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  #hair-specialists .row.g-3 > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #hair-specialists .row.g-3 > [class*="col-"] > .d-flex {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #skin-experts .eb-feature-list {
+    width: fit-content !important;
+    max-width: 100%;
+    align-items: stretch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #skin-experts .eb-feature-list li {
+    width: auto !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* ── Offers page: centered featured offer and referral content ── */
+@media (max-width: 991.98px) {
+  #featured-offer .row > .col-lg-7 {
+    text-align: center;
+  }
+
+  #featured-offer .row > .col-lg-7 p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #featured-offer .row > .col-lg-7 > .d-flex {
+    justify-content: center;
+    align-items: center;
+  }
+
+  #referral .row > .col-lg-6:first-child {
+    text-align: center;
+  }
+
+  #referral .eb-experience-list {
+    width: 100%;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #referral .eb-experience-item {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    gap: 1.25rem;
+    width: 100%;
+    text-align: left !important;
+  }
+
+  #referral .eb-experience-title,
+  #referral .eb-experience-desc {
+    text-align: left !important;
+  }
+
+  #referral .row > .col-lg-6:first-child > .eb-btn {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ── Hair Transformation: centered content group ── */
+@media (max-width: 1024px) {
+  #hair-showcase .eb-split > :last-child {
+    text-align: center;
+  }
+
+  #hair-showcase .eb-feature-list {
+    width: fit-content !important;
+    max-width: 100%;
+    align-items: stretch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #hair-showcase .eb-feature-list li {
+    width: auto !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+
+  #hair-showcase .eb-split > :last-child > .d-flex {
+    justify-content: center !important;
+  }
+}
+
+/* ── Seasonal Offers Header: centered tablet/mobile layout ── */
+@media (max-width: 991.98px) {
+  #seasonal-offers-h2 > .container > .row:first-child {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #seasonal-offers-h2 > .container > .row:first-child > [class*="col-"] {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #seasonal-offers-h2 > .container > .row:first-child > :first-child {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #seasonal-offers-h2 .eb-divider,
+  #seasonal-offers-h2 .eb-section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #seasonal-offers-h2 .text-md-end {
+    margin-top: 1.5rem;
+    text-align: center !important;
+  }
+}
+
+/* ============================================
+   iPad Mini (768x1024) Center Alignment Rules
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Page Banners & Hero Content */
+  .eb-page-banner-content,
+  .eb-hero-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .eb-breadcrumb {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Eyebrows, Titles, Subtitles & Dividers */
+  .eb-eyebrow,
+  .eb-section-title,
+  .eb-section-subtitle,
+  .eb-hero-title,
+  .eb-hero-subtitle,
+  .eb-page-banner-title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .eb-divider {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Editorial Split Sections (Hair, Color, Skin, Nail Studio, About, etc.) */
+  .eb-split {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2.5rem !important;
+  }
+
+  .eb-split > * {
+    width: 100% !important;
+    max-width: 680px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .eb-split-media,
+  .eb-split-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 540px !important;
+  }
+
+  .eb-feature-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .eb-feature-list li {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .eb-split .eb-btn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: inline-flex !important;
+  }
+
+  /* Filter Bar Centering */
+  .eb-filter-bar {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Cards & Info Grids */
+  .eb-card,
+  .eb-contact-info-card,
+  .eb-stylist-card,
+  .eb-service-card,
+  .eb-pricing-card,
+  .eb-package-card,
+  .eb-offer-card {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .eb-card-body {
+    text-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .eb-card-footer {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  /* Credentials / Certifications Grid */
+  #certifications .row {
+    justify-content: center !important;
+  }
+
+  #certifications .eb-contact-info-card {
+    align-items: center !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #certifications .eb-contact-info-title,
+  #certifications .eb-contact-info-text {
+    text-align: center !important;
+  }
+
+  #certifications .eb-cert-img-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Nail Artists & Color Specialists Grids */
+  #nail-artists .eb-stylist-card,
+  #stylistsGrid .eb-stylist-card {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  #nail-artists .eb-stylist-role,
+  #nail-artists .eb-card-title,
+  #nail-artists .eb-stylist-specialization,
+  #nail-artists .eb-stylist-bio,
+  #nail-artists .eb-stylist-experience,
+  #nail-artists .eb-stylist-review {
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  #nail-artists .eb-btn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* CTA Sections */
+  .eb-cta-section-content {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .eb-cta-actions {
+    justify-content: center !important;
+  }
+
+  /* Stats Strip */
+  .eb-stats-strip {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Auth Cards & Forms */
+  .eb-auth-card,
+  .eb-auth-instruction,
+  .eb-appointment-form {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
 }
