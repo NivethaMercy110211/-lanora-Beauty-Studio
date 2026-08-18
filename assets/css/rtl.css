@@ -94,47 +94,101 @@
 
 /* ── Form RTL ── */
 [dir="rtl"] .eb-form-control {
-  text-align: right;
+  text-align: right !important;
+  direction: rtl !important;
 }
 
-[dir="rtl"] .eb-form-select,
+[dir="rtl"] .eb-form-select {
+  background-position: left 14px center !important;
+  padding-right: 16px !important;
+  padding-left: 40px !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
 [dir="rtl"] input[type="date"].eb-form-control,
 [dir="rtl"] input[type="time"].eb-form-control,
 [dir="rtl"] input[type="datetime-local"].eb-form-control {
-  background-position: left 14px center;
-  padding-right: 16px;
-  padding-left: 40px;
+  padding-right: 16px !important;
+  padding-left: 40px !important;
+  text-align: right !important;
+  direction: rtl !important;
 }
 
 [dir="rtl"] input[type="date"]::-webkit-calendar-picker-indicator,
 [dir="rtl"] input[type="time"]::-webkit-calendar-picker-indicator,
 [dir="rtl"] input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  right: auto;
-  left: 0;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .eb-form-label {
+  text-align: right !important;
+  display: block !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .eb-form-label .required {
+  margin-left: 0 !important;
+  margin-right: 3px !important;
+}
+
+[dir="rtl"] .eb-appointment-form {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .eb-appointment-form-title,
+[dir="rtl"] .eb-appointment-form-subtitle {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .eb-form-check {
+  flex-direction: row !important;
+  text-align: right !important;
+  direction: rtl !important;
+  align-items: flex-start !important;
+}
+
+[dir="rtl"] .eb-form-check-label {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] optgroup,
+[dir="rtl"] option {
+  text-align: right !important;
+  direction: rtl !important;
 }
 
 [dir="rtl"] .eb-input-group .eb-form-control {
-  padding-left: 16px;
-  padding-right: 44px;
+  padding-left: 16px !important;
+  padding-right: 44px !important;
 }
 
 [dir="rtl"] .eb-input-group-icon {
-  left: auto;
-  right: 14px;
+  left: auto !important;
+  right: 14px !important;
 }
 
 [dir="rtl"] .eb-password-field .eb-form-control {
-  padding-right: 16px;
-  padding-left: 44px;
+  padding-right: 16px !important;
+  padding-left: 44px !important;
 }
 
 [dir="rtl"] .eb-password-toggle {
-  right: auto;
-  left: 13px;
+  right: auto !important;
+  left: 13px !important;
 }
 
 [dir="rtl"] .eb-form-row {
-  direction: rtl;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .eb-form-success {
+  text-align: center !important;
+  direction: rtl !important;
 }
 
 /* ── Footer RTL ── */

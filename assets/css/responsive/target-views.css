@@ -2490,10 +2490,13 @@ body {
   }
 
   .eb-breadcrumb {
-    display: flex !important;
+    display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 100% !important;
+    width: fit-content !important;
+    max-width: fit-content !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Eyebrows, Titles, Subtitles & Dividers */
@@ -2572,7 +2575,6 @@ body {
 
   /* Cards & Info Grids */
   .eb-card,
-  .eb-contact-info-card,
   .eb-stylist-card,
   .eb-service-card,
   .eb-pricing-card,
@@ -2592,6 +2594,67 @@ body {
   .eb-card-footer {
     justify-content: center !important;
     width: 100% !important;
+  }
+
+  /* Contact Page "Find Us" Section Cards: align one by one */
+  #contact-info .row.g-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    max-width: 640px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #contact-info .row.g-3 > [class*="col-"] {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #contact-info .eb-contact-info-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 1.25rem 1.5rem !important;
+    min-height: 0 !important;
+    box-shadow: var(--shadow-sm) !important;
+  }
+
+  #contact-info .eb-contact-icon {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 0 !important;
+    margin-right: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #contact-info .eb-contact-info-title {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0.25rem !important;
+    display: block !important;
+    text-align: left !important;
+    font-size: var(--fs-body) !important;
+    font-weight: var(--fw-bold) !important;
+    line-height: 1.3 !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  #contact-info .eb-contact-info-text {
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+    text-align: left !important;
+    line-height: 1.5 !important;
+    -webkit-line-clamp: unset !important;
   }
 
   /* Credentials / Certifications Grid */
