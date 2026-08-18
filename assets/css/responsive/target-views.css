@@ -2372,6 +2372,50 @@ body {
   }
 }
 
+/* ── Trending Hair tablet grid: two cards, then one centered ── */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #trending-hair .row.g-4 {
+    justify-content: center !important;
+  }
+
+  #trending-hair .row.g-4 > .col-md-4 {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    max-width: 50% !important;
+  }
+
+  #trending-hair .row.g-4 > .col-md-4:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #trending-hair .eb-card-footer {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  #trending-hair .eb-card-body {
+    width: 100% !important;
+    align-self: stretch;
+  }
+
+  #trending-hair .eb-card-footer > :first-child {
+    min-width: 0;
+    justify-self: start;
+    text-align: left;
+  }
+
+  #trending-hair .eb-card-footer .eb-btn {
+    justify-self: end;
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+}
+
 /* ── Hair Transformation: centered content group ── */
 @media (max-width: 1024px) {
   #hair-showcase .eb-split > :last-child {
