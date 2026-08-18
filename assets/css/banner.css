@@ -487,6 +487,8 @@
   font-weight: var(--fw-medium);
   color: rgba(255, 249, 244, 0.72);
   margin-bottom: 1rem;
+  width: fit-content;
+  max-width: fit-content;
 }
 
 .eb-breadcrumb a {

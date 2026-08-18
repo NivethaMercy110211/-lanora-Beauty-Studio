@@ -2473,9 +2473,9 @@ body {
 }
 
 /* ============================================
-   iPad Mini (768x1024) Center Alignment Rules
+   iPad Mini (768x1024) & iPad Pro (1024x1366) Banner & Breadcrumb Rules
    ============================================ */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1366px) {
 
   /* Page Banners & Hero Content */
   .eb-page-banner-content,
