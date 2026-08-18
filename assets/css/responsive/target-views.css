@@ -2324,6 +2324,54 @@ body {
   }
 }
 
+/* ── Skin treatment mini-cards: uniform grid and text alignment ── */
+@media (max-width: 1024px) {
+  #skin-section .row.g-3 {
+    align-items: stretch;
+  }
+
+  #skin-section .row.g-3 > .col-6 {
+    display: flex;
+  }
+
+  #skin-section .eb-contact-info-card {
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    align-items: center !important;
+    min-height: 128px;
+    padding: 1.25rem !important;
+    gap: 1rem;
+    text-align: left !important;
+  }
+
+  #skin-section .eb-contact-info-card > div:not(.eb-contact-icon) {
+    width: 100%;
+    min-width: 0;
+    text-align: left !important;
+  }
+
+  #skin-section .eb-contact-info-title,
+  #skin-section .eb-contact-info-text {
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left !important;
+  }
+}
+
+/* ── Seasonal Offer cards: equal full-width image frames ── */
+@media (max-width: 1024px) {
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img {
+    width: 100% !important;
+    align-self: stretch;
+  }
+
+  #seasonal-offers-h2 .eb-offer-card .eb-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+  }
+}
+
 /* ── Hair Transformation: centered content group ── */
 @media (max-width: 1024px) {
   #hair-showcase .eb-split > :last-child {
